@@ -1,0 +1,52 @@
+version: '2'
+
+services:
+  app:
+    image: node:6.9.4-alpine
+    container_name: node_frontend
+    ports:
+    - "80:3000"
+    volumes:
+    - .:/usr/src/app
+    environment:
+    - NODE_ENV=dev
+    - PORT=3000
+    command:
+      sh -c '
+      cd /usr/src/app &&
+      /usr/local/bin/node index.js'
+
+  npm-install:
+    image: node:6.9.4-alpine
+    container_name: npm
+    volumes:
+      - .:/usr/src/app
+    command:
+      sh -c '
+      cd /usr/src/app &&
+      npm install --no-bin-links || npm install --no-bin-links &&
+      npm rebuild node-sass --no-bin-links'
+
+  # webpack:
+  #   image: node:6.9.4-alpine
+  #   container_name: webpack
+  #   volumes:
+  #     - .:/usr/src/app
+  #   environment:
+  #     - NODE_ENV=dev
+  #   command:
+  #     sh -c '
+  #     cd /usr/src/app &&
+  #     /usr/local/bin/node index.js'
+
+  mocha:
+    image: node:6.9.4-alpine
+    container_name: mocha
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=test
+    command:
+      sh -c '
+      cd /usr/src/app &&
+      /usr/src/app/node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./src/test/test_helper.js src/test/*test.js'
