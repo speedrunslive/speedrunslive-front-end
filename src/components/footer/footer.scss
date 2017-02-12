@@ -1,0 +1,36 @@
+@import '../../css/variables';
+@import '../../css/mixins';
+footer {
+    //background: url(http://cdn.speedrunslive.com/images/texture_bar_footer2.jpg) top center;
+    background-color: $darker-grey-background;
+    color: $grey-darker;
+    font-size: em(12);
+    margin-top: 27px;
+    border-top: 1px $coal-grey dotted;
+}
+
+footer div{
+    padding: 5px;
+
+}
+
+footer .right {
+    margin: 0px 8px;
+    float: right;
+}
+
+footer .left {
+    margin: 0px 8px;
+    padding-bottom: 5px;
+    float: left;
+}
+
+.linktext{
+    padding: 0px 5px;
+    text-decoration: none;
+    color:inherit;
+}
+
+.linktext :hover {
+    color: $white;
+}
