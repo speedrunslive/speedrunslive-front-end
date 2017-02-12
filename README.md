@@ -8,6 +8,8 @@ Setup
 
 Clone the repository and navigate to the project then run the following commands:
 
+Note for Windows users: The project must be in your /users/ folder for volume mounting.
+
 ```Shell
 # For development
 $ docker-compose run --rm npm-install

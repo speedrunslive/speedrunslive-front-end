@@ -10,11 +10,13 @@ export default class Navigation extends React.Component {
   render() {
     return (
           <nav>
-              <Link to="/" className="headerButton"><Translate content="navigation.streams"/></Link>
-              <Link to="/races" className="racesButton headerButton"><Translate content="navigation.races"/></Link>
-              <Link to="/channel" className="headerButton"><Translate content="navigation.channel"/></Link>
-              <Link to="/faq/rules" className="headerButton"><Translate content="navigation.rules"/></Link>
-              <Link to="/tools" className="headerButton"><Translate content="navigation.tools"/></Link>
+            <div className="primary">
+              <Link to="/" className="btn"><Translate content="navigation.streams"/></Link>
+              <Link to="/races" className="btn red-hover"><Translate content="navigation.races"/></Link>
+              <Link to="/channel" className="btn"><Translate content="navigation.channel"/></Link>
+              <Link to="/faq/rules" className="btn"><Translate content="navigation.rules"/></Link>
+              <Link to="/tools" className="btn"><Translate content="navigation.tools"/></Link>
+            </div>
           </nav>
     );
   }

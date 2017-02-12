@@ -5,7 +5,7 @@ header {
     padding-top: 16px;
     border-bottom: 1px $srl-blue dotted;
     box-shadow: 0 0 2px $srl-blue;
-    background: url('../../css/images/texture_bar2.jpg') top center;
+    background: linear-gradient(to top, $darker-grey-background, $main-background);
 }
 
 .srlLogo {
