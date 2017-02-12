@@ -26,4 +26,20 @@
         background: linear-gradient(to bottom, $red-background, $dark-red);
         border-color: $red $dark-red $dark-red $red;
     }
+    &.blue-hover:hover {
+        background: linear-gradient(to bottom, $royal-blue,$dark-blue);
+        border-color:$royal-blue $dark-blue $dark-blue $royal-blue;
+    }
+    &.yellow-hover:hover {
+        background: linear-gradient(to bottom, $mustard, $dark-brown);
+        border-color:$mustard $dark-brown $dark-brown $mustard;
+    }
+    &.green-hover:hover {
+        background: linear-gradient(to bottom, $green, $dark-green);
+        border-color:$green $dark-green $dark-green $green;
+    }
+    &.grey-hover:hover {
+        background: linear-gradient(to bottom, $dark-grey, $coal-grey);
+        border-color:$dark-grey $coal-grey $coal-grey $dark-grey;
+    }
 }
