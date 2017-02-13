@@ -14,8 +14,8 @@ export default class Footer extends React.Component {
       <footer>
         <div className="container">
           <em>
-            <div className="left">SpeedRunsLive © {new Date().getFullYear()}</div>
-            <div className="right">
+            <div className="pull-left">SpeedRunsLive © {new Date().getFullYear()}</div>
+            <div className="pull-right">
               <Link to="/news" className="linktext"><Translate content="footer.news"/></Link>
               <Link to="/" className="linktext"><Translate content="footer.contact"/></Link>
               <Link to="/promotion" className="linktext"><Translate content="footer.promotion"/></Link>
