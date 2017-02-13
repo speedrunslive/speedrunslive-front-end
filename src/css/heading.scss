@@ -1,0 +1,10 @@
+@import '../../css/variables';
+@import '../../css/mixins';
+
+h1 {
+    font-weight: $bold;
+    font-size: em(15);
+    line-height: em(15);
+    color: $srl-orange;
+    margin: 16px 0 8px 0;
+}

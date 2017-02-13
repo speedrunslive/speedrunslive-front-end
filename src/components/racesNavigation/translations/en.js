@@ -5,7 +5,7 @@ module.exports = {
         seasons: 'Seasons',
         raceStats: 'Race Stats',
         pastResults: 'Past Results',
-        gamelist: 'Gamelist',
+        gameList: 'Game List',
         bulletinBoard: 'Bulletin Board'
     }
 };

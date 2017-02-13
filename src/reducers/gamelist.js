@@ -1,4 +1,4 @@
-const gamelist = (state = {}, action) => {
+const gameList = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_GAMELIST':
         return Object.assign({}, state, {
@@ -11,4 +11,4 @@ const gamelist = (state = {}, action) => {
   }
 }
 
-export default gamelist
+export default gameList

@@ -1,0 +1,27 @@
+@import '../../css/variables';
+@import '../../css/mixins';
+
+.gameList {
+    .alphaList {
+        height: 600px;
+        overflow-y: scroll;
+        border-top: 2px $grey-background solid;
+        border-bottom: 2px $grey-background solid;
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: em(14)
+        }
+    }
+
+    .gameSort {
+        a {
+            border-radius: 4px 4px 0 0;
+
+            &:not(:first-of-type) {
+                border-radius: initial;
+            }
+        }
+    }
+}
