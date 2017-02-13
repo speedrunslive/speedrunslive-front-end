@@ -16,7 +16,8 @@ $ docker-compose run --rm npm-install
 $ docker-compose up app
 ```
 
-After that the project will be up at your docker-machine's IP on port 80.
+You can find the IP of your docker machine by running `docker-machine ip`
+Just hit that IP or add it to your /etc/hosts file.
 
 Anytime you add packages you will need to run npm-install. 
 
