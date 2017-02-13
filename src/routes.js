@@ -8,7 +8,7 @@ import Landing from './routes/landing';
 import Races from './routes/races';
 
 // Components
-import Gamelist from './components/gamelist';
+import GameList from './components/gameList';
 
 
 const store = configureStore()
@@ -18,8 +18,8 @@ export default (
       <Router history={browserHistory}>
         <Route path="/" component={Landing}>
           <Route path="races" component={Races}>
-            <IndexRoute component={Gamelist} />
-            <Route path="gamelist" component={Gamelist} />
+            <IndexRoute component={GameList} />
+            <Route path="gamelist" component={GameList} />
           </Route>
         </Route>
       </Router>

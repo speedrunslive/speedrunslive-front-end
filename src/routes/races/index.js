@@ -6,12 +6,8 @@ export default class Races extends React.Component {
     return (
         <div className="container">
           <div className="row">
-            <div className="col-md-2">
-              <RacesNavigation />
-            </div>
-            <div className="col-md-10">
-              {this.props.children}
-            </div>
+            <RacesNavigation />
+            {this.props.children}
           </div>
         </div>
     );

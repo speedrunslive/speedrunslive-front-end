@@ -1,0 +1,12 @@
+.racesNav {
+    a {
+        padding-left: 10px;
+        text-align: left;
+        margin-bottom: 1px;
+        border-radius: 4px 4px 0 0;
+
+        &:not(:first-of-type) {
+            border-radius: initial;
+        }
+    }
+}
