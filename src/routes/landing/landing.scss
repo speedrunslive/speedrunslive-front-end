@@ -5,4 +5,8 @@ body {
     background-color: $main-background;
     font-family: $font-family-base;
     color: $grey;
+
+    a {
+        color: $grey;
+    }
 }

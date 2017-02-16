@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import fetch from 'isomorphic-fetch';
 import { Link } from 'react-router';
@@ -7,12 +7,44 @@ import './gameList.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 
+const alphabet = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split('');;
 counterpart.registerTranslations('en', require('./translations/en'));
 
 class GameList extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchGameList());
-  }
+  };
+
+  renderLetterPicker() {
+    return (
+      <div className="letterPicker">
+        <a href="/races/gamelist/alphabetical/number">#</a>
+        {alphabet.map((letter, i) => {
+          return <a href={"/races/gamelist/alphabetical/" + letter} key={i}>{letter}</a>
+        })}
+      </div>
+    );
+  };
+
+  renderAlphaList() {
+    var newLetter = '';
+    var currentLetter = '';
+
+    return (
+      <div className="alphaList">
+        <ul>
+          {this.props.games.map((game, i) => {
+            newLetter = game.name.charAt(0);
+            if (newLetter !== currentLetter) {
+              currentLetter = newLetter;
+              return [<h1>{newLetter}</h1>,<li key={i}>{game.name}</li>]
+            }
+            return <li key={i}>{game.name}</li>
+          })}
+        </ul>
+      </div>
+    );
+  };
 
   render() {
     return (
@@ -26,15 +58,8 @@ class GameList extends React.Component {
             </div>
             <div className="col-md-7 col-md-pull-2 padding-md">
               <h1><Translate content="gameList.alphabetical"/></h1>
-              <div className="letterPicker">
-              </div>
-              <div className="alphaList">
-                <ul>
-                  {this.props.games.map((game, i) =>
-                  <li key={i}>{game.name}</li>
-                  )}
-                </ul>
-              </div>
+              {this.renderLetterPicker()}
+              {this.renderAlphaList()}
             </div>
         </div>
     );
@@ -42,8 +67,8 @@ class GameList extends React.Component {
 }
 
 GameList.propTypes = {
-    games: React.PropTypes.array.isRequired
-}
+    games: PropTypes.array.isRequired
+};
 
 export function mapStateToProps(state) {
   return {
