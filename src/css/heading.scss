@@ -3,8 +3,23 @@
 
 h1 {
     font-weight: $bold;
-    font-size: em(15);
-    line-height: em(15);
+    font-size: em($font-size-base + 2.5);
+    line-height: em($font-size-base + 2.5);
     color: $srl-orange;
     margin: 16px 0 8px 0;
 }
+
+h2 {
+    margin: 0 0 8px;
+    color: $srl-yellow;
+    font-weight: $bold;
+    font-size: em($font-size-base + 1);
+}
+h3 {
+    //display: block;
+    margin: 0 0 8px;
+    color: $srl-yellow-dark;
+    font-weight: $bold;
+    font-size: em($font-size-base);
+}
+

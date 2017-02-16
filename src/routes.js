@@ -6,6 +6,7 @@ import configureStore from './configureStore'
 // Pages
 import Landing from './routes/landing';
 import Races from './routes/races';
+import FAQ from './routes/faq';
 
 // Components
 import GameList from './components/gameList';
@@ -25,6 +26,7 @@ export default (
             </Route>
             <Route path="pastresults" component={PastResults} />
           </Route>
+		      <Route path="faq" component={FAQ} />
         </Route>
       </Router>
     </Provider>
