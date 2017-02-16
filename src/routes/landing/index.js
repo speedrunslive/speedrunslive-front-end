@@ -8,7 +8,7 @@ export default class Landing extends React.Component {
     return (
       <div id="mainContent">
         <Header />
-          <div id="wrap">
+          <div className="wrap">
             {this.props.children}
           </div>
         <Footer />
