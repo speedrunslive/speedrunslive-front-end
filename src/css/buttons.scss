@@ -24,6 +24,14 @@
         width: 234px;
     }
 
+    &.btn-green {
+        background: linear-gradient(to bottom, $fern-green, $dark-green);
+        border-width: 1px 0px 1px 1px;
+        border-style: solid;
+        border-color:$green $black $black $green;
+        color: #b6dec7;
+    }
+
     &:hover {
         color: $white;
     }
