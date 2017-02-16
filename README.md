@@ -19,6 +19,19 @@ $ docker-compose up app
 You can find the IP of your docker machine by running `docker-machine ip`
 Just hit that IP or add it to your /etc/hosts file.
 
-Anytime you add packages you will need to run npm-install. 
+Anytime you add packages you will need to run `docker-compose run --rm npm-install`
 
-If you want to run unit tests use: `docker-compose run mocha`
+Development
+-----------
+
+Make sure to set the API url to whatever you're using for the API in /src/config. This project will only work with version 2 of the API, so you will have to boot up the API locally for now.
+
+#React components
+
+Make sure to keep presentational components and container components separate. The presentational components should take input for props and contain no logic if possible.
+
+#Unit Testing
+
+`docker-compose run --rm mocha`
+
+Please unit test any components or functions that you can.

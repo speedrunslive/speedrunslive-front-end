@@ -9,6 +9,7 @@ import Races from './routes/races';
 
 // Components
 import GameList from './components/gameList';
+import PastResults from './components/pastResults';
 
 
 const store = configureStore()
@@ -20,6 +21,7 @@ export default (
           <Route path="races" component={Races}>
             <IndexRoute component={GameList} />
             <Route path="gamelist" component={GameList} />
+            <Route path="pastresults" component={PastResults} />
           </Route>
         </Route>
       </Router>
