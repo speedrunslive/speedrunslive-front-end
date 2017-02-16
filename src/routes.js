@@ -26,7 +26,7 @@ export default (
             </Route>
             <Route path="pastresults" component={PastResults} />
           </Route>
-		  <Route path="faq" component={FAQ}>
+		      <Route path="faq" component={FAQ} />
         </Route>
       </Router>
     </Provider>

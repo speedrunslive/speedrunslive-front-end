@@ -9,6 +9,7 @@ body {
     margin: 0 0 $footer-height 0;
     background-color: $main-background;
     font-family: $font-family-base;
+    font-size: em($font-size-base);
     color: $grey;
 
     a {

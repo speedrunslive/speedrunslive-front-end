@@ -1,0 +1,26 @@
+@import '../../css/variables';
+@import '../../css/mixins';
+
+.faqdivider {
+    border-bottom: 1px dotted #646464;
+}
+
+code {
+    font-family: monospace;
+    background-color:  $black;
+    border-width: 1px 1px 0px 0px;
+    color:$white;
+    border-style: solid;
+    border-color: $darker-grey-background;
+    border-radius: 2px;
+    padding: 1px 5px;
+}
+
+strong {
+    color: $srl-yellow;
+    font-weight: $bold;
+}
+
+a {
+    color: inherit;
+}
