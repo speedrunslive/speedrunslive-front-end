@@ -8,7 +8,7 @@ import Landing from './routes/landing';
 import Races from './routes/races';
 
 // Components
-import GameList from './components/gameList';
+import GameList from './containers/gameList';
 import PastResults from './components/pastResults';
 
 

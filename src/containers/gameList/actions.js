@@ -1,9 +1,8 @@
 // Redux action creators
 
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from '../config'
-
-export const RECEIVE_GAMELIST = 'RECEIVE_GAMELIST';
+import { apiUrl } from '../../config'
+import { RECEIVE_GAMELIST } from './constants'
 
 export function receiveGameList(json) {
   return {

@@ -26,11 +26,13 @@ Development
 
 Make sure to set the API url to whatever you're using for the API in /src/config. This project will only work with version 2 of the API, so you will have to boot up the API locally for now.
 
-#React components
+React components
+----------------
 
 Make sure to keep presentational components and container components separate. The presentational components should take input for props and contain no logic if possible.
 
-#Unit Testing
+Unit Testing
+------------
 
 `docker-compose run --rm mocha`
 

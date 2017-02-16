@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import fetch from 'isomorphic-fetch';
 import { Link } from 'react-router';
-import { fetchGameList } from '../../actions/gameList';
 import './gameList.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
@@ -10,11 +7,7 @@ import counterpart from 'counterpart';
 const alphabet = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split('');;
 counterpart.registerTranslations('en', require('./translations/en'));
 
-class GameList extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchGameList());
-  };
-
+export default class GameList extends React.Component {
   renderLetterPicker() {
     return (
       <div className="letterPicker">
@@ -69,12 +62,3 @@ class GameList extends React.Component {
 GameList.propTypes = {
     games: PropTypes.array.isRequired
 };
-
-export function mapStateToProps(state) {
-  return {
-      games: state.gameList.items || []
-  }
-}
-
-// react-redux connect binding
-export default connect(mapStateToProps)(GameList);
