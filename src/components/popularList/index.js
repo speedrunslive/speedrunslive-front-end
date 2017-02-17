@@ -9,15 +9,13 @@ counterpart.registerTranslations('en', require('./translations/en'));
 
 const PopularList = (props) => {
   return (
-    <div>
+    <div className="popularList">
       <h1><Translate content="popularList.heading"/></h1>
-      <div className="popularList">
-        <ul>
-        {props.games.map((game, i) =>
-          <PopularGame name={game.name} rank={i+1} key={i} />
-        )}
-        </ul>
-      </div>
+      <ul>
+      {props.games.map((game, i) =>
+        <PopularGame name={game.name} rank={i+1} short={game.short} key={i} />
+      )}
+      </ul>
     </div>
   );
 }

@@ -49,4 +49,4 @@ services:
     command:
       sh -c '
       cd /usr/src/app &&
-      /usr/src/app/node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./src/test/test_helper.js src/test/*test.js'
+      /usr/src/app/node_modules/mocha/bin/mocha'

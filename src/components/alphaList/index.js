@@ -22,7 +22,7 @@ const AlphaList = (props) => {
           newLetter = game.name.charAt(0);
           if (newLetter !== currentLetter) {
             currentLetter = newLetter;
-            return [<h1>{newLetter}</h1>,<li key={i}>{game.name}</li>]
+            return [<li><h1>{newLetter}</h1></li>,<li key={i}>{game.name}</li>]
           }
           return <li key={i}>{game.name}</li>
         })}
