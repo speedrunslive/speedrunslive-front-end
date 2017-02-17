@@ -7,18 +7,18 @@ import counterpart from 'counterpart';
 
 counterpart.registerTranslations('en', require('./translations/en'));
 
-export default class PastResults extends React.Component {
-  render() {
-    return (
-        <div className="pastResults">
-            <div className="col-md-6">
-              <h1><Translate content="pastResults.heading"/></h1>
-              <button className="btn first"></button>
-              <button className="btn prev"></button>
-              <button className="btn first"></button>
-              <button className="btn last"></button>
-            </div>
-        </div>
-    );
-  }
+const PastResults = () => {
+  return (
+    <div className="pastResults">
+      <div className="col-md-6">
+        <h1><Translate content="pastResults.heading"/></h1>
+        <button className="btn first"></button>
+        <button className="btn prev"></button>
+        <button className="btn first"></button>
+        <button className="btn last"></button>
+      </div>
+    </div>
+  );
 }
+
+export default PastResults;

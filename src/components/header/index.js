@@ -4,15 +4,15 @@ import Navigation from '../navigation';
 
 import './header.scss';
 
-export default class Header extends React.Component {
-  render() {
-    return (
-      <header>
-        <div className="container">
-          <Link to="/" className="srlLogo" />
-          <Navigation />
-        </div>
-      </header>
-    );
-  }
+const Header = () => {
+  return (
+    <header>
+      <div className="container">
+        <Link to="/" className="srlLogo" />
+        <Navigation />
+      </div>
+    </header>
+  );
 }
+
+export default Header;

@@ -6,8 +6,7 @@ import './faq.scss'
 
 //counterpart.registerTranslations('en', require('./translations/en'));
 
-export default class FAQBody extends React.Component {
-  render() {
+const FAQBody = () => {
     return (
         <div id="faq">
             <h1>Frequently asked questions&ensp;
@@ -369,7 +368,7 @@ Your stream will appear on the Streams page of the site after 1 hour of racing. 
             <p>Also, if you're still feeling unsure of how everything works here, feel free to lurk in <strong>#speedrunslive</strong>, check out a few races, linger in race channels, and ask questions (even if the people tell you to look at the FAQ again, which isn't a bad idea either).</p>
 
         </div>
-
     );
-  }
 }
+
+export default FAQBody;
