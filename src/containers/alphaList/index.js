@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { fetchGameList } from '../../actions';
+import { fetchAlphaList } from './actions';
 import AlphaList from '../../components/alphaList';
 
 class AlphaListContainer extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchGameList({ sort: 'name', order: 'ASC' }));
+    this.props.dispatch(fetchAlphaList({ sort: 'name', order: 'ASC' }));
   };
 
   render() {
@@ -21,7 +21,7 @@ AlphaListContainer.propTypes = {
 
 export function mapStateToProps(state) {
   return {
-      games: state.gameList.items || []
+      games: state.alphaList.items || []
   }
 }
 

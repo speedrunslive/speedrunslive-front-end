@@ -12,6 +12,7 @@ import FAQ from './routes/faq';
 import GameList from './components/gameList';
 import PastResults from './components/pastResults';
 import AlphaList from './containers/AlphaList';
+import PopularList from './containers/PopularList';
 
 const store = configureStore()
 
@@ -21,8 +22,9 @@ export default (
         <Route path="/" component={Landing}>
           <Route path="races" component={Races}>
             <Route path="gamelist" component={GameList}>
-              <IndexRoute component={AlphaList} />
+              <IndexRoute component={PopularList} />
               <Route path="alphabetical" component={AlphaList} />
+              <Route path="popular" component={PopularList} />
             </Route>
             <Route path="pastresults" component={PastResults} />
           </Route>
