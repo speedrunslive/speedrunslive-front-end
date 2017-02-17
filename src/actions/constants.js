@@ -1,1 +1,0 @@
-export const RECEIVE_GAMELIST = 'RECEIVE_GAMELIST';

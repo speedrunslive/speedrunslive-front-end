@@ -1,6 +1,6 @@
-const gameList = (state = {}, action) => {
+const popularList = (state = {}, action) => {
   switch (action.type) {
-    case 'RECEIVE_GAMELIST':
+    case 'RECEIVE_POPULARLIST':
         return Object.assign({}, state, {
             isFetching: false,
             didInvalidate: false,
@@ -11,4 +11,4 @@ const gameList = (state = {}, action) => {
   }
 }
 
-export default gameList
+export default popularList
