@@ -16,9 +16,6 @@ footer {
 }
 
 .linktext {
-    text-decoration: none;
     color: inherit;
-     :hover {
-        color: $white;
-    }
+    text-decoration: none;
 }

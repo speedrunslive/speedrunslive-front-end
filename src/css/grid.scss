@@ -915,3 +915,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+/* pull-right on all except xs devices */
+@media (min-width: 992px) {
+    .pull-right-sm {
+        float: right;
+    }
+}

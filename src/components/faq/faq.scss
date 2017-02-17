@@ -5,6 +5,14 @@
     border-bottom: 1px dotted #646464;
 }
 
+.faqNav {
+    a {
+        text-decoration: none;
+        display: block;
+    }
+
+}
+
 code {
     font-family: monospace;
     background-color:  $black;
