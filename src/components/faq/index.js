@@ -8,7 +8,52 @@ import './faq.scss'
 
 const FAQBody = () => {
     return (
-        <div id="faq">
+<div className="container">
+
+<div className="pull-right-sm col-md-3 faqNav"> 
+		<h1>Navigation</h1>
+		<a href="#what">What is speedrunning?</a>
+		<a href="#whatsrl">What is SpeedRunsLive?</a>
+		<br/>
+		<a href="#getstarted"><h2>Getting started</h2></a>
+		<a href="#whatsrlraces">What are SRL Races?</a>
+		<a href="#join">How do I participate in races?</a>
+		<a href="#resources">Are there resources on my game?</a>
+		<br/>
+		<a href="#racing"><h2>Racing</h2></a>
+		<a href="#whatrace">What can I race on SpeedRunsLive?</a>
+		<a href="#howgoals">How do the different goals work?</a>
+		<a href="#newgame">Can I race an unlisted game?</a>
+		<a href="#caniemulate">Can I emulate?</a>
+		<a href="#setstream">How do I appear on races page?</a>
+		<a href="#nostream">I can't stream, can I still race?</a>
+		<a href="#proofcall">How do race proofcalls work?</a>
+		<a href="#whatseasons">What are SRL seasons?</a>
+		<a href="#rankingsystem">How does the ranking system work?</a>
+		<a href="#gametime">What about in-game times?</a>
+		<a href="#turboetc">What about glitches, cheats, turbo?</a>
+		<br/>
+		<a href="#frontpage"><h2>Front page</h2></a>
+		<a href="#howfrontpage">How do I get on the front page?</a>
+		<a href="#whatcanistream">What can I stream?</a>
+		<a href="#whatotherfeatures">Any front page features?</a>
+		<a href="#charitymarathons">Will you feature my marathon?</a>
+		<br/>
+		<a href="#other"><h2>Other</h2></a>
+		<a href="#socialmedia">How do I link my social media?</a>
+		<a href="#twitchteam">How do I get on the Twitch team?</a>
+		<a href="#involved">Can I get more involved?</a>
+		<a href="#imbad">I'm really bad, should I even bother?</a>
+		<br/>
+		<div className="faqdivider">
+		</div>
+		<br/>
+		<h2>Additional resources</h2>
+		<a href="/faq/registration">Registration FAQ</a>
+		<a href="/news/update-13-11-14/">Front page guide</a>
+	</div>
+
+        <div className = "pull-left col-md-9" id="faq">
             <h1>Frequently asked questions&ensp;
                 <a href="">
                     <img className="flag" src="http://cdn.speedrunslive.com/images/flags/United_States_of_America.png" alt="En" />
@@ -368,6 +413,7 @@ Your stream will appear on the Streams page of the site after 1 hour of racing. 
             <p>Also, if you're still feeling unsure of how everything works here, feel free to lurk in <strong>#speedrunslive</strong>, check out a few races, linger in race channels, and ask questions (even if the people tell you to look at the FAQ again, which isn't a bad idea either).</p>
 
         </div>
+    </div>
     );
 }
 
