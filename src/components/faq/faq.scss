@@ -1,36 +1,8 @@
 @import '../../css/variables';
 @import '../../css/mixins';
-
-.faqdivider {
-    border-bottom: 1px dotted #646464;
-    margin:20px 0;
-}
-
-.faqNav {
-    a {
-        text-decoration: none;
-        display: block;
-        color:inherit;
+.faq {
+    .faqdivider {
+        border-bottom: 1px dotted #646464;
+        margin: 20px 0;
     }
-
-}
-
-img{
-    margin:0 4px;
-}
-
-code {
-    font-family: monospace;
-    background-color:  $black;
-    border-width: 1px 1px 0px 0px;
-    color:$white;
-    border-style: solid;
-    border-color: $darker-grey-background;
-    border-radius: 2px;
-    padding: 1px 5px;
-}
-
-strong {
-    color: $srl-yellow-dark;
-    font-weight: $bold;
 }

@@ -3,14 +3,13 @@ import { Link } from 'react-router';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './faq.scss'
-
+import FAQNav from '../faqNav';
 //counterpart.registerTranslations('en', require('./translations/en'));
 
 const FAQBody = () => {
     return (
- <div className="row">
-    <div className="pull-right-sm col-md-3 faqNav">
-        <h1>Navigation</h1>
+<div className = "row faq">
+    <FAQNav>
         <a href="#what">What is speedrunning?</a>
         <a href="#whatsrl">What is SpeedRunsLive?</a>
         <h2>
@@ -51,13 +50,13 @@ const FAQBody = () => {
         <h2>Additional resources</h2>
         <a href="/faq/registration">Registration FAQ</a>
         <a href="/news/update-13-11-14/">Front page guide</a>
-    </div>
-    <div className="pull-left col-md-9" id="faq">
+    </FAQNav>
+    <div className="pull-left col-md-9">
             <h1>Frequently asked questions 
-            <Link to="">
+            <Link to="/faq">
                 <img className="flag" src="http://cdn.speedrunslive.com/images/flags/United_States_of_America.png" alt="En" />
             </Link>
-            <Link to="./sp/">
+            <Link to="/faq/sp">
                 <img src="http://cdn.speedrunslive.com/images/flags/Spain.png" className="flag" alt="Sp" />
             </Link>
             </h1>
@@ -158,7 +157,7 @@ const FAQBody = () => {
         </p>
         <h3>8. Review the Racing section of this FAQ</h3>
         <p>
-            The racing section of the FAQ can be found <Link to="#racing">here</Link>.
+            The racing section of the FAQ can be found <a href="#racing">here</a>.
         </p>
         <p>
             After doing all of the above, you are ready for your first race. You can join any races with an ENTRY OPEN status. Alternatively,

@@ -20,6 +20,32 @@ body {
         }
     }
 
+    strong {
+        color: $srl-yellow-dark;
+        font-weight: $bold;
+    }
+
+    li {
+        p {
+            margin-top: 0;
+        }
+    }
+
+    code {
+        font-family: monospace;
+        background-color: $black;
+        border-width: 1px 1px 0px 0px;
+        color: $white;
+        border-style: solid;
+        border-color: $darker-grey-background;
+        border-radius: 2px;
+        padding: 1px 5px;
+    }
+
+    .flag {
+        margin: 0 4px;
+    }
+
     .wrap{
         margin-bottom:60px;
     }
