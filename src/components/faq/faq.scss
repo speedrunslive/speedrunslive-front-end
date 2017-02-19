@@ -3,14 +3,20 @@
 
 .faqdivider {
     border-bottom: 1px dotted #646464;
+    margin:20px 0;
 }
 
 .faqNav {
     a {
         text-decoration: none;
         display: block;
+        color:inherit;
     }
 
+}
+
+img{
+    margin:0 4px;
 }
 
 code {
@@ -25,10 +31,6 @@ code {
 }
 
 strong {
-    color: $srl-yellow;
+    color: $srl-yellow-dark;
     font-weight: $bold;
-}
-
-a {
-    color: inherit;
 }

@@ -6,20 +6,22 @@ h1 {
     font-size: em(16);
     line-height: em(16);
     color: $srl-orange;
-    margin: 16px 0 8px 0;
+    margin: 25px 0 8px 0;
 }
 
 h2 {
-    margin: 0 0 8px;
     color: $srl-yellow;
     font-weight: $bold;
     font-size: em(15);
+    margin: 35px 0 4px 0;
 }
 h3 {
-    //display: block;
-    margin: 0 0 8px;
     color: $srl-yellow-dark;
     font-weight: $bold;
     font-size: em(13);
+        margin: 35px 0 2px 0;
 }
+h1 + h2 { margin-top: 6px }  
+h2 + h3 { margin-top: 6px }  
+
 
