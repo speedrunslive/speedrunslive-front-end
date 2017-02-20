@@ -1,0 +1,20 @@
+@import '../../css/variables';
+.glossary {
+    h1 {
+        margin-left: 120px;
+    }
+    td:first-child {
+        color: $srl-yellow-dark;
+        font-weight: $bold;
+        text-align: right;
+        padding-right: 8px;
+    }
+    td {
+        padding-bottom: 12px;
+        vertical-align: top;
+    }
+    .note {
+    color: $grey-darker;
+    font-size: 90%;
+    }
+}

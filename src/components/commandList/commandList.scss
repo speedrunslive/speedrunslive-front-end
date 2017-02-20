@@ -1,0 +1,12 @@
+ @import '../../css/variables';
+
+ .commandList {
+     .border-under {
+         border-bottom: 1px dotted $dark-grey;
+         padding-bottom: 4px;
+     }
+     .grey {
+         color: $grey-darker;
+         text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+     }
+ }
