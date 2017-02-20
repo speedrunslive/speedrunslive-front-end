@@ -10,9 +10,9 @@ var buildPath = path.resolve(__dirname, 'public', 'build');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const sassLoaders = [
-  'css-loader',
+  'css-loader?sourceMap=true',
   'postcss-loader',
-  'sass-loader?includePaths[]=' + path.resolve(__dirname, './src')
+  'sass-loader?sourceMap=true&outputStyle=expanded&sourceMapContents=true&includePaths[]=' + path.resolve(__dirname, './src')
 ]
 
 module.exports = {
