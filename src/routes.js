@@ -13,6 +13,10 @@ import GameList from './components/gameList';
 import PastResults from './components/pastResults';
 import AlphaList from './containers/AlphaList';
 import PopularList from './containers/PopularList';
+import Rules from './components/rules';
+import CommandList from './components/commandList';
+import Glossary from './components/glossary';
+import FAQBody from './components/faq';
 
 const store = configureStore()
 
@@ -29,9 +33,10 @@ export default (
             <Route path="pastresults" component={PastResults} />
           </Route>
 		      <Route path="faq" component={FAQ}>
-              <Route path = "rules" component={FAQ}/>
-              <Route path = "commandlist" component={FAQ}/>
-              <Route path = "glossary" component={FAQ}/>
+            <IndexRoute component={FAQBody}/>
+            <Route path = "rules" component={Rules}/>
+            <Route path = "commandlist" component={CommandList}/>
+            <Route path = "glossary" component={Glossary}/>
           </Route>
         </Route>
       </Router>

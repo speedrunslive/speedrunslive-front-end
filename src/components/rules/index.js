@@ -61,7 +61,7 @@ const Rules = () => {
             VERY seriously, and we hold a zero tolerance policy on cheating.</p>
         </li>
 
-        <li>You must stream if you are playing on emulator or are playing a PC game. See <a href="faq#proofcall">FAQ</a> for
+        <li>You must stream if you are playing on emulator or are playing a PC game. See <a href="/faq#proofcall">FAQ</a> for
             more details.
             <p><strong>Result:</strong> If caught playing on emulator or PC game without streaming, DQed from the race. If playing
             on console, and you are proof-called but cannot provide proof, DQed from the race. If you are highly suspected
