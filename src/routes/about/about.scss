@@ -1,0 +1,21 @@
+@import '../../css/variables.scss';
+
+.aboutSRL{
+  p{
+    margin: 3px;
+  }
+  a{
+    float: left;
+    width: 200px;
+    font-weight: $bold;
+    text-align: right;
+    text-decoration: none;
+  }
+  span{
+    margin:0 0 0 7px;
+  }
+  .vertical-space{
+    margin:20px 0 0;
+  }
+
+}

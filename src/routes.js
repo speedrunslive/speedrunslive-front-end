@@ -7,6 +7,7 @@ import configureStore from './configureStore'
 import Landing from './routes/landing';
 import Races from './routes/races';
 import FAQ from './routes/faq';
+import About from './routes/about';
 
 // Components
 import GameList from './components/gameList';
@@ -38,6 +39,7 @@ export default (
             <Route path = "commandlist" component={CommandList}/>
             <Route path = "glossary" component={Glossary}/>
           </Route>
+          <Route path="about" component={About} />
         </Route>
       </Router>
     </Provider>
