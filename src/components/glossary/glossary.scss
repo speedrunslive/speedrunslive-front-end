@@ -1,20 +1,24 @@
 @import '../../css/variables';
+@import '../../css/mixins';
+
+$word-padding: 30px;
+
 .glossary {
     h1 {
-        margin-left: 120px;
-    }
-    td:first-child {
-        color: $srl-yellow-dark;
-        font-weight: $bold;
-        text-align: right;
-        padding-right: 8px;
-    }
-    td {
-        padding-bottom: 12px;
-        vertical-align: top;
+      padding-bottom: 30px;
     }
     .note {
-    color: $grey-darker;
-    font-size: 90%;
+      color: $grey-darker;
+      font-size: 90%;
     }
+    .word{
+      color: $srl-yellow;
+      font-weight: $bold;
+      font-size: em(15);
+      text-shadow: $text-shadow-base;
+    }
+    .definition{
+        padding-bottom:$word-padding;
+    }
+
 }

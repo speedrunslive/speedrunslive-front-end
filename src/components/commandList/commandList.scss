@@ -4,7 +4,7 @@
      span {
          float: right;
          color: $grey-darker;
-         text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+         text-shadow: $text-shadow-base;
      }
      h2{
          border-bottom: 1px dotted $dark-grey;

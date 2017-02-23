@@ -2,7 +2,7 @@
 @import '../../css/mixins';
 .faq {
     .faqdivider {
-        border-bottom: 1px dotted #646464;
+        border-bottom: 1px dotted $grey-darker;
         margin: 20px 0;
     }
 }
