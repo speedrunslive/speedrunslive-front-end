@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './faqHeader.scss'
@@ -10,10 +10,10 @@ const FAQHeader = () => {
   return (
     <nav>
       <div className="faqHeader">
-        <Link to="/faq/rules" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.racingRules"/></Link>
-        <Link to="/faq" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.faq"/></Link>
-        <Link to="/faq/commandlist" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.racebotCommands"/></Link>
-        <Link to="/faq/glossary" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.glossary"/></Link>
+        <Link to="/faq/rules" activeClassName="active-green" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.racingRules"/></Link>
+        <IndexLink to="/faq" activeClassName="active-green" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.faq"/></IndexLink>
+        <Link to="/faq/commandlist" activeClassName="active-green" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.racebotCommands"/></Link>
+        <Link to="/faq/glossary" activeClassName="active-green" className="btn btn-large btn-green green-hover"><Translate content="faqHeader.glossary"/></Link>
       </div>
     </nav>
   );

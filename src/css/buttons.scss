@@ -16,7 +16,21 @@
     border-radius: 4px;
     border-color: $dark-grey $black $black $dark-grey;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    display: inline-block;
+    display: inline-block;  
+
+    &.btn-large {
+        font-size: em(15);
+        line-height: 1.75;
+        width: 234px;
+    }
+
+    &.btn-green {
+        background: linear-gradient(to bottom, $fern-green, $dark-green);
+        border-width: 1px 0px 1px 1px;
+        border-style: solid;
+        border-color:$green $black $black $green;
+        color: #b6dec7;
+    }
 
     &.active-red{
       border-color: $brick-red darken($brick-red, 25%) $black $brick-red;
@@ -42,21 +56,7 @@
     &.active-grey{
       background: linear-gradient(to bottom, $coal-grey,darken($coal-grey,10%));
       box-shadow: none;
-    }        
-
-    &.btn-large {
-        font-size: em(15);
-        line-height: 1.75;
-        width: 234px;
-    }
-
-    &.btn-green {
-        background: linear-gradient(to bottom, $fern-green, $dark-green);
-        border-width: 1px 0px 1px 1px;
-        border-style: solid;
-        border-color:$green $black $black $green;
-        color: #b6dec7;
-    }
+    }     
 
     &:hover {
         color: $white;
