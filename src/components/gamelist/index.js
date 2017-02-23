@@ -12,8 +12,8 @@ const GameList = (props) => {
       <div className="col-md-2 col-md-push-7">
         <div className="gameSort">
           <h1><Translate content="gameList.sort"/></h1>
-          <Link to="/races/gamelist/popular" className="btn red-hover"><Translate content="gameList.popular"/></Link>
-          <Link to="/races/gamelist/alphabetical" className="btn red-hover"><Translate content="gameList.alphabetical"/></Link>
+          <Link to="/races/gamelist/popular" activeClassName="active-red" className="btn red-hover"><Translate content="gameList.popular"/></Link>
+          <Link to="/races/gamelist/alphabetical" activeClassName="active-red" className="btn red-hover"><Translate content="gameList.alphabetical"/></Link>
         </div>
       </div>
       <div className="col-md-7 col-md-pull-2 padding-md">

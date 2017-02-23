@@ -16,7 +16,7 @@
     border-radius: 4px;
     border-color: $dark-grey $black $black $dark-grey;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    display: inline-block;
+    display: inline-block;  
 
     &.btn-large {
         font-size: em(15);
@@ -31,6 +31,32 @@
         border-color:$green $black $black $green;
         color: #b6dec7;
     }
+
+    &.active-red{
+      border-color: $brick-red darken($brick-red, 25%) $black $brick-red;
+      background: linear-gradient(to bottom, $brick-red, darken($brick-red, 25%));
+      box-shadow: none;
+    }
+
+    &.active-blue{
+      background: linear-gradient(to bottom, $dark-blue, darken($dark-blue,10%));
+      box-shadow: none;
+    }
+
+    &.active-yellow{
+      background: linear-gradient(to bottom, $dark-brown, darken($dark-brown,10%));
+      box-shadow: none;
+    }
+
+    &.active-green{
+      background: linear-gradient(to bottom, $dark-green, darken($dark-green,5%));
+      box-shadow: none;
+    }
+
+    &.active-grey{
+      background: linear-gradient(to bottom, $coal-grey,darken($coal-grey,10%));
+      box-shadow: none;
+    }     
 
     &:hover {
         color: $white;
