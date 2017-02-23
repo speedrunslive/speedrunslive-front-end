@@ -4,6 +4,7 @@ import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './faq.scss'
 import FAQNav from '../faqNav';
+import ToTopButton from '../toTopButton';
 //counterpart.registerTranslations('en', require('./translations/en'));
 
 const FAQBody = () => {
@@ -432,6 +433,9 @@ const FAQBody = () => {
         <p>Also, if you're still feeling unsure of how everything works here, feel free to lurk in <strong>#speedrunslive</strong>,
           check out a few races, linger in race channels, and ask questions (even if the people tell you to look at the FAQ again,
           which isn't a bad idea either).</p>
+
+          <ToTopButton/>
+          
       </div>
     </div>
   );

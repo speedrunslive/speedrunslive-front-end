@@ -4,6 +4,7 @@ import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './glossary.scss'
 import FAQNav from '../faqNav';
+import ToTopButton from '../toTopButton';
 
 //counterpart.registerTranslations('en', require('./translations/en'));
 
@@ -37,7 +38,7 @@ const Glossary = () => {
           games may not, but the term stuck around. </div>
 
         <div className="word">Autofire</div>
-        <div className="note definition">see Turbo</div>
+        <div className="dull definition">see Turbo</div>
 
         <div className="word">Blind</div>
         <div className="definition">Having no experience with or beneficial knowledge of a game before running it.</div>
@@ -47,7 +48,7 @@ const Glossary = () => {
           frame.</div>
       
         <div className="word">Bug</div>
-        <div className="note definition">see Glitch</div>
+        <div className="dull definition">see Glitch</div>
       
         <div className="word">Capture Card</div>
         <div className="definition">A device used to capture your TV screen for purposes of streaming or recording.</div>
@@ -169,7 +170,7 @@ const Glossary = () => {
         <div className="definition">A speedrun done in real time.</div>
       
         <div className="word">Run</div>
-        <div className="note definition">see Speedrun</div>
+        <div className="dull definition">see Speedrun</div>
       
         <div className="word">Save State</div>
         <div className="definition">An emulator function that saves the current state of everything in the game, which can be reloaded at will. Not
@@ -254,6 +255,8 @@ const Glossary = () => {
         <div className="word">Zip</div>
         <div className="definition">A 2D game's wall ejection routine sending the player character through the wall rapidly.</div>
       
+      <ToTopButton/>
+
       </div>
     </div>
   );
