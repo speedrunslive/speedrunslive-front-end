@@ -49,4 +49,9 @@ body {
     .wrap{
         margin-bottom:60px;
     }
+
+    .dull {
+        color: $grey-darker;
+        text-shadow: $text-shadow-base;
+    }
 }

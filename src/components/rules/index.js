@@ -4,6 +4,7 @@ import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './rules.scss'
 import FAQNav from '../faqNav';
+import ToTopButton from '../toTopButton';
 
 //counterpart.registerTranslations('en', require('./translations/en'));
 
@@ -111,6 +112,9 @@ const Rules = () => {
           </li>
           <li>Do not ban evade.</li>
         </ul>
+
+        <ToTopButton/>
+
       </div>
     </div>
   );
