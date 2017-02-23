@@ -19,6 +19,7 @@
     display: inline-block;
 
     &.active-red{
+      border-color: $brick-red darken($brick-red, 25%) $black $brick-red;
       background: linear-gradient(to bottom, $brick-red, darken($brick-red, 25%));
       box-shadow: none;
     }
