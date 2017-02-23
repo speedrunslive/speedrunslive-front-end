@@ -1,57 +1,56 @@
 @import '../../css/global';
-
-html{
-    position: relative;
-    min-height:100%;
-    overflow-y: scroll;
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-y: scroll;
 }
 
 body {
-    margin: 0 0 $footer-height 0;
-    background-color: $main-background;
-    font-family: $font-family-base;
-    font-size: #{$font-size-base}px;
+  margin: 0 0 $footer-height 0;
+  background-color: $main-background;
+  font-family: $font-family-base;
+  font-size: #{$font-size-base}px;
+  color: $grey;
+  a {
     color: $grey;
-
-    a {
-        color: $grey;
-        &:hover{
-            color:$white;
-        }
+    &:hover {
+      color: $white;
     }
-
-    strong {
-        color: $srl-yellow-dark;
-        font-weight: $bold;
+  }
+  strong {
+    color: $srl-yellow-dark;
+    font-weight: $bold;
+  }
+  li {
+    p {
+      margin-top: 0;
     }
-
-    li {
-        p {
-            margin-top: 0;
-        }
+  }
+  code {
+    font-family: monospace;
+    background-color: $black;
+    border-width: 1px 1px 0px 0px;
+    color: $white;
+    border-style: solid;
+    border-color: $darker-grey-background;
+    border-radius: 2px;
+    padding: 1px 5px;
+  }
+  .flag {
+    margin: 0 4px;
+  }
+  .wrap {
+    margin-bottom: 60px;
+  }
+  .dull {
+    font-size: 96%;
+    color: $grey-darker;
+    text-shadow: $text-shadow-base;
+  }
+  div {
+    .divider {
+      border-bottom: 1px dotted $dark-grey-background;
+      margin: 20px 0;
     }
-
-    code {
-        font-family: monospace;
-        background-color: $black;
-        border-width: 1px 1px 0px 0px;
-        color: $white;
-        border-style: solid;
-        border-color: $darker-grey-background;
-        border-radius: 2px;
-        padding: 1px 5px;
-    }
-
-    .flag {
-        margin: 0 4px;
-    }
-
-    .wrap{
-        margin-bottom:60px;
-    }
-
-    .dull {
-        color: $grey-darker;
-        text-shadow: $text-shadow-base;
-    }
+  }
 }
