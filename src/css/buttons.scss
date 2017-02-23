@@ -44,7 +44,7 @@
     }
 
     &.active-yellow{
-      background: linear-gradient(to bottom, $dark-brown, darken($dark-brown,10%));
+      background: linear-gradient(to bottom, lighten($dark-brown,10%), $dark-brown);
       box-shadow: none;
     }
 

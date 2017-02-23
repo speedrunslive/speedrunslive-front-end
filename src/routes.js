@@ -8,6 +8,7 @@ import Landing from './routes/landing';
 import Races from './routes/races';
 import FAQ from './routes/faq';
 import About from './routes/about';
+import Channel from './routes/channel';
 
 // Components
 import GameList from './components/gameList';
@@ -40,6 +41,7 @@ export default (
             <Route path = "glossary" component={Glossary}/>
           </Route>
           <Route path="about" component={About} />
+          <Route path="channel" component={Channel} />
         </Route>
       </Router>
     </Provider>
