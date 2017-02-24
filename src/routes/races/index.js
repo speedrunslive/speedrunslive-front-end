@@ -1,5 +1,5 @@
 import React from 'react';
-import RacesNavigation from '../../components/racesNavigation'
+import RacesNavigation from './components/racesNavigation'
 
 const Races = (props) => {
   return (

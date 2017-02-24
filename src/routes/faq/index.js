@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQHeader from '../../components/faqHeader'
+import FAQHeader from './components/faqHeader'
 
 const FAQ = (props) => {
   return (

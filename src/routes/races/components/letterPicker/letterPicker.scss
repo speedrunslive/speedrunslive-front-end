@@ -1,0 +1,12 @@
+@import '../../../../css/variables';
+
+.letterPicker {
+    letter-spacing: 5px;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        padding: 3px 0 3px 5px;
+        font-weight: $bold;
+    }
+}
