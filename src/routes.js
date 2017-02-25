@@ -19,6 +19,7 @@ import Rules from './routes/faq/components/rules';
 import CommandList from './routes/faq/components/commandList';
 import Glossary from './routes/faq/components/glossary';
 import FAQBody from './routes/faq/components/faq';
+import ChannelBody from './routes/channel/components/channelBody';
 
 const store = configureStore()
 
@@ -41,7 +42,9 @@ export default (
             <Route path="glossary" component={Glossary}/>
           </Route>
           <Route path="about" component={About} />
-          <Route path="channel" component={Channel} />
+          <Route path="channel" component={Channel}>
+            <IndexRoute component={ChannelBody}/>
+          </Route>
         </Route>
       </Router>
     </Provider>

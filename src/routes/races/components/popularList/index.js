@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import './popularList.scss';
+//import './popularList.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 
