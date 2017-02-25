@@ -46,7 +46,7 @@ const FAQBody = () => {
         <a href="#twitchteam">How do I get on the Twitch team?</a>
         <a href="#involved">Can I get more involved?</a>
         <a href="#imbad">I'm really bad, should I even bother?</a>
-        <div className="divider"></div>
+        <hr/>
         <h2>Additional resources</h2>
         <a href="/faq/registration">Registration FAQ</a>
         <a href="/news/update-13-11-14/">Front page guide</a>
@@ -72,7 +72,7 @@ const FAQBody = () => {
           <li>A richly developed <Link to="/races/">speedrun racing platform</Link>.</li>
           <li>A populated <Link to="/channel/">IRC community</Link>.</li>
         </ul>
-        <div className="divider"></div>
+        <hr/>
         <h1 id="getstarted">Getting started on SpeedRunsLive</h1>
         <h2 id="whatsrlraces">What are SRL Races?</h2>
         <p>SRL Races are currently the most developed facet of SpeedRunsLive. Races let you run in direct competition with others
@@ -173,7 +173,7 @@ const FAQBody = () => {
           <li>There may be an existing site out there devoted entirely to providing strategies, routes, and/or leaderboards for your
             game or its series. Do a quick Google search and see what comes up!</li>
         </ul>
-        <div className="divider"></div>
+        <hr/>
         <h1 id="racing">Racing</h1>
         <h2 id="whatrace">What can I race on SpeedRunsLive?</h2>
         <p>We strongly encourage users to race goals that are meaningful and give time enough for the racers to demonstrate their
@@ -328,7 +328,7 @@ const FAQBody = () => {
         <p>Allowed if it is specified in the goal. Disallowed otherwise.</p>
         <p>What you should pick up from this list is that it's the game's community drives the ruleset. Nothing is set in stone.
         </p>
-        <div className="divider"></div>
+        <hr/>
         <h1 id="frontpage">Front page</h1>
         <h2 id="howfrontpage">How do I get my stream to appear on the front page of SpeedRunsLive?</h2>
         <p>Type <code>.setstream twitch/<em>name</em></code> to link your stream to SRL, if you have not done so already. Your stream
@@ -401,7 +401,7 @@ const FAQBody = () => {
         <p>Any races done on a marathon account to circumvent the stream requirement will be ended, and may result in the marathon
           being blacklisted.</p>
         <p>As stated above, please PM a moderator, and/or send an e-mail to the SRL e-mail address at <a href="mailto:staff@speedrunslive.com">staff@speedrunslive.com</a> with full details and schedule.</p>
-        <div className="divider"></div>
+        <hr/>
         <h1 id="other">Other</h1>
         <h2 id="socialmedia">How can I add or change the social media links in my SRL profile?</h2>
         <p>

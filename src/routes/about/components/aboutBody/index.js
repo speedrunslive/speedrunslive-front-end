@@ -13,13 +13,13 @@ const AboutBody = () => {
         <p><Link to="/profiles/#%21/Garrison/1">Garrison</Link><span className="dull">IRC op</span></p>
         <p><Link to="/profiles/#%21/sumichu/1">Sumichu</Link><span className="dull">IRC op</span></p>
 
-        <div className="divider"></div>
+        <hr/>
 
         <p><Link to="/profiles/#!/Stauken/1">Stauken</Link><span className="dull">Teamleader for back-end development</span></p>
         <p><Link to="/profiles/#%21/esi/1">esi</Link><span className="dull">Developer</span></p>
         <p><Link to="/profiles/#!/rainbowism/1">rainbowism</Link><span className="dull">Developer</span></p>
 
-        <div className="divider"></div>
+        <hr/>
 
         <p><Link to="/profiles/#%21/bjw/1">bjw</Link><span className="dull">IRC halfop</span></p>
         <p><Link to="/profiles/#%21/bony/1">bony</Link><span className="dull">IRC halfop</span></p>
@@ -28,7 +28,7 @@ const AboutBody = () => {
         <p><Link to="/profiles/#%21/Prier/1">Prier</Link><span className="dull">IRC halfop</span></p>
         <p><Link to="/profiles/#%21/something915/1">something915</Link><span className="dull">IRC halfop</span></p>
 
-        <div className="divider"></div>
+        <hr/>
 
         <p><Link to="/profiles/#%21/Acmlm/1">Acmlm</Link><span className="dull">IRC voice</span></p>
         <p><Link to="/profiles/#%21/bangerra/1">bangerra</Link><span className="dull">IRC voice</span></p>
@@ -55,14 +55,14 @@ const AboutBody = () => {
         <p><Link to="/profiles/#%21/Xelnas/1">Xelnas</Link><span className="dull">IRC voice</span></p>
         <p><Link to="/profiles/#%21/ZaeloRae/1">ZaeloRae</Link><span className="dull">IRC voice</span></p>
 
-        <div className="divider"></div>
+        <hr/>
 
         <p><Link to="/profiles/#!/Mundungu/1">Mundungu</Link><span className="dull">SRL Seasons front-end code</span></p>
         <p><Link to="/profiles/#!/IvanGS/1">IvanGS</Link><span className="dull">Back-end development</span></p>
         <p><Link to="/profiles/#!/joe/1">joe</Link><span className="dull">Coded JOPEBUSTER, bugfixed RaceBot</span></p>
         <p><Link to="/profiles/#!/izu/1">izu</Link><span className="dull">Japanese translation</span></p>
 
-        <div className="divider"></div>
+        <hr/>
 
         <p><Link to="/profiles/#!/Narcissa/1">Narcissa Wright</Link><span className="dull">Co-founder, designer, helped code front-end</span></p>
         <p><Link to="/profiles/#!/bmn/1">bmn</Link><span className="dull">Helped code the original streams page</span></p>
