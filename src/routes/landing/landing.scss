@@ -47,10 +47,9 @@ body {
     color: $grey-darker;
     text-shadow: $text-shadow-base;
   }
-  div {
-    .divider {
-      border-bottom: 1px dotted $dark-grey-background;
-      margin: 20px 0;
-    }
+  hr {
+    border: 0;
+    border-bottom: 1px dotted $dark-grey-background;
+    margin: 20px 0;
   }
 }
