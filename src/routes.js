@@ -18,7 +18,7 @@ import PopularList from './routes/races/containers/PopularList';
 import Rules from './routes/faq/components/rules';
 import CommandList from './routes/faq/components/commandList';
 import Glossary from './routes/faq/components/glossary';
-import FAQBody from './routes/faq/components/faq';
+import FAQBody from './routes/faq/components/faqBody';
 import ChannelBody from './routes/channel/components/channelBody';
 import AboutBody from './routes/about/components/aboutBody';
 
