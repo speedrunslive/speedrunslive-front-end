@@ -10,6 +10,7 @@ import FAQ from './routes/faq';
 import About from './routes/about';
 import Channel from './routes/channel';
 import Tools from './routes/tools';
+import Promotion from './routes/promotion';
 
 // Components
 import GameList from './routes/races/components/gameList';
@@ -24,6 +25,7 @@ import ChannelBody from './routes/channel/components/channelBody';
 import AboutBody from './routes/about/components/aboutBody';
 import ToolsBody from './routes/tools/components/toolsBody';
 import Registration from './routes/faq/components/registration';
+import PromoBody from './routes/promotion/components/promoBody';
 
 const store = configureStore()
 
@@ -53,6 +55,7 @@ export default (
             <IndexRoute component={ChannelBody}/>
           </Route>
           <Route path="tools" component={ToolsBody}/>
+          <Route path="promotion" component={PromoBody}/>
         </Route>
       </Router>
     </Provider>
