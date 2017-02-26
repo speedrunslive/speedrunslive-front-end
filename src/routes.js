@@ -23,6 +23,7 @@ import FAQBody from './routes/faq/components/faqBody';
 import ChannelBody from './routes/channel/components/channelBody';
 import AboutBody from './routes/about/components/aboutBody';
 import ToolsBody from './routes/tools/components/toolsBody';
+import Registration from './routes/faq/components/registration';
 
 const store = configureStore()
 
@@ -43,6 +44,7 @@ export default (
             <Route path="rules" component={Rules}/>
             <Route path="commandlist" component={CommandList}/>
             <Route path="glossary" component={Glossary}/>
+            <Route path="registration" component={Registration}/>
           </Route>
           <Route path="about" component={About}>
             <IndexRoute component={AboutBody}/>
