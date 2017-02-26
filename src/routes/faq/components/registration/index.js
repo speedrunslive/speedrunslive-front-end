@@ -5,7 +5,7 @@ import ToTopButton from '../toTopButton';
 
 const Registration = () => {
   return (
-    <div className="container">
+    <div className="row">
       <FAQNav>
         <a href="#what">What does registering mean?</a>
         <a href="#how">How do I register?</a>
