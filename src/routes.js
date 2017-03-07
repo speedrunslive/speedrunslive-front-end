@@ -13,6 +13,7 @@ import Tools from './routes/tools';
 import Promotion from './routes/promotion';
 
 // Components
+import NotFound from './routes/error/components/notFound';
 import GameList from './routes/races/components/gameList';
 import PastResults from './routes/races/components/pastResults';
 import AlphaList from './routes/races/containers/AlphaList';
@@ -57,9 +58,10 @@ export default function (props = {}) {
         </Route>
         <Route path="channel" component={Channel}>
           <IndexRoute component={ChannelBody}/>
+          <Route path="tools" component={ToolsBody}/>
+          <Route path="promotion" component={PromoBody}/>
         </Route>
-        <Route path="tools" component={ToolsBody}/>
-        <Route path="promotion" component={PromoBody}/>
+        <Route path="*" component={NotFound} />
       </Route>
     </Router>
   )
