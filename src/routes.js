@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-router';
 import { Provider } from 'react-redux';
-import configureStore from './configureStore'
+import { syncHistoryWithStore } from 'react-router-redux'  
 
 // Pages
 import Landing from './routes/landing';
@@ -28,37 +28,41 @@ import ToolsBody from './routes/tools/components/toolsBody';
 import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/promotion/components/promoBody';
 
-const store = configureStore()
+export default function (props = {}) {
+  let history = browserHistory;
 
-export default (
-    <Provider store={store}>
-      <Router history={browserHistory}>
-        <Route path="/" component={Landing}>
-          <Route path="races" component={Races}>
-            <Route path="gamelist" component={GameList}>
-              <IndexRedirect to="/races/gamelist/popular" />
-              <Route path="alphabetical" component={AlphaList} />
-              <Route path="popular" component={PopularList} />
-            </Route>
-            <Route path="pastresults" component={PastResults} />
+  if (props.store) {
+    history = syncHistoryWithStore(browserHistory, props.store)
+  }
+
+  return (
+    <Router history={history}>
+      <Route path="/" component={Landing}>
+        <Route path="races" component={Races}>
+          <Route path="gamelist" component={GameList}>
+            <IndexRedirect to="/races/gamelist/popular" />
+            <Route path="alphabetical" component={AlphaList} />
+            <Route path="popular" component={PopularList} />
           </Route>
-		      <Route path="faq" component={FAQ}>
-            <IndexRoute component={FAQBody}/>
-            <Route path="rules" component={Rules}/>
-            <Route path="commandlist" component={CommandList}/>
-            <Route path="glossary" component={Glossary}/>
-            <Route path="registration" component={Registration}/>
-          </Route>
-          <Route path="about" component={About}>
-            <IndexRoute component={AboutBody}/>
-          </Route>
-          <Route path="channel" component={Channel}>
-            <IndexRoute component={ChannelBody}/>
-          </Route>
+          <Route path="pastresults" component={PastResults} />
+        </Route>
+        <Route path="faq" component={FAQ}>
+          <IndexRoute component={FAQBody}/>
+          <Route path="rules" component={Rules}/>
+          <Route path="commandlist" component={CommandList}/>
+          <Route path="glossary" component={Glossary}/>
+          <Route path="registration" component={Registration}/>
+        </Route>
+        <Route path="about" component={About}>
+          <IndexRoute component={AboutBody}/>
+        </Route>
+        <Route path="channel" component={Channel}>
+          <IndexRoute component={ChannelBody}/>
           <Route path="tools" component={ToolsBody}/>
           <Route path="promotion" component={PromoBody}/>
-          <Route path="*" component={NotFound} />
         </Route>
-      </Router>
-    </Provider>
-);
+        <Route path="*" component={NotFound} />
+      </Route>
+    </Router>
+  )
+};

@@ -1,5 +1,10 @@
 const popularList = (state = {}, action) => {
   switch (action.type) {
+    case 'REQUEST_POPULARLIST':
+        return Object.assign({}, state, {
+            isFetching: true,
+            didInvalidate: false
+        });
     case 'RECEIVE_POPULARLIST':
         return Object.assign({}, state, {
             isFetching: false,

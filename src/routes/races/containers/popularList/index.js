@@ -5,7 +5,7 @@ import PopularList from '../../components/popularList';
 
 class PopularListContainer extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchPopularList({ sort: 'popularityrank', order: 'ASC' }));
+    if (this.props.games.length === 0) this.props.dispatch(fetchPopularList({ sort: 'popularityrank', order: 'ASC' }));
   };
 
   render() {
@@ -18,6 +18,8 @@ class PopularListContainer extends React.Component {
 PopularListContainer.propTypes = {
     games: PropTypes.array.isRequired
 };
+
+PopularListContainer.fetchData = ({ store }) => store.dispatch(fetchPopularList({ sort: 'popularityrank', order: 'ASC' }));
 
 export function mapStateToProps(state) {
   return {

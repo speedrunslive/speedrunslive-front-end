@@ -5,7 +5,7 @@ import AlphaList from '../../components/alphaList';
 
 class AlphaListContainer extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchAlphaList({ sort: 'name', order: 'ASC' }));
+    if (this.props.games.length === 0) this.props.dispatch(fetchAlphaList({ sort: 'name', order: 'ASC' }));
   };
 
   render() {
@@ -18,6 +18,8 @@ class AlphaListContainer extends React.Component {
 AlphaListContainer.propTypes = {
     games: PropTypes.array.isRequired
 };
+
+AlphaListContainer.fetchData = ({ store }) => store.dispatch(fetchAlphaList({ sort: 'name', order: 'ASC' }));
 
 export function mapStateToProps(state) {
   return {
