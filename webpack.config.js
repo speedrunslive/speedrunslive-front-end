@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 var DEV = process.env.NODE_ENV !== 'production';
 
-var javascriptEntryPath = path.resolve(__dirname, 'src', 'index.js');
+var javascriptEntryPath = path.resolve(__dirname, 'src', 'client.js');
 var htmlEntryPath = path.resolve(__dirname, 'src', 'index.html');
 var buildPath = path.resolve(__dirname, 'public', 'build');
 

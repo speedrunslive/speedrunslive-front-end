@@ -1,5 +1,3 @@
-import zlib from 'zlib';
-
 export function jsonToQueryString(json) {
     return '?' + 
         Object.keys(json).map(function(key) {
