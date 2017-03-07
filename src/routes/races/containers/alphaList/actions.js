@@ -1,9 +1,11 @@
-// Redux action creators
-
 import fetch from 'isomorphic-fetch';
 import { apiUrl } from '../../../../config'
 import { jsonToQueryString } from '../../../../utils'
-import { RECEIVE_ALPHALIST } from './constants'
+import { RECEIVE_ALPHALIST, REQUEST_ALPHALIST } from './constants'
+
+export function requestAlphaList() {
+  return { type: REQUEST_ALPHALIST };
+}
 
 export function receiveAlphaList(json) {
   return {
@@ -13,7 +15,8 @@ export function receiveAlphaList(json) {
 }
 
 export function fetchAlphaList(params) {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    dispatch(requestAlphaList());
     return fetch(`${apiUrl}/games${jsonToQueryString(params)}`)
         .then(response => response.json())
         .then((json) => {

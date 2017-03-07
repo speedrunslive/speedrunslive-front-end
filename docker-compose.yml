@@ -5,12 +5,12 @@ services:
     image: node:6.9.4-alpine
     container_name: node_frontend
     ports:
-    - "80:3000"
+    - "80:3001"
     volumes:
     - .:/usr/src/app
     environment:
     - NODE_ENV=dev
-    - PORT=3000
+    - PORT=3001
     command:
       sh -c '
       cd /usr/src/app &&
@@ -50,3 +50,8 @@ services:
       sh -c '
       cd /usr/src/app &&
       /usr/src/app/node_modules/mocha/bin/mocha'
+
+networks:
+  default:
+    external:
+      name: nodeapi_api

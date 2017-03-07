@@ -26,6 +26,8 @@ Development
 
 Make sure to set the API url to whatever you're using for the API in /src/config. This project will only work with version 2 of the API, so you will have to boot up the API locally for now.
 
+For server side rendering in development, the css will be applied after the markup. This won't happen in production because it will be using bundle.css. We are keeping the styles client side for hot reloading in development.
+
 React components
 ----------------
 
