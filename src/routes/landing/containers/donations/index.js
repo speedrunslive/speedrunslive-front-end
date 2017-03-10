@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux';
 
 class DonationsContainer extends React.Component {
   componentDidMount() {
-    if (this.props.donations) this.props.dispatch(fetchDonations());
+    if (this.props.donations) this.props.fetchDonations();
   };
 
   render() {
@@ -20,16 +20,14 @@ DonationsContainer.propTypes = {
     donations: PropTypes.object.isRequired
 };
 
-DonationsContainer.fetchData = ({ store }) => store.dispatch(fetchDonations());
-
 function mapStateToProps(state) {
   return {
       donations: state.donations.items || {amount:0}
   }
 }
 
-//function mapDispatchToProps(dispatch){
-//  return bindActionCreators({search: search}, dispatch);/
-//}
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({fetchDonations}, dispatch);
+}
 
-export default connect(mapStateToProps)(DonationsContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(DonationsContainer);
