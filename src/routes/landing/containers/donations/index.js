@@ -24,7 +24,7 @@ DonationsContainer.fetchData = ({ store }) => store.dispatch(fetchDonations());
 
 function mapStateToProps(state) {
   return {
-      donations: state.donations.items || {}
+      donations: state.donations.items || {amount:0}
   }
 }
 

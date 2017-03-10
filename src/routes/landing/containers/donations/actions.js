@@ -17,8 +17,7 @@ export function receiveDonations(json) {
 export function fetchDonations() {
   return (dispatch, getState) => {
     dispatch(requestDonations());
-    //return fetch(`${apiUrl}/frontend/donate`)
-    return fetch(`https://api.speedrunslive.com/frontend/donate`)
+    return fetch(`${apiUrl}/frontend/donate`)
         .then(response => response.json())
         .then((json) => {
             dispatch(receiveDonations(json));

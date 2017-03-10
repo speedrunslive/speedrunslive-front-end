@@ -1,0 +1,44 @@
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+.donations{
+  font-size: em(11);
+  text-align: center;
+  width:250px;
+  margin-top:3px;
+  a{
+    text-decoration:none;
+  }
+
+  .donations-bar{
+    display: table;
+    margin: 2px auto;
+    width:250px;
+    height:8px;
+    background: $dark-grey;
+    border-radius: 6px;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: $coal-grey $black $black $coal-grey;
+
+    .donations-total{
+      width:50%;
+      height:6px;
+      border-radius:inherit;
+      background: $srl-yellow-dark;
+      border: 1px solid;
+      border-color: $srl-yellow $srl-yellow-dark $srl-yellow-dark $srl-yellow
+    }
+  }
+}
+
+.donations:hover{
+  strong{
+    color:$srl-yellow;
+  }
+    .donations-bar{
+      background:lighten($dark-grey,8%);
+      .donations-total{
+        background:lighten($srl-yellow-dark,8%);
+      }
+    }
+}
