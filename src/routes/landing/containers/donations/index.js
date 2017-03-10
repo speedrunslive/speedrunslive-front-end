@@ -22,7 +22,7 @@ DonationsContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-      donations: state.donations || {amount:0}
+      donations: state.donations._source || {amount:null}
   }
 }
 

@@ -14,6 +14,9 @@ function getPercentage(currentDonations){
 }
 
 const Donations = ({donations}) => {
+
+  if (!donations.amount){return null}
+
   return (
     <div className="donations col-md-7">
       <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=SQ2NXSJRUVWLW"
