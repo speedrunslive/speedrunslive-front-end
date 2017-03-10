@@ -58,9 +58,9 @@ export default function (props = {}) {
         </Route>
         <Route path="channel" component={Channel}>
           <IndexRoute component={ChannelBody}/>
-          <Route path="tools" component={ToolsBody}/>
-          <Route path="promotion" component={PromoBody}/>
         </Route>
+        <Route path="tools" component={ToolsBody}/>
+        <Route path="promotion" component={PromoBody}/>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
