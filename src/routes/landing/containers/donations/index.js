@@ -22,7 +22,7 @@ DonationsContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-      donations: state.donations.items || {amount:0}
+      donations: state.donations || {amount:0}
   }
 }
 

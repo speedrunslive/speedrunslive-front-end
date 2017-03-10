@@ -1,27 +1,12 @@
 import fetch from 'isomorphic-fetch';
 import { apiUrl } from '../../../../config'
-import { RECEIVE_DONATIONS, REQUEST_DONATIONS} from './constants'
-
-export function requestDonations() {
-  return { type: REQUEST_DONATIONS };
-}
-
-export function receiveDonations(json) {
-  console.log(json);
-  return {
-    type: RECEIVE_DONATIONS,
-    donations: json._source
-  };
-}
+import { FETCH_DONATIONS} from './constants'
 
 export function fetchDonations() {
-  return (dispatch, getState) => {
-    dispatch(requestDonations());
-    return fetch(`${apiUrl}/frontend/donate`)
-        .then(response => response.json())
-        .then((json) => {
-            dispatch(receiveDonations(json));
-        }
-    );
+  //const request = fetch(`http://api.speedrunslive.com/frontend/donate`).then(response => response.json());
+  const request = fetch(`${apiUrl}/frontend/donate`).then(response => response.json());
+  return { 
+    type: FETCH_DONATIONS,
+    payload:request
   }
 };
