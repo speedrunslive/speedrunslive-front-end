@@ -27,6 +27,7 @@ import AboutBody from './routes/about/components/aboutBody';
 import ToolsBody from './routes/tools/components/toolsBody';
 import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/promotion/components/promoBody';
+import StreamsContainer from './routes/landing/containers/streams';
 
 export default function (props = {}) {
   let history = browserHistory;
@@ -38,6 +39,7 @@ export default function (props = {}) {
   return (
     <Router history={history}>
       <Route path="/" component={Landing}>
+        <IndexRoute component={StreamsContainer}/>
         <Route path="races" component={Races}>
           <Route path="gamelist" component={GameList}>
             <IndexRedirect to="/races/gamelist/popular" />
