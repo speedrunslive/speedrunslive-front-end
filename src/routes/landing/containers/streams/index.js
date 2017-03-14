@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {fetchStreams} from './actions';
 
 import FeaturedStream from '../../components/featuredStream';
-import StreamListItem from '../../components/streamListItem';
+import StreamList from '../../components/streamList';
 
 class StreamsContainer extends Component {
   componentDidMount(){
@@ -18,7 +18,7 @@ class StreamsContainer extends Component {
     return (
       <div className="container streams">
         <FeaturedStream featuredStream={this.props.streams._source.channels[2]}/>
-        <StreamListItem stream={this.props.streams._source.channels[1]} />
+        <StreamList streams={this.props.streams._source.channels} />
       </div>
     );
   }

@@ -1,17 +1,16 @@
 .stream-list-item{
   border-radius: 4px;
-  width: 317.3333333333333px;
+  //width: 370px;
   margin-right: 16px;
-  overflow: visible;
-  float: left;
+  //overflow: visible;
+  //float: left;
   min-height: 85px;
-  padding: 0;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   border-width: 1px 0px 1px 1px;
   border-style: solid;
   border-color: #464646 #000000 #000000 #414141;
-  background-color: #3b3b3b;
-  display: block;
+  background-color: #222;
+  //display: block;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   img{
     border-radius: 10px;
@@ -28,7 +27,7 @@
         padding-top: 8px;
   }
   .stream-name{
-        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 1.06rem;
     color: #f7e279;
@@ -40,5 +39,8 @@
     line-height: 1.4rem;
     margin-top: -3px;
     max-width: 200px;
+  }
+  ul{
+    margin-left:0;
   }
 }

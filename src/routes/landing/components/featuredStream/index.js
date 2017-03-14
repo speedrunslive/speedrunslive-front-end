@@ -7,7 +7,6 @@ const FeaturedStream = ({featuredStream}) => {
     const chatUrl = `http://www.twitch.tv/${user_name}/chat?darkpopout`
 
     return (
-    <div className="container">
       <div className="featured-stream">
         <div className="video-container col-md-8">
           <div className="stream-data"><strong>{user_name}</strong> <span className="dull">Playing</span> {meta_game}</div>
@@ -26,7 +25,6 @@ const FeaturedStream = ({featuredStream}) => {
         </iframe>
         </div>
       </div>
-    </div>
   );
 };
 
