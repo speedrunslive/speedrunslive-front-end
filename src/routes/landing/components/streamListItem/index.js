@@ -2,11 +2,13 @@ import React from 'react';
 
 import './streamListItem.scss';
 
-const StreamListItem = ({stream}) => {
-  console.log(stream);
+const StreamListItem = (props) => {
+
+  const stream = props.stream;
+  const onClick = props.onClick;
+
   return (
-    
-    <div className="stream-list-item btn-blue-hover">
+    <div onClick={()=>{onClick(stream)}} className="stream-list-item">
       <img src={stream.image.size70}></img>
       <div className="stream-info">
         <span className="stream-name">{stream.display_name}</span>

@@ -3,14 +3,14 @@ import StreamListItem from '../streamListItem';
 
 import './streamList.scss';
 
-function buildStreamList(stream){
-  return <StreamListItem stream={stream} />;
+function buildStreamList(stream, onClick){
+  return <StreamListItem onClick={onClick} stream={stream} />;
 }
 
 const StreamList = (props) => {
   return (
     <div className="stream-list">
-        {props.streams.map((stream)=>{return buildStreamList(stream)})}
+        {props.streams.map((stream)=>{return buildStreamList(stream, props.onClick)})}
     </div>
   );
 };
