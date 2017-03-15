@@ -1,10 +1,14 @@
 .featured-stream {
   margin-top: 20px;
-  margin-bottom:30px;
-  .chat_embed {
+  margin-bottom: 30px;
+  .chat-container {
     margin-top: 26px;
-    height: 411px;
-    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .video-container {
+    padding-left: 10px;
+    padding-right: 4px;
   }
   .stream-data {
     margin-bottom: 10px;
@@ -16,6 +20,16 @@
     padding: 0;
     overflow: hidden;
   }
+  @media (min-width: 992px) {
+    .chat {
+      padding-bottom: 112%;
+    }
+  }
+  @media (max-width: 991px) {
+  .chat {
+    padding-bottom: 65%;
+  }
+}
   .embed-responsive .embed-responsive-item,
   .embed-responsive iframe,
   .embed-responsive embed,
@@ -30,6 +44,6 @@
     border: 0;
   }
   .embed-responsive-16by9 {
-    padding-bottom: 56.25%;
+    padding-bottom: 55.6%;
   }
 }

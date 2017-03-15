@@ -9,10 +9,8 @@ function buildStreamList(stream){
 
 const StreamList = (props) => {
   return (
-    <div className="stream-list row">
-      <ul className="media-list col-sm-4">
+    <div className="stream-list">
         {props.streams.map((stream)=>{return buildStreamList(stream)})}
-      </ul>
     </div>
   );
 };

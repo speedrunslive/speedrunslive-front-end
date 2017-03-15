@@ -1,18 +1,18 @@
-.stream-list-item{
+@import '../../../../css/variables.scss';
+@import '../../../../css/mixins.scss';
+.stream-list-item {
   border-radius: 4px;
-  //width: 370px;
-  margin-right: 16px;
-  //overflow: visible;
-  //float: left;
-  min-height: 85px;
-  margin-bottom: 10px;
+  width: 364px;
+  height: 90px;
+  float: left;
+  margin: 10px 5px 0 11px;
   border-width: 1px 0px 1px 1px;
   border-style: solid;
-  border-color: #464646 #000000 #000000 #414141;
-  background-color: #222;
-  //display: block;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-  img{
+  border-color: $coal-grey $black $black $coal-grey;
+  background: $dark-grey-background;
+  background: linear-gradient($dark-grey-background, darken($dark-grey-background, 10%));
+  box-shadow: 1px 1px 2px $black;
+  img {
     border-radius: 10px;
     border: solid 1px #000000;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
@@ -23,24 +23,54 @@
     width: 70px;
     height: 70px;
   }
-  .stream-info{
-        padding-top: 8px;
+  .stream-info {
+    padding-top: 8px;
+    .stream-title {
+      display: block;
+      height: 2.7em;
+      font-size: em(12);
+      color: #C7AE8E;
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #805531;
+      word-wrap: break-word;
+    }
+    .stream-name {
+      font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: em(15);
+      color: #f7e279;
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #8d8145;
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 1.4rem;
+      margin-top: -3px;
+      max-width: 200px;
+    }
+    .game-name {
+      color: #9d683c;
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #5a3b22;
+      position: relative;
+      top: 2px;
+      font-size: em(12);
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
-  .stream-name{
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 1.06rem;
-    color: #f7e279;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #8d8145;
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    line-height: 1.4rem;
-    margin-top: -3px;
-    max-width: 200px;
-  }
-  ul{
-    margin-left:0;
+}
+
+.stream-list-item:hover {
+  background: #124;
+  background: linear-gradient(#124, darken(#124, 10%));
+  cursor: pointer;
+  .stream-info {
+    .game-name {
+      color: lighten(#9d683c, 10%);
+    }
+    .stream-name{
+            color: lighten(#f7e279,10%);
+    }
   }
 }

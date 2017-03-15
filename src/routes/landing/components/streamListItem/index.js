@@ -6,14 +6,14 @@ const StreamListItem = ({stream}) => {
   console.log(stream);
   return (
     
-    <li className="stream-list-item">
+    <div className="stream-list-item btn-blue-hover">
       <img src={stream.image.size70}></img>
       <div className="stream-info">
         <span className="stream-name">{stream.display_name}</span>
-        <p>{stream.title}</p>
-        <span>{stream.meta_game}</span>
+        <span className="stream-title">{stream.title}</span>
+        <span className="game-name">{stream.meta_game}</span>
       </div>
-    </li>
+    </div>
   );
 }
 export default StreamListItem;
@@ -24,8 +24,7 @@ api:"twitch"
 current_viewers:249
 display_name:"Hugo_One"
 image:
-Object
-  size70:"https://static-cdn.jtvnw.net/jtv_user_pictures/hugo_one-profile_image-f41b6c83a4877afa-70x70.jpeg"
+    size70:"https://static-cdn.jtvnw.net/jtv_user_pictures/hugo_one-profile_image-f41b6c83a4877afa-70x70.jpeg"
 is_racing:0
 meta_game:"Grand Theft Auto: San Andreas"
 name:"hugo_one"
