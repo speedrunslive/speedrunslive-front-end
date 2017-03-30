@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {fetchStreams} from './actions';
+import {fetchStreams, setFeaturedStream} from './actions';
 
 import FeaturedStream from '../../components/featuredStream';
 import StreamList from '../../components/streamList';
@@ -9,38 +9,32 @@ import StreamList from '../../components/streamList';
 class StreamsContainer extends Component {
   constructor(props){
     super(props);
-    this.changeStream = this.changeStream.bind(this);
-    this.state = {};
+    this.setFeaturedStream = this.setFeaturedStream.bind(this);
   }
   componentDidMount(){
     if (!this.props.streams || this.props.streams.length <= 0) this.props.fetchStreams();
   }
 
-  changeStream(stream){
-    console.log(stream);
-    this.setState({featuredStream:stream});
+  setFeaturedStream(stream){
+    this.props.setFeaturedStream(stream);
   }
 
   render(){
-
-    const featured = (!this.state.featuredStream) ? this.props.featuredStream : this.state.featuredStream;
-    console.log(featured);
-    if (this.props.streams.length <= 0) return <div>Loading...</div>
+    if (this.props.streams.length <= 0) return null //put loading animation here
     return (
       <div className="container streams">
-        <FeaturedStream featuredStream={featured}/>
-        <StreamList onClick={(stream)=>{this.changeStream(stream)}} streams={this.props.streams} />
+        <FeaturedStream featuredStream={this.props.featuredStream }/>
+        <StreamList onClick={(stream)=>{this.setFeaturedStream(stream)}} streams={this.props.streams} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  console.log("in mapStateToProps");
   return {
-    streams: state.streams || [],
-    featuredStream: state.streams[0]
+    streams: state.streams.all || [],
+    featuredStream: state.streams.featuredStream
   }
 }
 
-export default connect(mapStateToProps,{fetchStreams})(StreamsContainer);
+export default connect(mapStateToProps,{fetchStreams, setFeaturedStream})(StreamsContainer);

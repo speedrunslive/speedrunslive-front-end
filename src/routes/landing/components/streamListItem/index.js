@@ -1,19 +1,25 @@
 import React from 'react';
+import {decodeHtmlEntities} from '../../../../utils';
 
 import './streamListItem.scss';
+
 
 const StreamListItem = (props) => {
 
   const stream = props.stream;
   const onClick = props.onClick;
+  const featuredStream = (stream.featured) ? 'stream-list-item-selected' : '';
 
   return (
-    <div onClick={()=>{onClick(stream)}} className="stream-list-item">
-      <img src={stream.image.size70}></img>
+    <div onClick={()=>{onClick(stream)}} className={`stream-list-item ${featuredStream}`}>
+      <img className="stream-icon" src={stream.image.size70}></img>
       <div className="stream-info">
         <span className="stream-name">{stream.display_name}</span>
-        <span className="stream-title">{stream.title}</span>
+        <span className="stream-title">{decodeHtmlEntities(stream.title)}</span>
         <span className="game-name">{stream.meta_game}</span>
+        <img className="icon" src="http://cdn.speedrunslive.com/images/ttv_icon20px.png"></img>
+        <span className="viewers">{stream.current_viewers}</span>
+
       </div>
     </div>
   );

@@ -5,72 +5,90 @@
   width: 364px;
   height: 90px;
   float: left;
-  margin: 10px 5px 0 11px;
+  margin: 10px 5px 0 14px;
+  padding: 5px;
   border-width: 1px 0px 1px 1px;
   border-style: solid;
-  border-color: $coal-grey $black $black $coal-grey;
+  border-color: $dark-grey $black $black $dark-grey;
   background: $dark-grey-background;
-  background: linear-gradient($dark-grey-background, darken($dark-grey-background, 10%));
+  background-image:linear-gradient($dark-grey-background, darken($dark-grey-background,6%));
   box-shadow: 1px 1px 2px $black;
-  img {
-    border-radius: 10px;
-    border: solid 1px #000000;
+  .stream-icon {
+    border-radius: 8px;
+    border: solid 1px $black;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     float: left;
-    margin: 5.328px;
-    margin-right: 10.656px;
-    margin-bottom: -4px;
-    width: 70px;
-    height: 70px;
+    margin-right: 10px;
+    height: 100%;
   }
   .stream-info {
-    padding-top: 8px;
+    position: relative;
+    height: 99%;
+    .stream-name {
+      display: block;
+      font-weight: $bold;
+      font-size: em(15);
+      color: $srl-yellow;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .stream-title {
       display: block;
-      height: 2.7em;
+      height: 2.9em;
       font-size: em(12);
-      color: #C7AE8E;
-      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #805531;
-      word-wrap: break-word;
-    }
-    .stream-name {
-      font-family: 'Roboto', Helvetica, Arial, sans-serif;
-      font-weight: bold;
-      font-size: em(15);
-      color: #f7e279;
-      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #8d8145;
+      color: $khaki;
       overflow: hidden;
-      display: inline-block;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      line-height: 1.4rem;
-      margin-top: -3px;
-      max-width: 200px;
+      padding: 5px 10px 0 0;
     }
     .game-name {
-      color: #9d683c;
-      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 0 0 1px #5a3b22;
-      position: relative;
-      top: 2px;
+      color: $sepia;
+      text-shadow: $text-shadow-base, 0 0 1px darken($sepia, 35%);
+      position: absolute;
+      bottom: 0;
       font-size: em(12);
       display: inline-block;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: 62%;
+      white-space: nowrap;
+    }
+    .viewers {
+      color: $grey;
+      position: absolute;
+      bottom: 0;
+      right: 21px;
+      font-size: em(12);
+      float: right;
+    }
+    .icon {
+      height: 12px;
+      width: 12px;
+      float: right;
+      position: absolute;
+      bottom: 1px;
+      right: 4px;
     }
   }
 }
 
 .stream-list-item:hover {
-  background: #124;
-  background: linear-gradient(#124, darken(#124, 10%));
+  background: $dark-blue;
+  background: linear-gradient($dark-blue, darken($dark-blue,5%));
+  border-color: $srl-blue $black $black $srl-blue;
   cursor: pointer;
   .stream-info {
-    .game-name {
-      color: lighten(#9d683c, 10%);
+    .stream-title {
+      color: lighten($royal-blue,15%);
+      text-shadow: $text-shadow-base;
     }
-    .stream-name{
-            color: lighten(#f7e279,10%);
+    .stream-name {
+      color: lighten($srl-yellow, 10%);
     }
   }
+}
+
+.stream-list-item-selected{
+  @extend .stream-list-item:hover;
+  background: darken($dark-blue,10%);
+  background-image: linear-gradient(darken($dark-blue,5%), darken($dark-blue,15%));
 }
