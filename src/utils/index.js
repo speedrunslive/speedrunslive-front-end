@@ -23,3 +23,7 @@ export function createPage(html, state) {
   </html>
   `
 }
+
+export function decodeHtmlEntities(text) {
+	return text.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+}
