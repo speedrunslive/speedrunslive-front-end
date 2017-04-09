@@ -4,11 +4,13 @@ import { fetchPopularList } from './actions';
 import PopularList from '../../components/popularList';
 
 class PopularListContainer extends React.Component {
-  componentDidMount() {
+  //componentDidMount() will not trigger on IndexRedirect.
+  componentWillMount() {
     if (this.props.games.length === 0) this.props.dispatch(fetchPopularList({ sort: 'popularityrank', order: 'ASC' }));
   };
 
   render() {
+    if (this.props.games.length === 0) {return null;}
     return (
         <PopularList games={this.props.games}/>
     );
