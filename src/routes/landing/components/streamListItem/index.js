@@ -19,7 +19,6 @@ const StreamListItem = (props) => {
         <span className="game-name">{stream.meta_game}</span>
         <img className="icon" src="http://cdn.speedrunslive.com/images/ttv_icon20px.png"></img>
         <span className="viewers">{stream.current_viewers}</span>
-
       </div>
     </div>
   );

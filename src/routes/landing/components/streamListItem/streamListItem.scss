@@ -1,29 +1,17 @@
 @import '../../../../css/variables.scss';
 @import '../../../../css/mixins.scss';
 .stream-list-item {
-  border-radius: 4px;
-  width: 364px;
-  height: 90px;
+  @include srlPanel(364px, 90px);
   float: left;
   margin: 10px 5px 0 14px;
   padding: 5px;
-  border-width: 1px 0px 1px 1px;
-  border-style: solid;
-  border-color: $dark-grey $black $black $dark-grey;
-  background: $dark-grey-background;
-  background-image:linear-gradient($dark-grey-background, darken($dark-grey-background,6%));
-  box-shadow: 1px 1px 2px $black;
   .stream-icon {
-    border-radius: 8px;
-    border: solid 1px $black;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    float: left;
-    margin-right: 10px;
-    height: 100%;
+    @include gameThumbnail(null, 100%);
   }
   .stream-info {
     position: relative;
     height: 99%;
+    padding-left:10px;
     .stream-name {
       display: block;
       font-weight: $bold;
