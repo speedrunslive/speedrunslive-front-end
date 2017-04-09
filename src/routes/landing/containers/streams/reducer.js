@@ -7,11 +7,10 @@ const streams = (state = INITIAL_STATE, action) => {
     case FETCH_STREAMS:{
       var streams = action.payload._source.channels;
       var featuredStream = state.featuredStream;
-      if (Object.keys(featuredStream).length === 0){
+      if (!featuredStream || Object.keys(featuredStream).length === 0){
         featuredStream = pickFeaturedStream(streams);
         streams =  setFeaturedStream(streams, featuredStream);
       }
-      const newStreamList = setFeaturedStream(streams, streams[0]);
       return {all: streams, featuredStream};
     }
     case SET_FEATURED_STREAM:{
