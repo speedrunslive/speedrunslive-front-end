@@ -43,37 +43,22 @@ src
 │       ├── components
 │       │   ├── navigation
 │       │   ├── header
-│       │   ├── footer
-│       │   └── donations
-│       ├── containers
+│       │   └── footer
 │       ├── routes
 │       │   ├── races
 │       │   │   ├── components
 │       │   │   │   └── racesNav
-│       │   │   │       ├── index.js
-│       │   │   │       └── racesNav.scss
 │       │   │   ├── routes
-│       │   │   │   ├── live
-│       │   │   │   │   ├── components
-│       │   │   │   │   │   └── liveRaces
-│       │   │   │   │   │       ├── index.js
-│       │   │   │   │   │       └── liveRaces.scss
-│       │   │   │   │   ├── containers
-│       │   │   │   │   │   ├── liveRaces
-│       │   │   │   │   │   │   ├── index.js
-│       │   │   │   │   │   │   ├── reducer.js
-│       │   │   │   │   │   │   └── actions.js
-│       │   │   │   │   └── index.js
-│       │   │   │   └── raceStats
+│       │   │   │   └── live
 │       │   │   │       ├── components
-│       │   │   │       │   ├── topRacers
-│       │   │   │       │   ├── globalStats
-│       │   │   │       │   └── monthlyStats
+│       │   │   │       │   └── liveRaces
+│       │   │   │       │       ├── index.js
+│       │   │   │       │       └── liveRaces.scss
 │       │   │   │       ├── containers
-│       │   │   │       │   ├── topRacers
-│       │   │   │       │   │   ├── index.js
-│       │   │   │       │   │   ├── reducer.js
-│       │   │   │       │   │   └── actions.js
+│       │   │   │       │   └── liveRaces
+│       │   │   │       │       ├── index.js
+│       │   │   │       │       ├── reducer.js
+│       │   │   │       │       └── actions.js
 │       │   │   │       └── index.js
 │       │   │   ├── shared
 │       │   │   │   ├── components
