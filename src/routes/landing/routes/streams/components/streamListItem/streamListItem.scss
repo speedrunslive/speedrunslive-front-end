@@ -1,5 +1,5 @@
-@import '../../../../../../css/variables.scss';
-@import '../../../../../../css/mixins.scss';
+@import '~css/variables.scss';
+@import '~css/mixins.scss';
 .stream-list-item {
   @include srlPanel(364px, 90px);
   float: left;
