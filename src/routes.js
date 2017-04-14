@@ -10,7 +10,7 @@ import FAQ from './routes/faq';
 import About from './routes/landing/routes/about';
 import Channel from './routes/landing/routes/channel';
 import Tools from './routes/tools';
-import Promotion from './routes/promotion';
+import Promotion from './routes/landing/routes/promotion';
 import Streams from './routes/landing/routes/streams';
 
 // Components
@@ -27,7 +27,7 @@ import ChannelBody from './routes/landing/routes/channel/components/channelBody'
 import ToolsBody from './routes/tools/components/toolsBody';
 import AboutBody from './routes/landing/routes/about/components/aboutBody';
 import Registration from './routes/faq/components/registration';
-import PromoBody from './routes/promotion/components/promoBody';
+import PromoBody from './routes/landing/routes/promotion/components/promoBody';
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 
 export default function (props = {}) {
