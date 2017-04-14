@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import FAQNav from '../faqNav';
-import ToTopButton from '../toTopButton';
+import FAQNav from '../../../../components/faqNav';
+import ToTopButton from '../../../../components/toTopButton';
 
 const Registration = () => {
   return (

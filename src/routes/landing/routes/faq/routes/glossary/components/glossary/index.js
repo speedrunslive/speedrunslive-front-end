@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 import './glossary.scss'
-import FAQNav from '../faqNav';
-import ToTopButton from '../toTopButton';
+import FAQNav from '../../../../components/faqNav';
+import ToTopButton from '../../../../components/toTopButton';
 
 //counterpart.registerTranslations('en', require('./translations/en'));
 

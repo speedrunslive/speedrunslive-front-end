@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 // Pages
 import Landing from './routes/landing';
 import Races from './routes/races';
-import FAQ from './routes/faq';
+import FAQ from './routes/landing/routes/faq';
 import About from './routes/landing/routes/about';
 import Channel from './routes/landing/routes/channel';
 import Tools from './routes/landing/routes/tools';
@@ -19,14 +19,14 @@ import GameList from './routes/races/components/gameList';
 import PastResults from './routes/races/components/pastResults';
 import AlphaList from './routes/races/containers/AlphaList';
 import PopularList from './routes/races/containers/PopularList';
-import Rules from './routes/faq/components/rules';
-import CommandList from './routes/faq/components/commandList';
-import Glossary from './routes/faq/components/glossary';
-import FAQBody from './routes/faq/components/faqBody';
+import Rules from './routes/landing/routes/faq/routes/rules/components/rules';
+import CommandList from './routes/landing/routes/faq/routes/commandList/components/commandList';
+import Glossary from './routes/landing/routes/faq/routes/glossary/components/glossary';
+import FAQBody from './routes/landing/routes/faq/components/faqBody';
+import Registration from './routes/landing/routes/faq/routes/registration/components/registration';
 import ChannelBody from './routes/landing/routes/channel/components/channelBody';
 import ToolsBody from './routes/landing/routes/tools/components/toolsBody';
 import AboutBody from './routes/landing/routes/about/components/aboutBody';
-import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/landing/routes/promotion/components/promoBody';
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 
