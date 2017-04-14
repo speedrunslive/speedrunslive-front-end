@@ -8,7 +8,7 @@ import Landing from './routes/landing';
 import Races from './routes/races';
 import FAQ from './routes/faq';
 import About from './routes/landing/routes/about';
-import Channel from './routes/channel';
+import Channel from './routes/landing/routes/channel';
 import Tools from './routes/tools';
 import Promotion from './routes/promotion';
 
@@ -22,7 +22,7 @@ import Rules from './routes/faq/components/rules';
 import CommandList from './routes/faq/components/commandList';
 import Glossary from './routes/faq/components/glossary';
 import FAQBody from './routes/faq/components/faqBody';
-import ChannelBody from './routes/channel/components/channelBody';
+import ChannelBody from './routes/landing/routes/channel/components/channelBody';
 import ToolsBody from './routes/tools/components/toolsBody';
 import AboutBody from './routes/landing/routes/about/components/aboutBody';
 import Registration from './routes/faq/components/registration';
