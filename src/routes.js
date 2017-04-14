@@ -11,6 +11,7 @@ import About from './routes/landing/routes/about';
 import Channel from './routes/landing/routes/channel';
 import Tools from './routes/tools';
 import Promotion from './routes/promotion';
+import Streams from './routes/landing/routes/streams';
 
 // Components
 import NotFound from './routes/error/components/notFound';
@@ -27,7 +28,7 @@ import ToolsBody from './routes/tools/components/toolsBody';
 import AboutBody from './routes/landing/routes/about/components/aboutBody';
 import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/promotion/components/promoBody';
-import StreamsContainer from './routes/landing/containers/streams';
+import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 
 export default function (props = {}) {
   let history = browserHistory;
@@ -36,10 +37,13 @@ export default function (props = {}) {
     history = syncHistoryWithStore(browserHistory, props.store)
   }
 
-  return (
+  return ( 
     <Router history={history}>
       <Route path="/" component={Landing}>
         <IndexRoute component={StreamsContainer}/>
+        <Route path="streams" component={Streams}>
+          <IndexRedirect to="/"/>
+        </Route>
         <Route path="races" component={Races}>
           <Route path="gamelist" component={GameList}>
             <IndexRedirect to="/races/gamelist/popular" />

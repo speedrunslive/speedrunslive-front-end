@@ -1,5 +1,5 @@
 import React from 'react';
-import {decodeHtmlEntities} from '../../../../utils';
+import {decodeHtmlEntities} from '../../../../../../utils';
 
 import './streamListItem.scss';
 
