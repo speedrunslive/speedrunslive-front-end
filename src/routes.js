@@ -9,7 +9,7 @@ import Races from './routes/races';
 import FAQ from './routes/faq';
 import About from './routes/landing/routes/about';
 import Channel from './routes/landing/routes/channel';
-import Tools from './routes/tools';
+import Tools from './routes/landing/routes/tools';
 import Promotion from './routes/landing/routes/promotion';
 import Streams from './routes/landing/routes/streams';
 
@@ -24,7 +24,7 @@ import CommandList from './routes/faq/components/commandList';
 import Glossary from './routes/faq/components/glossary';
 import FAQBody from './routes/faq/components/faqBody';
 import ChannelBody from './routes/landing/routes/channel/components/channelBody';
-import ToolsBody from './routes/tools/components/toolsBody';
+import ToolsBody from './routes/landing/routes/tools/components/toolsBody';
 import AboutBody from './routes/landing/routes/about/components/aboutBody';
 import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/landing/routes/promotion/components/promoBody';
@@ -65,8 +65,12 @@ export default function (props = {}) {
         <Route path="channel" component={Channel}>
           <IndexRoute component={ChannelBody}/>
         </Route>
-        <Route path="tools" component={ToolsBody}/>
-        <Route path="promotion" component={PromoBody}/>
+        <Route path="tools" component={Tools}>
+          <IndexRoute component={ToolsBody} />
+        </Route>
+        <Route path="promotion" component={Promotion}>
+          <IndexRoute component={PromoBody} /> 
+        </Route>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
