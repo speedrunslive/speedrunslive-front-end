@@ -7,7 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import Landing from './routes/landing';
 import Races from './routes/races';
 import FAQ from './routes/faq';
-import About from './routes/about';
+import About from './routes/landing/routes/about';
 import Channel from './routes/channel';
 import Tools from './routes/tools';
 import Promotion from './routes/promotion';
@@ -23,8 +23,8 @@ import CommandList from './routes/faq/components/commandList';
 import Glossary from './routes/faq/components/glossary';
 import FAQBody from './routes/faq/components/faqBody';
 import ChannelBody from './routes/channel/components/channelBody';
-import AboutBody from './routes/about/components/aboutBody';
 import ToolsBody from './routes/tools/components/toolsBody';
+import AboutBody from './routes/landing/routes/about/components/aboutBody';
 import Registration from './routes/faq/components/registration';
 import PromoBody from './routes/promotion/components/promoBody';
 import StreamsContainer from './routes/landing/containers/streams';
@@ -55,7 +55,7 @@ export default function (props = {}) {
           <Route path="glossary" component={Glossary}/>
           <Route path="registration" component={Registration}/>
         </Route>
-        <Route path="about" component={About}>
+        <Route path="about" component={About} >
           <IndexRoute component={AboutBody}/>
         </Route>
         <Route path="channel" component={Channel}>
