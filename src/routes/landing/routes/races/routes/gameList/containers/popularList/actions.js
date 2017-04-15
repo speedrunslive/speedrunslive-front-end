@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from '../../../../config';
-import { jsonToQueryString } from '../../../../utils';
+import { apiUrl } from 'config'
+import { jsonToQueryString } from '../../../../../../../../utils';
 import { RECEIVE_POPULARLIST, REQUEST_POPULARLIST } from './constants';
 
 export function requestPopularList() {

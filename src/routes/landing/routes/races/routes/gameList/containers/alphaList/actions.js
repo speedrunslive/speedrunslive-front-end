@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from '../../../../config'
-import { jsonToQueryString } from '../../../../utils'
+import { apiUrl } from 'config'
+import { jsonToQueryString } from '../../../../../../../../utils'
 import { RECEIVE_ALPHALIST, REQUEST_ALPHALIST } from './constants'
 
 export function requestAlphaList() {

@@ -1,9 +1,8 @@
 @import '~css/variables';
 @import '~css/mixins';
-.popularList {
-  ul {
-    padding-left: 0;
-    li {
+
+
+    .popular-game {
       list-style: none;
       margin-top:-2px;
       a {
@@ -53,9 +52,9 @@
         }
       }
     }
-  }
-}
-.popularList {
+
+
+.popular-game {
   a:hover{
     background: linear-gradient(to bottom, $dark-red, darken($dark-red,7%));
     border-color: $brick-red $dark-red $dark-red $red;

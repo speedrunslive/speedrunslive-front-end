@@ -50,7 +50,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.scss'],
-    root: [path.join(__dirname, './src'), path.join(__dirname, './src/css')]
+    root: [path.join(__dirname, './src'), path.join(__dirname, './src/css'), path.join(__dirname, './src/config')]
   },
   devtool: 'cheap-module-source-map',
   plugins: [ 

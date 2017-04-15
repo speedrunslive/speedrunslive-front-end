@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 //import './popularList.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
+import './popularList.scss';
 
 import PopularGame from '../popularGame';
 
@@ -10,7 +11,7 @@ counterpart.registerTranslations('en', require('./translations/en'));
 const PopularList = (props) => {
   const topRank = props.games[0].ranking;
   return (
-    <div className="popularList">
+    <div className="popular-list">
       <h1><Translate content="popularList.heading"/></h1>
       <ul>
       {props.games.map((game, i) =>

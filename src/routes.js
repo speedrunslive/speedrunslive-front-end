@@ -5,20 +5,21 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 // Pages
 import Landing from './routes/landing';
-import Races from './routes/races';
+import Races from './routes/landing/routes/races';
 import FAQ from './routes/landing/routes/faq';
 import About from './routes/landing/routes/about';
 import Channel from './routes/landing/routes/channel';
 import Tools from './routes/landing/routes/tools';
 import Promotion from './routes/landing/routes/promotion';
 import Streams from './routes/landing/routes/streams';
+import GameList from './routes/landing/routes/races/routes/gameList'
+
+import PastResults from './routes/landing/routes/races/routes/pastResults';
 
 // Components
 import NotFound from './routes/error/components/notFound';
-import GameList from './routes/races/components/gameList';
-import PastResults from './routes/races/components/pastResults';
-import AlphaList from './routes/races/containers/AlphaList';
-import PopularList from './routes/races/containers/PopularList';
+import AlphaList from './routes/landing/routes/races/routes/gameList/containers/AlphaList';
+import PopularList from './routes/landing/routes/races/routes/gameList/containers/PopularList';
 import Rules from './routes/landing/routes/faq/routes/rules/components/rules';
 import CommandList from './routes/landing/routes/faq/routes/commandList/components/commandList';
 import Glossary from './routes/landing/routes/faq/routes/glossary/components/glossary';
@@ -46,11 +47,11 @@ export default function (props = {}) {
         </Route>
         <Route path="races" component={Races}>
           <Route path="gamelist" component={GameList}>
-            <IndexRedirect to="/races/gamelist/popular" />
-            <Route path="alphabetical" component={AlphaList} />
+            <IndexRedirect to="popular" />
             <Route path="popular" component={PopularList} />
+            <Route path="alphabetical" component={AlphaList} />
           </Route>
-          <Route path="pastresults" component={PastResults} />
+         <Route path="pastresults" component={PastResults} />
         </Route>
         <Route path="faq" component={FAQ}>
           <IndexRoute component={FAQBody}/>
