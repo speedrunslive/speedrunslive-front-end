@@ -1,0 +1,14 @@
+@import '~css/variables';
+@import '~css/mixins';
+
+.gameList {
+    .gameSort {
+        a {
+            border-radius: 4px 4px 0 0;
+
+            &:not(:first-of-type) {
+                border-radius: initial;
+            }
+        }
+    }
+}

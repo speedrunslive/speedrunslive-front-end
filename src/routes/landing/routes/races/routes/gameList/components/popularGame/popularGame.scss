@@ -1,0 +1,69 @@
+@import '~css/variables';
+@import '~css/mixins';
+
+
+    .popular-game {
+      list-style: none;
+      margin-top:-2px;
+      a {
+        @include srlPanel(100%, 50px);
+        padding: 4px;
+        min-width: 300px;
+        text-decoration: none;
+        font-size: em(14);
+        line-height: 1.6;
+        font-weight: $bold;
+        color: $grey;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .game-thumbnail{
+          @include gameThumbnail(10%, 100%);
+        }
+        .panel-contents{
+            width:87%;
+            float:right;
+            padding-right:10px;
+
+          .game-name{
+            text-shadow: $text-shadow-base;
+            width:85%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .rank-percent{
+            height:8px;
+            background: lighten($dark-grey-background,7%);
+            border-radius: 6px;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-color: $darker-grey-background $coal-grey $coal-grey $coal-grey;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            clear:both;
+          }
+          .first{
+            color:$srl-yellow;
+          }
+          .third{
+            color:$srl-orange;
+          }
+        }
+      }
+    }
+
+
+.popular-game {
+  a:hover{
+    background: linear-gradient(to bottom, $dark-red, darken($dark-red,7%));
+    border-color: $brick-red $dark-red $dark-red $red;
+    color:$white;
+    .panel-contents{
+      .rank-percent{
+        background: lighten($dark-red,7%);
+        border-color: $brick-red $dark-red $dark-red;
+      }
+    }
+  }
+}
