@@ -2,15 +2,22 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchTopRacers} from './actions';
 import TopRacers from '../../components/topRacers';
+import * as sort from './constants';
 
 class TopRacersContainer extends Component {
   componentDidMount (){
-    this.props.fetchTopRacers(15);
+    this.props.fetchTopRacers(sort.RACES_SORT);
   }
+  onHeaderClick(column){
+    if (this.props.sort != column){
+      this.props.fetchTopRacers(column);
+    }
+  }
+
   render(){
     return (
       <div>
-        <TopRacers topRacers={this.props.topRacers}/>
+        <TopRacers racers={this.props.racers} onHeaderClick={this.onHeaderClick.bind(this)}/>
       </div>
     );
   }
@@ -18,7 +25,8 @@ class TopRacersContainer extends Component {
 
 function mapStateToProps(state){
   return {
-    topRacers: state.topRacers
+    racers: state.topRacers.racers,
+    sort: state.topRacers.sort
   }
 }
 
