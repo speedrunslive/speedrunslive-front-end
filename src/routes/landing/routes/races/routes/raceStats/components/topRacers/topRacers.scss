@@ -2,4 +2,11 @@
 
 .top-racers{
   @include srlTable();
+  th.rank {width: 10%}
+  th.name {width: 35%}
+  th.races {width: 10%}
+  th.wins {width: 10%}
+  th.time {width: 25%}
+  th.games {width: 10%}
+
 }

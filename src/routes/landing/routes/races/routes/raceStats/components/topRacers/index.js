@@ -1,4 +1,6 @@
 import React from 'react';
+import * as sort from '../../containers/topRacers/constants';
+import {convertSecondsToTimeString} from '../../../../../../../../utils';
 
 import './topRacers.scss'; 
 
@@ -11,7 +13,7 @@ const TopRacers = (props) => {
         <td>{racer.name}</td>
         <td>{racer.totalRaces}</td>
         <td>{racer.totalFirstPlace}</td>
-        <td>{racer.totalTimePlayed}</td>
+        <td>{convertSecondsToTimeString(racer.totalTimePlayed)}</td>
         <td>{racer.totalGames}</td>
       </tr>
     );
@@ -23,16 +25,16 @@ const TopRacers = (props) => {
     <table>
       <thead>
         <tr className="leaderboard">
-          <th>Rank</th>
-          <th>Name</th>
-          <th>Races</th>
-          <th>Wins</th>
-          <th>Time</th>
-          <th>Games</th>
+          <th className='rank'>Rank</th>
+          <th className='name'>Name</th>
+          <th className='races clickable' onClick={() => props.onHeaderClick(sort.RACES_SORT)}>Races</th>
+          <th className='wins clickable' onClick={() => props.onHeaderClick(sort.WINS_SORT)}>Wins</th>
+          <th className='time clickable' onClick={() => props.onHeaderClick(sort.TIME_SORT)}>Time</th>
+          <th className='games clickable' onClick={() => props.onHeaderClick(sort.GAMES_SORT)}>Games</th>
         </tr>
       </thead>
       <tbody>
-        {props.topRacers.map(createRow)}
+        {props.racers.map(createRow)}
       </tbody>
     </table>
     </div>
