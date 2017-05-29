@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from '../../../../../../config'
+import { apiUrl } from '../../../../../../config';
 import {FETCH_STREAMS, SET_FEATURED_STREAM} from './constants';
 
 export function fetchStreams() {

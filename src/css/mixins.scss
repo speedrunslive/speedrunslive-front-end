@@ -1,3 +1,5 @@
+@import '~css/variables';
+
 $browser-context: $font-size-base; // Default font size
 
 @function em($pixels, $context: $browser-context) {
@@ -24,4 +26,53 @@ $browser-context: $font-size-base; // Default font size
     margin-right: 6px;
     height: 100%;
     width: $width;
+}
+
+@mixin srlTable(){
+  table {
+    margin-bottom: 16px;
+    border-radius: 4px;
+    background-color: $coal-grey;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    border-spacing: 0px;
+    
+    th,td {
+      padding: 3px 6px;
+      text-align: center;
+    }
+
+    tr.odd-row{
+     background-color: darken($coal-grey,3%);
+    }
+
+    th.game-name {text-align: left;
+      padding-left: 8px;
+      font-weight: $bold;
+      text-shadow: $text-shadow-base;
+      column-span: all;
+    }
+
+    th.race-goal {
+      color: $srl-yellow;
+      text-shadow: $text-shadow-base;
+      font-weight: $bold;
+      column-span: all;
+    }
+
+    tr.leaderboard {
+      color: #ffffff;
+      text-shadow: $text-shadow-base;
+      font-weight: 700;
+      background: linear-gradient($dark-red, darken($dark-red,6%));
+      th:first-child {border-radius: 4px 0 0 0;}
+      th:last-child  {border-radius: 0 4px 0 0;}
+      th:hover{
+        background:rgba(240, 240, 240, .2);;
+      }
+    }
+
+
+
+
+  }
 }

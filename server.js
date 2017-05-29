@@ -56,6 +56,7 @@ if (DEV) {
     },
     stats: {
       colors: true,
+      errorDetails: true
     }
   });
 
