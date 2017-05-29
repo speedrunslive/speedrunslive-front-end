@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from 'config'
+import { apiUrl } from '../../../../../../../../config';
 import { jsonToQueryString } from '../../../../../../../../utils';
 import { RECEIVE_POPULARLIST, REQUEST_POPULARLIST } from './constants';
 
