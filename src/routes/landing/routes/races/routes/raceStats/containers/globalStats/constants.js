@@ -1,0 +1,1 @@
+export const FETCH_GLOBAL_STATS = 'FETCH_GLOBAL_STATS';
