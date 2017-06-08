@@ -1,0 +1,92 @@
+@import '~css/variables';
+.monthly-stats-container {
+  h3 {
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .year {
+    &> :first-child {
+      .panel {
+        border-radius: 4px 4px 0 0;
+        .progress-bar {
+          border-top-left-radius: 4px;
+        }
+      }
+    }
+    &> :last-child {
+      .panel {
+        border-radius: 0 0 4px 4px;
+        .progress-bar {
+          border-bottom-left-radius: 4px;
+        }
+      }
+    }
+    .monthly-stats {
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .panel {
+        background: $darker-grey-background;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px $black;
+        border-bottom: 1px solid $main-background;
+        &:hover {
+          background: lighten($darker-grey-background, 15%);
+        }
+        &:hover .progress-bar {
+          background: lighten($dark-red, 2%);
+        }
+        .panel-content {
+          display: inline-block;
+          padding: 4px 6px;
+          clear: both;
+        }
+        .month {
+          font-weight: $bold;
+          color: $srl-orange;
+          text-shadow: $text-shadow-base;
+        }
+        .total-races {
+          color: $grey-darker;
+          font-style: italic;
+          font-size: 85%;
+          text-shadow: 1px 1px 0px rgba(0, 0, 0, 1), 0 0 1px $dark-brown;
+        }
+        .progress-bar {
+          background: linear-gradient(darken($dark-red, 10%), darken($dark-red, 21%));
+          border-radius: 0 2px 2px 0;
+        }
+      }
+      .more-stats {
+        background: $black;
+        margin-top: 0;
+        margin-bottom: 0;
+        animation-name: fade-in;
+        animation-duration: .2s;
+        padding: 3px;
+        font-size: 95%;
+        color: $grey-darker;
+        a {
+          text-decoration: none;
+          color: inherit;
+          &:hover *,
+          &:hover {
+            text-decoration: underline;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: .2;
+  }
+  to {
+    opacity: 1;
+  }
+}

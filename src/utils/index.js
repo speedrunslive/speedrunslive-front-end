@@ -72,3 +72,9 @@ function dePluralize(text, num){
     if (num <= 1) return text.slice(0,-1);
     return text;
 }
+
+export function numberToMonth(monthNum) {
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  if (monthNum < 0 || monthNum > months.length) return monthNum;
+  return months[--monthNum];
+}
