@@ -1,0 +1,1 @@
+export const FETCH_RACE_RESULTS = "FETCH_RACE_RESULTS";

@@ -8,7 +8,7 @@ const TopRacers = (props) => {
 
   function createRow(racer, i){
     return (
-      <tr key={i+1} className={(i%2)?"odd-row":null}>
+      <tr key={i+1}>
         <td>{i+1}</td>
         <td>{racer.name}</td>
         <td>{racer.totalRaces}</td>

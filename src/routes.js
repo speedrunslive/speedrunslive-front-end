@@ -15,11 +15,10 @@ import Streams from     './routes/landing/routes/streams';
 import GameList from    './routes/landing/routes/races/routes/gameList'
 import PastResults from './routes/landing/routes/races/routes/pastResults';
 import RaceStats from   './routes/landing/routes/races/routes/raceStats';
-
+import Game from        './routes/landing/routes/game';
 
 // Display Components
 import NotFound from      './routes/error/components/notFound';
-
 import AlphaList from     './routes/landing/routes/races/routes/gameList/containers/AlphaList';
 import PopularList from   './routes/landing/routes/races/routes/gameList/containers/PopularList';
 import RaceStatsBody from './routes/landing/routes/races/routes/raceStats/components/raceStatsBody';
@@ -35,7 +34,7 @@ import ToolsBody from     './routes/landing/routes/tools/components/toolsBody';
 import AboutBody from     './routes/landing/routes/about/components/aboutBody';
 import PromoBody from     './routes/landing/routes/promotion/components/promoBody';
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
-
+import GameBody from      './routes/landing/routes/game/components/gameBody'; 
 
 export default function (props = {}) {
   let history = browserHistory;
@@ -61,6 +60,12 @@ export default function (props = {}) {
          <Route path="racestats" component={RaceStats}>
            <IndexRoute component={RaceStatsBody} />
          </Route>
+        </Route>
+        <Route path="game/:game" component={Game}>
+          <IndexRedirect to="1" />
+          <Route path=":page">
+            <IndexRoute component={GameBody}  />
+          </Route>
         </Route>
         <Route path="faq" component={FAQ}>
           <IndexRoute component={FAQBody}/>
