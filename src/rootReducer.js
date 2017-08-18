@@ -7,6 +7,7 @@ import streams from './routes/landing/routes/streams/containers/streams/reducer'
 import topRacers from './routes/landing/routes/races/routes/raceStats/containers/topRacers/reducer';
 import globalStats from './routes/landing/routes/races/routes/raceStats/containers/globalStats/reducer';
 import monthlyStats from './routes/landing/routes/races/routes/raceStats/containers/monthlyStats/reducer';
+import raceResultList from './shared/containers/raceResultList/reducer';
 
 const appReducers = combineReducers({
   alphaList,
@@ -16,6 +17,7 @@ const appReducers = combineReducers({
   topRacers,
   globalStats,
   monthlyStats,
+  raceResultList,
   routing: routerReducer
 });
 

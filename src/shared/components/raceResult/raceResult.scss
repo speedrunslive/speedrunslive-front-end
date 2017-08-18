@@ -1,0 +1,56 @@
+@import '~css/mixins';
+.race-result-table {
+  @include srlTable();
+
+  td:nth-child(1) { width:5%;}
+  td:nth-child(2) { width:25%; }
+
+  .true-skill {
+    font-size: .9em;
+    font-style: italic;
+    color: $grey-darker;
+    text-shadow: $text-shadow-base;
+  }
+  .green {
+    color: $green-light;
+  }
+  .red {
+    color: $red;
+  }
+  .left {
+    text-align: left;
+  }
+  div {
+    display: none;
+  }
+  .comment {
+    font-size: .88em;
+    cursor: default;
+    span {
+      background-color: lighten($coal-grey, 4%);
+      border-radius: 5px;
+      padding: 1px 6px;
+    }
+    &:hover {
+      span {
+        background: $tory-blue;
+        color: $white;
+      }
+      div {
+        display: inline-block;
+        position: absolute;
+        z-index: 24;
+        border-radius: 4px;
+        padding: 6px;
+        right: 50px;
+        width: 192px;
+        border: 1px solid $tory-blue;
+        background-color: $main-background;
+        box-shadow: inset $tory-blue 0 0 6px, $black 2px 2px 10px, $tory-blue 0 0 2px;
+        color: #bec7d2;
+        word-wrap: break-word;
+        overflow: hidden;
+      }
+    }
+  }
+}

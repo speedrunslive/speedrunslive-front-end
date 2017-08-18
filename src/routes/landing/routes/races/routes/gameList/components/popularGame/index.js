@@ -20,7 +20,7 @@ export default class PopularGame extends Component {
     const rankClass = this.rankClass(this.props.rank);
     return (
       <li className="popular-game">
-        <Link to={"/races/game/" + this.props.short + "/1"}>
+        <Link to={"/races/game/" + this.props.short} >
           <img className = "game-thumbnail" src="http://placehold.it/74x38" />
           <div className='panel-contents'>
             <div className="game-name pull-left">{this.props.name}</div>
