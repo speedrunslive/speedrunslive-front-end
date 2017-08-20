@@ -46,9 +46,9 @@ export default function (props = {}) {
   return ( 
     <Router history={history}>
       <Route path="/" component={Landing}>
-        <IndexRoute component={StreamsContainer}/>
+        <IndexRoute component={StreamsContainer} />
         <Route path="streams" component={Streams}>
-          <IndexRedirect to="/"/>
+          <IndexRedirect to="/" />
         </Route>
         <Route path="races" component={Races}>
           <Route path="gamelist" component={GameList}>
@@ -56,35 +56,39 @@ export default function (props = {}) {
             <Route path="popular" component={PopularList} />
             <Route path="alphabetical" component={AlphaList} />
           </Route>
-         <Route path="pastresults" component={PastResults} />
-         <Route path="racestats" component={RaceStats}>
-           <IndexRoute component={RaceStatsBody} />
-         </Route>
+          <Route path="pastresults" component={PastResults}>
+            <IndexRedirect to="1" />
+            <Route path=":page">
+              <IndexRoute component={PastResults} />
+            </Route></Route>
+          <Route path="racestats" component={RaceStats}>
+            <IndexRoute component={RaceStatsBody} />
+          </Route>
         </Route>
         <Route path="game/:game" component={Game}>
           <IndexRedirect to="1" />
           <Route path=":page">
-            <IndexRoute component={GameBody}  />
+            <IndexRoute component={GameBody} />
           </Route>
         </Route>
         <Route path="faq" component={FAQ}>
-          <IndexRoute component={FAQBody}/>
-          <Route path="rules" component={Rules}/>
-          <Route path="commandlist" component={CommandList}/>
-          <Route path="glossary" component={Glossary}/>
-          <Route path="registration" component={Registration}/>
+          <IndexRoute component={FAQBody} />
+          <Route path="rules" component={Rules} />
+          <Route path="commandlist" component={CommandList} />
+          <Route path="glossary" component={Glossary} />
+          <Route path="registration" component={Registration} />
         </Route>
         <Route path="about" component={About} >
-          <IndexRoute component={AboutBody}/>
+          <IndexRoute component={AboutBody} />
         </Route>
         <Route path="channel" component={Channel}>
-          <IndexRoute component={ChannelBody}/>
+          <IndexRoute component={ChannelBody} />
         </Route>
         <Route path="tools" component={Tools}>
           <IndexRoute component={ToolsBody} />
         </Route>
         <Route path="promotion" component={Promotion}>
-          <IndexRoute component={PromoBody} /> 
+          <IndexRoute component={PromoBody} />
         </Route>
         <Route path="*" component={NotFound} />
       </Route>

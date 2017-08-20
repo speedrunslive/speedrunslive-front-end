@@ -65,8 +65,8 @@
 
     &.red-hover:hover {
         background: linear-gradient(to bottom, $red-background, $dark-red);
-        border-color: $red $dark-red $dark-red $red;
-    }
+        border-color: $red $dark-red $black $red;
+    } 
     &.blue-hover:hover {
         background: linear-gradient(to bottom, $royal-blue,$dark-blue);
         border-color:$royal-blue $dark-blue $dark-blue $royal-blue;

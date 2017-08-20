@@ -61,10 +61,10 @@ $browser-context: $font-size-base; // Default font size
       }
     }
     tr.leaderboard {
-      color: #ffffff;
+      color: #eee;
       text-shadow: $text-shadow-base;
       font-weight: 700;
-      background: linear-gradient($dark-red, darken($dark-red, 6%));
+      background: linear-gradient($dark-red, darken($dark-red, 10%));
       th:first-child {
         border-radius: 4px 0 0 0;
       }
