@@ -20,9 +20,10 @@ class RaceResultListContainer extends Component {
   }
 
   render() {
+    var lastPage = Math.ceil(this.props.count / this.props.pageSize);
     return (
       <div>
-        <RaceResultList page={this.props.page} raceResultList={this.props.raceResultList}/>
+        <RaceResultList page={this.props.page} pageSize={this.props.pageSize} lastPage={lastPage} raceResultList={this.props.raceResultList}/>
       </div>
     );
   }
@@ -30,7 +31,8 @@ class RaceResultListContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    raceResultList: state.raceResultList
+    raceResultList: state.raceResultList.races || [],
+    count: state.raceResultList.count || 0
   }
 }
 

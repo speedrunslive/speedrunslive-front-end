@@ -5,17 +5,15 @@ import './pastResults.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 
+import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
+
 counterpart.registerTranslations('en', require('./translations/en'));
 
-const PastResults = () => {
+const PastResults = (props) => {
   return (
     <div className="pastResults">
-      <div className="col-md-6">
-        <h1><Translate content="pastResults.heading"/></h1>
-        <button className="btn first"></button>
-        <button className="btn prev"></button>
-        <button className="btn first"></button>
-        <button className="btn last"></button>
+      <div className="col-md-7">
+        <RaceResultListContainer page={props.params.page} pageSize={16} />
       </div>
     </div>
   );

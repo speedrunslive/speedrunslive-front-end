@@ -13,19 +13,25 @@ const RaceResultList = (props) => {
   }
 
   function renderPagenator() {
+    // temp paging. Should be done with react router and buttons in future.
+    var nextPage = parseInt(props.page) + 1;
+    var prevPage = parseInt(props.page) - 1;
+    prevPage = (prevPage < 1) ? 1 : prevPage;
+    nextPage = (nextPage > props.lastPage) ? props.lastPage : nextPage;
+    
   return (
     <div className="pagenator">
-      <div className="btn grey-hover" to=''>First</div>
-      <div className="btn grey-hover" to=''>Left</div>
-      <div className="btn grey-hover" to=''>Right</div>
-      <div className="btn grey-hover" to=''>Last</div>
+      <a className="btn red-hover" href='1'>First</a>
+      <a className="btn red-hover" href={prevPage}>Left</a>
+      <a className="btn red-hover" href={nextPage}>Right</a>
+      <a className="btn red-hover" href={props.lastPage}>Last</a>
     </div>
   );
   }
 
   return ( 
     <div className="race-result-list">
-      <h2>Latest Races <span className="dull">»</span> Page {props.page}</h2>
+      <h1>Latest Races <span className="dull">»</span> Page {props.page}</h1>
       {renderPagenator()}
       {raceResultList.map(renderRace)}
       {renderPagenator()}

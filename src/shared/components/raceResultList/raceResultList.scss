@@ -1,11 +1,11 @@
 .race-result-list {
   .pagenator {
     margin: 12px auto;
-    div {
+    a {
       width: 22%;
       margin-right: 4%;
     }
-    & div:last-child {
+    & a:last-child {
       margin-right: 0;
     }
   }
