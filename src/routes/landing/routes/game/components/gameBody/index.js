@@ -1,5 +1,6 @@
 import React from 'react';
 import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
+import GameImage from '../gameImage';
 
 const GameBody = (props) => {
   return (
@@ -8,10 +9,7 @@ const GameBody = (props) => {
         <div className="col-md-3"><h1>Game Leaderboard Container</h1>All the nerds go here</div>
         <div className="col-md-6"><RaceResultListContainer game={props.params.game} page={props.params.page} pageSize={16} /></div>
         <div className="col-md-3">
-          <h1>Game Image Container</h1>
-          <object data="http://cdn.speedrunslive.com/images/games/smw.jpg">
-            <img src="http://cdn.speedrunslive.com/images/games/noimage.jpg" alt="smw" />
-          </object>
+          <GameImage game={props.params.game} />
           <h1>Game Rules Container</h1>
           <p>Rules.</p>
           <p>Here are the rules.</p>
