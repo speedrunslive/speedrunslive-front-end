@@ -9,7 +9,7 @@ const RaceResultList = (props) => {
   var raceResultList = props.raceResultList;
 
   function renderRace(raceResult){
-    return (<RaceResult raceResult={raceResult} />);
+    return (<RaceResult key={raceResult.id} raceResult={raceResult} />);
   }
 
   function renderPagenator() {

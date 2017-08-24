@@ -1,6 +1,8 @@
 import React from 'react';
+
 import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
 import GameImage from '../gameImage';
+import GameRulesContainer from '../../containers/gameRules';
 
 const GameBody = (props) => {
   return (
@@ -10,11 +12,9 @@ const GameBody = (props) => {
         <div className="col-md-6"><RaceResultListContainer game={props.params.game} page={props.params.page} pageSize={16} /></div>
         <div className="col-md-3">
           <GameImage game={props.params.game} />
-          <h1>Game Rules Container</h1>
-          <p>Rules.</p>
-          <p>Here are the rules.</p>
-          <p>What are the rules?What are the rules?What are the rules?What are the rules?What are the rules?What are the rules?What are the rules?</p>
-          <p>There are the rules.</p>
+          
+          <h1>Rules</h1>
+          <GameRulesContainer game={props.params.game} />
 
           <h1>Game Stats Container</h1>
           <ul>
