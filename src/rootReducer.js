@@ -9,6 +9,7 @@ import globalStats from './routes/landing/routes/races/routes/raceStats/containe
 import monthlyStats from './routes/landing/routes/races/routes/raceStats/containers/monthlyStats/reducer';
 import raceResultList from './shared/containers/raceResultList/reducer';
 import gameRules from './routes/landing/routes/game/containers/gameRules/reducer';
+import gameStats from './routes/landing/routes/game/containers/gameStats/reducer';
 
 const appReducers = combineReducers({
   alphaList,
@@ -20,6 +21,7 @@ const appReducers = combineReducers({
   monthlyStats,
   raceResultList,
   gameRules,
+  gameStats,
   routing: routerReducer
 });
 
