@@ -9,7 +9,12 @@ class GameRulesContainer extends Component {
   
   render() {
     if (!this.props.gameRules) return null;
-    return <div className="game-rules-container" dangerouslySetInnerHTML={{__html: this.props.gameRules}}></div>
+    return (
+      <div className="game-rules-container">
+        <h1>Rules</h1>
+        <div dangerouslySetInnerHTML={{ __html: this.props.gameRules }}></div>
+      </div>
+  );
   }
 }
 

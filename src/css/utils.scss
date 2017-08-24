@@ -9,3 +9,8 @@
     color: $grey-darker;
     text-shadow: $text-shadow-base;
   }
+  
+  //used by injected HTML from game rules.
+  .red {
+    color:$red-background;
+  }
