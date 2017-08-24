@@ -1,0 +1,1 @@
+export const FETCH_GAME_RULES = "FETCH_GAME_RULES";
