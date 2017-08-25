@@ -2,6 +2,8 @@
 .race-result-table {
   @include srlTable();
 
+  min-width: 400px;
+
   td:nth-child(1) { width:5%;}
   td:nth-child(2) { width:25%; }
 

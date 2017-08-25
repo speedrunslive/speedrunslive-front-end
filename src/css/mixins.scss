@@ -33,7 +33,6 @@ $browser-context: $font-size-base; // Default font size
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     border-spacing: 0px;
     width: 100%;
-    min-width: 400px;
     border-collapse: collapse;
     overflow: hidden;
     background-color: darken($coal-grey, 2%);
@@ -87,12 +86,15 @@ $browser-context: $font-size-base; // Default font size
       text-shadow: $text-shadow-base;
       column-span: all;
       a {
-        text-decoration: none;
         color: $srl-yellow;
         &:hover {
           color: white;
         }
       }
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .first {

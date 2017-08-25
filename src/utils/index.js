@@ -78,3 +78,21 @@ export function numberToMonth(monthNum) {
   if (monthNum < 0 || monthNum > months.length) return monthNum;
   return months[--monthNum];
 }
+
+export function convertSecondsToRaceTime(seconds) {
+  if (seconds === -1) {return 'Forfeit'};
+  if (seconds === -2) {return 'DQ'};
+
+  const HOUR = 3600;  
+  const MINUTE = 60;
+
+  var hours = Math.floor(seconds / HOUR);
+  var minutes = Math.floor((seconds % HOUR) / MINUTE);
+  seconds = Math.floor((seconds % HOUR) % MINUTE);
+
+  hours = (hours >= 100) ? hours : hours.toString().padStart(2, "0");
+  minutes = minutes.toString().padStart(2, "0");
+  seconds = seconds.toString().padStart(2, "0");
+
+  return `${hours}:${minutes}:${seconds}`;
+}

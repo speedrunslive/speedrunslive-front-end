@@ -1,29 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {convertSecondsToRaceTime} from '../../../utils';
 
 import './raceResult.scss';
 
 const RaceResult = (props) => {
 
   const raceResult = props.raceResult;
-
-  function convertSecondsToRaceTime(seconds) {
-    if (seconds === -1) {return 'Forfeit'};
-    if (seconds === -2) {return 'DQ'};
-
-    const HOUR = 3600;  
-    const MINUTE = 60;
-
-    var hours = Math.floor(seconds / HOUR);
-    var minutes = Math.floor((seconds % HOUR) / MINUTE);
-    seconds = Math.floor((seconds % HOUR) % MINUTE);
-
-    hours = (hours >= 100) ? hours : hours.toString().padStart(2, "0");
-    minutes = minutes.toString().padStart(2, "0");
-    seconds = seconds.toString().padStart(2, "0");
-
-    return `${hours}:${minutes}:${seconds}`;
-  }
 
   function convertTimestampToDateString(timestamp) {
     var dateObj = new Date(timestamp * 1000);
@@ -102,7 +85,7 @@ const RaceResult = (props) => {
               <Link to={`/game/${raceResult.game.abbrev}`}>{raceResult.game.name}</Link>
             </th>
             <th colSpan="2" className='race-id'>
-              {raceResult.id}
+              <Link to={`/races/result/${raceResult.id}`}>{raceResult.id}</Link>
             </th>
           </tr>
           <tr className="sub-header">

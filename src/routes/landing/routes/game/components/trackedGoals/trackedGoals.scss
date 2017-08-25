@@ -1,0 +1,20 @@
+@import '~css/mixins.scss';
+
+.tracked-goal {
+  @include srlTable();
+  table {
+    max-width:400px;
+    min-width:250px;
+    td:nth-child(1) { width:5%;}
+    td:nth-child(2) { width:65%; }
+
+    .left {
+      text-align: left;
+    }
+
+    th.category {
+      color: $srl-yellow;
+      text-align: center;
+    }
+  }
+}
