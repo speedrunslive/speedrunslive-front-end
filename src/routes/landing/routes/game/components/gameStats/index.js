@@ -11,7 +11,7 @@ const GameStats = (props) => {
 
   function renderLargestRace() {
     return (
-      <Link to={`/raceresult/${stats.largestRace}`}>{stats.largestRaceSize}</Link>
+      <Link to={`/races/result/${stats.largestRace}`}>{stats.largestRaceSize}</Link>
     );
   }
 
