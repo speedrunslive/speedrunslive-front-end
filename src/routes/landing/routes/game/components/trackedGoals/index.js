@@ -42,10 +42,10 @@ const TrackedGoals = (props) => {
 
   function renderGoal(goal,i) {
     return (
-      <div key={i} className='tracked-goal'>
+      <div key={i} className=''>
         <table>
           <thead>
-            <tr className="leaderboard">
+            <tr>
               <th colSpan='3' className='category'>
                 {goal.name}
               </th>
@@ -60,7 +60,7 @@ const TrackedGoals = (props) => {
   }
 
   return (
-    <div className=''>
+    <div className='tracked-goals'>
       <h1>Best Race Times</h1>
       {trackedGoals.map(renderGoal)}
     </div>

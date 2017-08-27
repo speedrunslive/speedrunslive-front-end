@@ -29,9 +29,14 @@ const RaceResultList = (props) => {
   );
   }
 
+  function renderPageNumber() {
+    if (!props.page || props.page <= 1) return null;
+    return <span><span className="dull">»</span> Page {props.page} </span>
+  }
+
   return ( 
     <div className="race-result-list">
-      <h1>Latest Races <span className="dull">»</span> Page {props.page}</h1>
+      <h1>Latest Races {renderPageNumber()}</h1>
       {renderPagenator()}
       {raceResultList.map(renderRace)}
       {renderPagenator()}

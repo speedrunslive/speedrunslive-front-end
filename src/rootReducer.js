@@ -11,6 +11,7 @@ import raceResultList from './shared/containers/raceResultList/reducer';
 import gameRules from './routes/landing/routes/game/containers/gameRules/reducer';
 import gameStats from './routes/landing/routes/game/containers/gameStats/reducer';
 import trackedGoals from './routes/landing/routes/game/containers/trackedGoals/reducer';
+import gameLeaderboard from './routes/landing/routes/game/containers/gameLeaderboard/reducer';
 
 const appReducers = combineReducers({
   alphaList,
@@ -24,6 +25,7 @@ const appReducers = combineReducers({
   gameRules,
   gameStats,
   trackedGoals,
+  gameLeaderboard,
   routing: routerReducer
 });
 

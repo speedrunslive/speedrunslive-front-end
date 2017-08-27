@@ -1,0 +1,32 @@
+.game-leaderboard-table {
+  table {
+    width: 100%;
+    margin-bottom:4px;
+    padding-left:4px;
+    border-collapse: collapse;
+    td:nth-child(1) { width:20%; padding-left: 8px;}
+    td:nth-child(2) { width:65%;}
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.085);
+    }
+    tr {
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  @mixin leaderboardColors($background, $foreground) {
+    background-color: $background; 
+    color: $foreground; 
+    border-left:4px solid $foreground;
+  }
+
+  // These colors are only used within the Game Leaderboard
+  .percentile-1 { @include leaderboardColors(#40363b,#efe3eb); } // white
+  .percentile-2 { @include leaderboardColors(#3a2344,#ff9ff0); } // purple
+  .percentile-3 { @include leaderboardColors(#20283f,#57c2ff); } // blue
+  .percentile-4 { @include leaderboardColors(#1e2a20,#68df98); } // green
+  .percentile-5 { @include leaderboardColors(#221f1d,#e4c17c); } // gold
+  .percentile-6 { @include leaderboardColors(#191b22,#b4b9bf); } // silver
+  .percentile-7 { @include leaderboardColors(#241310,#d6a59a); } // bronze
+  .percentile-unranked {@include leaderboardColors(#161616,#808080); } // unranked
+}

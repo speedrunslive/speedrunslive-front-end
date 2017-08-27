@@ -1,6 +1,6 @@
 @import '~css/mixins.scss';
 
-.tracked-goal {
+.tracked-goals {
   @include srlTable();
   table {
     max-width:400px;
@@ -11,7 +11,10 @@
     .left {
       text-align: left;
     }
-
+    th {
+      background: linear-gradient(darken($dark-red, 9%), darken($dark-red, 17%));
+      border-top: 1px solid darken($dark-red, 14%);
+    }
     th.category {
       color: $srl-yellow;
       text-align: center;
