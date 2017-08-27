@@ -1,0 +1,14 @@
+@import '~css/variables';
+
+.toggle-unranked-leaderboard {
+  background-color: #141414; 
+  color: #808080; 
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border-left:4px solid #808080;
+  &:hover {
+    color: $white;
+    background-color: #161616;
+  }
+}

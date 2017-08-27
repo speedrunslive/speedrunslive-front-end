@@ -4,14 +4,16 @@ import RaceResultListContainer from '../../../../../../shared/containers/raceRes
 import GameImage from '../gameImage';
 import GameRulesContainer from '../../containers/gameRules';
 import GameStatsContainer from '../../containers/gameStats';
-
 import TrackedGoalsContainer from '../../containers/trackedGoals';
+import GameLeaderboard from '../../containers/gameLeaderboard';
 
 const GameBody = (props) => {
   return (
     <div className="gameBody">
       <div className="row">
-        <div className="col-md-3"><h1>Game Leaderboard Container</h1>All the nerds go here</div>
+        <div className="col-md-3">
+          <GameLeaderboard game={props.params.game}/>
+        </div>
 
         <div className="col-md-6">
           <RaceResultListContainer game={props.params.game} page={props.params.page} pageSize={16} />
