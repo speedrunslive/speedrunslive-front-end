@@ -102,9 +102,10 @@ export function convertSecondsToRaceTime(seconds) {
  * @param {Number} number - number to add ordinal indicator to
  */
 export function addOrdinalIndicator(number) {
-  if (number >= 4 && number <= 20) return number + 'th';
-  else if (number % 10 == 3) return number + 'rd';
-  else if (number % 10 == 2) return number + 'nd';
-  else if (number % 10 == 1) return number + 'st';
-  else return number + 'th';
+  const lastDigit = number % 10;
+  const lastTwoDigits = number % 100;
+  if (lastDigit == 1 && lastTwoDigits != 11) { return number + "st"; }
+  if (lastDigit == 2 && lastTwoDigits != 12) { return number + "nd"; }
+  if (lastDigit == 3 && lastTwoDigits != 13) { return number + "rd"; }
+  return number + "th";
 }
