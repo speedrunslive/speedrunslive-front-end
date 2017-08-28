@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {convertSecondsToRaceTime} from '../../../../../../utils';
+import {convertSecondsToRaceTime, addOrdinalIndicator} from '../../../../../../utils';
 
 import './trackedGoals.scss';
 
@@ -10,13 +10,13 @@ const TrackedGoals = (props) => {
 
     function renderPlace(place) {
       var placeColor = '';
-      if (place === 3) {placeColor = 'third';}
-      else if (place === 2) {placeColor = 'second';}
-      else if (place === 1) {placeColor = 'first';}
-      else {placeColor = 'dull';}
+      if (place === 3) {placeColor = 'third-place';}
+      else if (place === 2) {placeColor = 'second-place';}
+      else if (place === 1) {placeColor = 'first-place';}
+      else {placeColor = 'loser-place';}
 
       return (
-        <td className={placeColor}>{place}</td>
+        <td className={`left ${placeColor}`}>{addOrdinalIndicator(place)}</td>
         );
     }
 

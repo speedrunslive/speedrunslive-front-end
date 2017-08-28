@@ -26,7 +26,7 @@ class MonthlyStats extends Component {
         <ul className="more-stats" style={{display:`${this.state.displayMoreStats}`}}>
           <li>Players: <strong>{stats.totalPlayers}</strong></li>
           <li>Games: <strong>{stats.totalGames}</strong></li>
-          <li><Link to={`result/${stats.largestRace}`}>Largest race: <strong>{stats.largestRaceSize}</strong></Link></li>
+          <li><Link to={`/races/result/${stats.largestRace}`}>Largest race: <strong>{stats.largestRaceSize}</strong></Link></li>
           <li>Time played: <strong>{convertSecondsToTimeString(stats.totalTimePlayed)}</strong></li>
         </ul>
       </div>

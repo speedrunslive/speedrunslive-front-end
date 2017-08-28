@@ -4,8 +4,17 @@
     margin-bottom:4px;
     padding-left:4px;
     border-collapse: collapse;
-    td:nth-child(1) { width:20%; padding-left: 8px;}
-    td:nth-child(2) { width:65%;}
+    table-layout: fixed;
+
+    //rank
+    td:nth-child(1) { width:21%; padding-left: 8px;} 
+
+    //player name
+    td:nth-child(2) { 
+      width:62%;     
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     tr:nth-child(even) {
       background-color: rgba(0, 0, 0, 0.085);
     }

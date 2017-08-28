@@ -36,6 +36,8 @@ import PromoBody from     './routes/landing/routes/promotion/components/promoBod
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 import GameBody from      './routes/landing/routes/game/components/gameBody'; 
 
+import IndividualRaceResult from './routes/landing/routes/races/routes/result/components/individualRaceResult';
+
 export default function (props = {}) {
   let history = browserHistory;
 
@@ -60,9 +62,12 @@ export default function (props = {}) {
             <IndexRedirect to="1" />
             <Route path=":page">
               <IndexRoute component={PastResults} />
-            </Route></Route>
+            </Route>
+          </Route>
           <Route path="racestats" component={RaceStats}>
             <IndexRoute component={RaceStatsBody} />
+          </Route>
+          <Route path="result/:raceId" component={IndividualRaceResult}>
           </Route>
         </Route>
         <Route path="game/:game" component={Game}>
