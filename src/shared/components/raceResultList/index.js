@@ -34,14 +34,33 @@ const RaceResultList = (props) => {
     return <span><span className="dull">»</span> Page {props.page} </span>
   }
 
-  return ( 
-    <div className="race-result-list">
-      <h1>Latest Races {renderPageNumber()}</h1>
-      {renderPagenator()}
-      {raceResultList.map(renderRace)}
-      {renderPagenator()}
-    </div>
-);
+  function renderIndividualRace() {
+    return (
+      <div className="race-result-list">
+        <h1>Individual Race Result</h1>
+        {raceResultList.map(renderRace)}
+      </div>
+      );
+  }
+
+  function renderMultipleRaces() {
+    return (
+      <div className="race-result-list">
+        <h1>Latest Races {renderPageNumber()}</h1>
+        {renderPagenator()}
+        {raceResultList.map(renderRace)}
+        {renderPagenator()}
+      </div>
+    );
+  }
+
+  if (props.isIndividualRace) { 
+    return renderIndividualRace();
+  } 
+  else {
+    return renderMultipleRaces(); 
+  }
+  
 }
 
 export default RaceResultList;

@@ -96,3 +96,15 @@ export function convertSecondsToRaceTime(seconds) {
 
   return `${hours}:${minutes}:${seconds}`;
 }
+
+/**
+ * Add ordinal indicator to a number. Example 1 -> 1st
+ * @param {Number} number - number to add ordinal indicator to
+ */
+export function addOrdinalIndicator(number) {
+  if (number >= 4 && number <= 20) return number + 'th';
+  else if (number % 10 == 3) return number + 'rd';
+  else if (number % 10 == 2) return number + 'nd';
+  else if (number % 10 == 1) return number + 'st';
+  else return number + 'th';
+}

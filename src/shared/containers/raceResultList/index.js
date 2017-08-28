@@ -20,10 +20,11 @@ class RaceResultListContainer extends Component {
   }
 
   render() {
-    var lastPage = Math.ceil(this.props.count / this.props.pageSize);
+    const lastPage = Math.ceil(this.props.count / this.props.pageSize);
+    const isIndividualRace = (this.props.raceId > 0);
     return (
       <div>
-        <RaceResultList page={this.props.page} pageSize={this.props.pageSize} lastPage={lastPage} raceResultList={this.props.raceResultList}/>
+        <RaceResultList isIndividualRace={isIndividualRace} page={this.props.page} pageSize={this.props.pageSize} lastPage={lastPage} raceResultList={this.props.raceResultList}/>
       </div>
     );
   }

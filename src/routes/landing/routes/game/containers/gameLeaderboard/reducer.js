@@ -21,7 +21,6 @@ function steralizeUnrankedStats(unranked){
 
 // TODO: The manipulation in function is something that should be fed from the API. Not arranged in front end.
 function aggregatePlayersByPercentile(leaders) {
-  console.log(leaders);
   let currentWorkingPercentile = 1;
   let tempLeadersArray = [];
   let aggregateArray = [];

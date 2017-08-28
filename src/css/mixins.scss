@@ -97,14 +97,19 @@ $browser-context: $font-size-base; // Default font size
       text-decoration: none;
     }
 
-    .first {
+    .first-place, .second-place, .third-place {text-shadow: $text-shadow-base;}
+    .first-place {
       color: $srl-yellow;
     }
-    .second {
+    .second-place {
       color: $grey;
     }
-    .third {
+    .third-place {
       color: $srl-orange;
+    }
+    .loser-place {
+      color: $grey-darker;
     }
   }
 }
+
