@@ -16,6 +16,7 @@ import GameList from    './routes/landing/routes/races/routes/gameList'
 import PastResults from './routes/landing/routes/races/routes/pastResults';
 import RaceStats from   './routes/landing/routes/races/routes/raceStats';
 import Game from        './routes/landing/routes/game';
+import PlayerProfile from './routes/landing/routes/profile';
 
 // Display Components
 import NotFound from      './routes/error/components/notFound';
@@ -35,6 +36,7 @@ import AboutBody from     './routes/landing/routes/about/components/aboutBody';
 import PromoBody from     './routes/landing/routes/promotion/components/promoBody';
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 import GameBody from      './routes/landing/routes/game/components/gameBody'; 
+import PlayerProfileBody from './routes/landing/routes/profile/components/playerProfileBody';
 
 import IndividualRaceResult from './routes/landing/routes/races/routes/result/components/individualRaceResult';
 
@@ -74,6 +76,21 @@ export default function (props = {}) {
           <IndexRedirect to="1" />
           <Route path=":page">
             <IndexRoute component={GameBody} />
+          </Route>
+        </Route>
+        <Route path="profile/:player" component={PlayerProfile}>
+          <Route path="game">
+            <Route path=":game">
+              <IndexRedirect to="1" />
+              <Route path=":page">
+                <IndexRoute component={PlayerProfileBody} />
+              </Route>
+            </Route>
+            <IndexRoute component={PlayerProfileBody} />
+          </Route>
+          <IndexRedirect to="1" />
+          <Route path=":page">
+            <IndexRoute component={PlayerProfileBody} />
           </Route>
         </Route>
         <Route path="faq" component={FAQ}>
