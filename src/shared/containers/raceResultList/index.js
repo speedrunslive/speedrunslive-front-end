@@ -24,7 +24,9 @@ class RaceResultListContainer extends Component {
     const isIndividualRace = (this.props.raceId > 0);
     return (
       <div>
-        <RaceResultList isIndividualRace={isIndividualRace} page={this.props.page} pageSize={this.props.pageSize} lastPage={lastPage} raceResultList={this.props.raceResultList}/>
+        <RaceResultList isIndividualRace={isIndividualRace} page={this.props.page} 
+                        pageSize={this.props.pageSize} lastPage={lastPage} 
+                        raceResultList={this.props.raceResultList}/>
       </div>
     );
   }
