@@ -2,6 +2,7 @@ import React from 'react';
 
 import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
 import PlayerDataContainer from '../../containers/playerData';
+import PlayerGameListContainer from '../../containers/playerGameList';
 
 const PlayerProfileBody = (props) => {
   const {page, game, player} = props.params;
@@ -19,15 +20,13 @@ const PlayerProfileBody = (props) => {
   return (
     <div className='player-profile-body'>
       <div className='col-md-2'>
-      <PlayerDataContainer player={player} />
+        <PlayerDataContainer player={player} />
       </div>
+
       <div className='col-md-4'>
-        <h1>Games</h1>
-        <p>Super Mario World</p>
-        <p>Super Mario World</p>
-        <p>Super Mario World</p>
-        <p>Super Mario World</p>
+        <PlayerGameListContainer player={player} />
       </div>
+      
       <div className='col-md-6'>
         <h1>Stats</h1>
         <p>Nerdy Numbers</p>

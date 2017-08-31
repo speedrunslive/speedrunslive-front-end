@@ -1,9 +1,6 @@
   .flag {
     margin: 0 4px;
   }
-  .wrap {
-    margin-bottom: 60px;
-  }
   .dull {
     font-size: 96%;
     color: $grey-darker;
@@ -13,4 +10,18 @@
   //used by injected HTML from game rules.
   .red {
     color:$red-background;
+  }
+
+  .first-place, .second-place, .third-place {text-shadow: $text-shadow-base;}
+  .first-place {
+    color: $srl-yellow;
+  }
+  .second-place {
+    color: $grey;
+  }
+  .third-place {
+    color: $srl-orange;
+  }
+  .loser-place {
+    color: $grey-darker;
   }

@@ -12,7 +12,7 @@ body {
   font-size: #{$font-size-base}px;
   color: $grey;
   a {
-    color: $grey;
+    color: inherit;
     &:hover {
       color: $white;
     }

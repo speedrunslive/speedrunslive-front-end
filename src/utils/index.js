@@ -106,3 +106,12 @@ export function addOrdinalIndicator(number) {
   if (lastDigit == 3 && lastTwoDigits != 13) { return number + "rd"; }
   return number + "th";
 }
+
+export function getCssClassForRank(place) {
+  var rankColor = '';
+  if (place === 3) {rankColor = 'third-place';}
+  else if (place === 2) {rankColor = 'second-place';}
+  else if (place === 1) {rankColor = 'first-place';}
+  else {rankColor = 'loser-place';}
+  return rankColor;
+}
