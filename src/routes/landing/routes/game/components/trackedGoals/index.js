@@ -15,6 +15,14 @@ const TrackedGoals = (props) => {
         );
     }
 
+    function renderPlayer(player) {
+      return (
+        <td className='left'>
+          <Link to={`/profile/${player}`}>{player}</Link>
+        </td>
+      );
+    }
+
     function renderRaceTime(seconds, race) {
       return (
       <td className={`left`}>
@@ -29,7 +37,7 @@ const TrackedGoals = (props) => {
     return (
       <tr key={place}>
         {renderPlace(place)}
-        <td className='left'>{result.player}</td>
+        {renderPlayer(result.player)}
         {renderRaceTime(result.time, result.race)}
       </tr>
     );

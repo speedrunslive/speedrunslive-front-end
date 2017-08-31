@@ -29,6 +29,14 @@ const RaceResult = (props) => {
     );
   }
 
+  function renderPlayer(player) {
+    return (
+      <td className="left">
+        <Link to={`/profile/${player}`}>{player}</Link>
+      </td>
+    );
+  }
+
   function renderRaceTime(time, place) {
     let timeString, quitterColor = '';
     if (place === 9998) timeString = 'Forfeit', quitterColor = 'red';
@@ -66,7 +74,7 @@ const RaceResult = (props) => {
     return (
       <tr key={i+1}>
         {renderPlace(result.place)}
-        <td className="left">{result.player}</td>
+        {renderPlayer(result.player)}
         {renderRaceTime(result.time, result.place)}
         {renderComment(result.message)}
         {renderTrueSkill(result.oldtrueskill, result.newtrueskill)}

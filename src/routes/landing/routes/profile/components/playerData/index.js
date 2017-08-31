@@ -27,7 +27,7 @@ const PlayerData = (props) => {
   return (
     <div className='player-data'>
       <h1>{name}</h1>
-      <img className='player-image' src={logo} />
+      {(logo) ? <img className='player-image' src={logo} /> : null}
       <div className='social-media-section'>
         {renderSocialButton(channel, api)}
         {renderSocialButton(twitter, 'twitter')}

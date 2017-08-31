@@ -11,7 +11,7 @@ export function fetchPlayerData(player) {
       .then(response => {
         response.json()
           .then(srlData => 
-            dispatch(fetchStreamServiceData(player, srlData))
+            dispatch(fetchStreamServiceData(srlData.channel, srlData))
           )});
     }
   }
