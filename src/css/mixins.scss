@@ -95,20 +95,6 @@ $browser-context: $font-size-base; // Default font size
     a {
       text-decoration: none;
     }
-
-    .first-place, .second-place, .third-place {text-shadow: $text-shadow-base;}
-    .first-place {
-      color: $srl-yellow;
-    }
-    .second-place {
-      color: $grey;
-    }
-    .third-place {
-      color: $srl-orange;
-    }
-    .loser-place {
-      color: $grey-darker;
-    }
   }
 }
 

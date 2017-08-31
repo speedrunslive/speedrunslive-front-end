@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {convertSecondsToRaceTime, addOrdinalIndicator} from '../../../utils';
+import {convertSecondsToRaceTime, addOrdinalIndicator, getCssClassForRank} from '../../../utils';
 
 import './raceResult.scss';
 
@@ -22,11 +22,7 @@ const RaceResult = (props) => {
   }
 
   function renderPlace(place) {
-    var placeColor = '';
-    if (place === 3) {placeColor = 'third-place';}
-    else if (place === 2) {placeColor = 'second-place';}
-    else if (place === 1) {placeColor = 'first-place';}
-    else {placeColor = 'loser-place';}
+    let placeColor = getCssClassForRank(place);
 
     return (
     <td className={`left ${placeColor}`}>{(place > 9996) ? '' : addOrdinalIndicator(place)}</td>
@@ -36,7 +32,7 @@ const RaceResult = (props) => {
   function renderRaceTime(time, place) {
     let timeString, quitterColor = '';
     if (place === 9998) timeString = 'Forfeit', quitterColor = 'red';
-    else if (place === 9997) timeString = 'DQ', quitterColor = 'red';
+    else if (place === 9999) timeString = 'DQ', quitterColor = 'red';
     else timeString = convertSecondsToRaceTime(time);
 
     return (<td className={`left ${quitterColor}`}>{timeString}</td>);
