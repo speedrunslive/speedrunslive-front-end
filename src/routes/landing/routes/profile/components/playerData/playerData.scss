@@ -1,0 +1,30 @@
+@import '~css/variables';
+@import '~css/mixins';
+
+.player-data {
+  .player-image {
+    margin-bottom: 8px;
+    @include imageThumbnail(80%,100%);
+  }
+  .social-media-section {
+    img {
+      border-bottom:2px solid rgba(0,0,0,0);
+      padding-bottom:4px;
+      transition: border-bottom .2s;
+    }
+    img:hover {
+      border-bottom:2px solid rgba(222,222,222,.3);
+    }
+    a:not(:last-of-type) {
+      padding-right: 4px;
+    }
+  }
+}
+
+@media only screen and (max-width:991px) {
+  .player-data {
+    .player-image {
+      width: 40%;
+    }
+  }
+}

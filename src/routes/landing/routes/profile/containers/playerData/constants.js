@@ -1,0 +1,1 @@
+export const FETCH_PLAYER_DATA = 'FETCH_PLAYER_DATA';

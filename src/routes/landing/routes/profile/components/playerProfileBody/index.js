@@ -1,6 +1,7 @@
 import React from 'react';  
 
 import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
+import PlayerDataContainer from '../../containers/playerData';
 
 const PlayerProfileBody = (props) => {
   const {page, game, player} = props.params;
@@ -18,7 +19,7 @@ const PlayerProfileBody = (props) => {
   return (
     <div className='player-profile-body'>
       <div className='col-md-2'>
-        <h1>Player</h1>
+      <PlayerDataContainer player={player} />
       </div>
       <div className='col-md-4'>
         <h1>Games</h1>

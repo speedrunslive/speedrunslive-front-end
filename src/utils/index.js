@@ -80,9 +80,6 @@ export function numberToMonth(monthNum) {
 }
 
 export function convertSecondsToRaceTime(seconds) {
-  if (seconds === -1) {return 'Forfeit'};
-  if (seconds === -2) {return 'DQ'};
-
   const HOUR = 3600;  
   const MINUTE = 60;
 

@@ -33,10 +33,13 @@ const RaceResult = (props) => {
     );
   }
 
-  function renderRaceTime(time) {
-    var quitterColor = '';
-    if (time < 0) {quitterColor = 'red';}
-    return (<td className={`left ${quitterColor}`}>{convertSecondsToRaceTime(time)}</td>);
+  function renderRaceTime(time, place) {
+    let timeString, quitterColor = '';
+    if (place === 9998) timeString = 'Forfeit', quitterColor = 'red';
+    else if (place === 9997) timeString = 'DQ', quitterColor = 'red';
+    else timeString = convertSecondsToRaceTime(time);
+
+    return (<td className={`left ${quitterColor}`}>{timeString}</td>);
   }
 
   function renderComment(comment) {
@@ -68,7 +71,7 @@ const RaceResult = (props) => {
       <tr key={i+1}>
         {renderPlace(result.place)}
         <td className="left">{result.player}</td>
-        {renderRaceTime(result.time)}
+        {renderRaceTime(result.time, result.place)}
         {renderComment(result.message)}
         {renderTrueSkill(result.oldtrueskill, result.newtrueskill)}
         {renderTrueSkillDelta(result.trueskillchange)}

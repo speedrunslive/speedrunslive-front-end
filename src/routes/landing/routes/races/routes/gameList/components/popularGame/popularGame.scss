@@ -19,7 +19,8 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         .game-thumbnail{
-          @include gameThumbnail(10%, 100%);
+          float:left;
+          @include imageThumbnail(10%, 100%);
         }
         .panel-contents{
             width:87%;
