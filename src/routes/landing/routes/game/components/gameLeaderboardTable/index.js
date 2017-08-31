@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 import './gameLeaderboardTable.scss';
 
@@ -9,7 +10,7 @@ const GameLeaderboardTable = (props) => {
     return (
       <tr>
         <td>{(player.rank) ? `#${player.rank}` : null}</td>
-        <td>{player.name}</td>
+        <td><Link to={`/profile/${player.name}`}>{player.name}</Link></td>
         <td>{(player.trueskill) ? Math.trunc(player.trueskill) : null}</td>
       </tr>
     );
