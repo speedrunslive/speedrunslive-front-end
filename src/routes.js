@@ -17,6 +17,7 @@ import PastResults from './routes/landing/routes/races/routes/pastResults';
 import RaceStats from   './routes/landing/routes/races/routes/raceStats';
 import Game from        './routes/landing/routes/game';
 import PlayerProfile from './routes/landing/routes/profile';
+import LiveRaces from   './routes/landing/routes/races/routes/live';
 
 // Display Components
 import NotFound from      './routes/error/components/notFound';
@@ -37,6 +38,7 @@ import PromoBody from     './routes/landing/routes/promotion/components/promoBod
 import StreamsContainer from './routes/landing/routes/streams/containers/streams';
 import GameBody from      './routes/landing/routes/game/components/gameBody'; 
 import PlayerProfileBody from './routes/landing/routes/profile/components/playerProfileBody';
+import LiveRacesListContainer from './routes/landing/routes/races/routes/live/containers/liveRacesList';
 
 import IndividualRaceResult from './routes/landing/routes/races/routes/result/components/individualRaceResult';
 
@@ -55,6 +57,10 @@ export default function (props = {}) {
           <IndexRedirect to="/" />
         </Route>
         <Route path="races" component={Races}>
+          <IndexRedirect to="live" />
+          <Route path="live" component={LiveRaces}>
+            <IndexRoute component={LiveRacesListContainer} />
+          </Route>
           <Route path="gamelist" component={GameList}>
             <IndexRedirect to="popular" />
             <Route path="popular" component={PopularList} />

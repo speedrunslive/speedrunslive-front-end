@@ -1,0 +1,59 @@
+@import '~css/mixins';
+@import '~css/variables';
+
+$panel-height: 60px;
+$panel-pad: 5px;
+
+.live-race {
+  @include srlPanel(100%,null);
+  min-height:$panel-height;
+  margin-bottom: 10px;
+  padding: $panel-pad;
+  min-width: 300px;
+
+  font-weight: $bold;
+  text-shadow: $text-shadow-base;
+
+  // clearfix
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+  img {
+    display:block;
+    float:left;
+    $image-height: ($panel-height - ($panel-pad * 2.1));
+    @include imageThumbnail(75px, $image-height);
+  }
+
+  div {
+    float:left;
+  }
+  h2 {
+    margin-top:0;
+  }
+
+  .race-details {
+    width: 65%;
+    word-break: break-all;
+  }
+
+  .race-status {
+    float: right;
+    text-align: right;
+  }
+
+  .green {
+    color: $green-light;
+  }
+
+  &:hover {
+    background: linear-gradient(to bottom, $dark-red, darken($dark-red,10%));
+    border-color: $brick-red $dark-red $black $brick-red;
+  }
+}
