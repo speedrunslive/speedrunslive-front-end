@@ -13,7 +13,8 @@ import gameStats from './routes/landing/routes/game/containers/gameStats/reducer
 import trackedGoals from './routes/landing/routes/game/containers/trackedGoals/reducer';
 import gameLeaderboard from './routes/landing/routes/game/containers/gameLeaderboard/reducer';
 import playerData from './routes/landing/routes/profile/containers/playerData/reducer';
-import playerGameList from './routes/landing/routes/profile/containers/playerGameList/reducer'
+import playerGameList from './routes/landing/routes/profile/containers/playerGameList/reducer'; playerStats
+import playerStats from './routes/landing/routes/profile/containers/playerStats/reducer';
 
 const appReducers = combineReducers({
   alphaList,
@@ -30,6 +31,7 @@ const appReducers = combineReducers({
   gameLeaderboard,
   playerData,
   playerGameList,
+  playerStats,
   routing: routerReducer
 });
 

@@ -8,9 +8,16 @@ class PlayerGameListContainer extends Component {
   componentDidMount(){
     this.props.fetchPlayerGameList(this.props.player);
   }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.player != this.props.player) {
+      this.props.fetchPlayerGameList(newProps.player);
+    }
+  }
+  
   render() {
     return (
-      <PlayerGameList playerGameList={this.props.playerGameList} player={this.props.player} />
+      <PlayerGameList playerGameList={this.props.playerGameList} player={this.props.player} game={this.props.game} />
     );
   }
 }
