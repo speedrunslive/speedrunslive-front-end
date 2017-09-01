@@ -3,6 +3,7 @@ import React from 'react';
 import RaceResultListContainer from '../../../../../../shared/containers/raceResultList';
 import PlayerDataContainer from '../../containers/playerData';
 import PlayerGameListContainer from '../../containers/playerGameList';
+import PlayerStatsContainer from '../../containers/playerStats';
 
 const PlayerProfileBody = (props) => {
   const {page, game, player} = props.params;
@@ -13,10 +14,6 @@ const PlayerProfileBody = (props) => {
     }
   }
 
-  function renderParam(param) {
-    return <p>{param}</p>;
-  }
-
   return (
     <div className='player-profile-body'>
       <div className='col-md-2'>
@@ -24,15 +21,12 @@ const PlayerProfileBody = (props) => {
       </div>
 
       <div className='col-md-4'>
-        <PlayerGameListContainer player={player} />
+        <PlayerGameListContainer player={player} game={game} />
       </div>
       
       <div className='col-md-6'>
-        <h1>Stats</h1>
-        <p>Nerdy Numbers</p>
-        
+        <PlayerStatsContainer player={player} game={game}/>
         <RaceResultListContainer player={player} game={game} page={page} pageSize={16}/>
-
       </div>
     </div>
   );

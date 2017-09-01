@@ -1,25 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {convertSecondsToRaceTime, addOrdinalIndicator, getCssClassForRank} from '../../../utils';
+import {convertSecondsToRaceTime, addOrdinalIndicator, 
+        getCssClassForRank, convertTimestampToDateString} from '../../../utils';
 
 import './raceResult.scss';
 
 const RaceResult = (props) => {
 
   const raceResult = props.raceResult;
-
-  function convertTimestampToDateString(timestamp) {
-    var dateObj = new Date(timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    var year = dateObj.getFullYear();
-    var month = months[dateObj.getMonth()];
-    var date = dateObj.getDate();
-    var hour = dateObj.getHours().toString().padStart(2, '0');;
-    var min = dateObj.getMinutes().toString().padStart(2, '0');
-    var sec = dateObj.getSeconds().toString().padStart(2, '0');
-    var time = month + ' ' + date + ', ' + year + ' - ' + hour + ':' + min + ':' + sec ;
-    return time;
-  }
 
   function renderPlace(place) {
     let placeColor = getCssClassForRank(place);
@@ -63,7 +51,9 @@ const RaceResult = (props) => {
   }
 
   // Positive true skill = green, else red font.
-  function renderTrueSkillDelta(trueskillchange) {
+  function renderTrueSkillDelta(trueskillchange, newtrueskill) {
+    if (newtrueskill == 0 ) return <td> </td>;
+
     var trueskillColor = '';
     if (trueskillchange > 0) { trueskillColor = 'green'; } 
     else if (trueskillchange < 0) { trueskillColor = 'red'; }
@@ -78,7 +68,7 @@ const RaceResult = (props) => {
         {renderRaceTime(result.time, result.place)}
         {renderComment(result.message)}
         {renderTrueSkill(result.oldtrueskill, result.newtrueskill)}
-        {renderTrueSkillDelta(result.trueskillchange)}
+        {renderTrueSkillDelta(result.trueskillchange, result.newtrueskill)}
       </tr>
     );
   }

@@ -4,7 +4,6 @@ import {Link} from 'react-router';
 import './playerData.scss';
 
 const PlayerData = (props) => {
-  console.log(props);
   const {name,channel,api,twitter,youtube,country} = props.playerData.srl;
   const {logo} = props.playerData.external;
 

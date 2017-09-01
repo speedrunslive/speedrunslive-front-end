@@ -1,6 +1,10 @@
 @import '~css/variables';
 
 .player-game-list {
+  .selected {
+    background-color: lighten($main-background, 3%);
+  }
+
   a {
     &:first-child {
       margin-bottom: 8px;

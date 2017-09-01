@@ -115,3 +115,16 @@ export function getCssClassForRank(place) {
   else {rankColor = 'loser-place';}
   return rankColor;
 }
+
+export function convertTimestampToDateString(timestamp) {
+  var dateObj = new Date(timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = dateObj.getFullYear();
+  var month = months[dateObj.getMonth()];
+  var date = dateObj.getDate();
+  var hour = dateObj.getHours().toString().padStart(2, '0');;
+  var min = dateObj.getMinutes().toString().padStart(2, '0');
+  var sec = dateObj.getSeconds().toString().padStart(2, '0');
+  var time = month + ' ' + date + ', ' + year + ' - ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
