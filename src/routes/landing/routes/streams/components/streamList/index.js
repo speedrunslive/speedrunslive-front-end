@@ -4,7 +4,7 @@ import StreamListItem from '../streamListItem';
 import './streamList.scss';
 
 function buildStreamList(stream, onClick){
-  return <StreamListItem onClick={onClick} stream={stream} />;
+  return <StreamListItem key={stream.name} onClick={onClick} stream={stream} />;
 }
 
 const StreamList = (props) => {

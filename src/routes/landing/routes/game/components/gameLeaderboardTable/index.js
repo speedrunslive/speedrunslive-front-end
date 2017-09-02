@@ -8,7 +8,7 @@ const GameLeaderboardTable = (props) => {
 
   function renderTableRow(player) {
     return (
-      <tr>
+      <tr key={player.name}>
         <td>{(player.rank) ? `#${player.rank}` : null}</td>
         <td><Link to={`/profile/${player.name}`}>{player.name}</Link></td>
         <td>{(player.trueskill) ? Math.trunc(player.trueskill) : null}</td>

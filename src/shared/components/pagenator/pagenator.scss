@@ -1,0 +1,27 @@
+.pagenator {
+  margin-bottom: 12px;
+  a, button {
+    width: 22%;
+    margin-right: 4%;
+  }
+  :last-child {
+    margin-right: 0;
+  }
+
+  span {
+    display: inline-block;
+    line-height: 1.2em;
+    width: 100%;
+  }
+  .first { background: url(http://cdn.speedrunslive.com/images/arrow_first.png) top center no-repeat; }
+  .previous { background: url(http://cdn.speedrunslive.com/images/arrow_prev.png) top center no-repeat; }
+  .next { background: url(http://cdn.speedrunslive.com/images/arrow_next.png) top center no-repeat; }
+  .last { background: url(http://cdn.speedrunslive.com/images/arrow_last.png) top center no-repeat; }
+  a:hover {
+    span {background-position-y:bottom; }
+  }
+  button[disabled] {
+    opacity: .3;
+    cursor: default;
+  }
+}

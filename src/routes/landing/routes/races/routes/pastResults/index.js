@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import './pastResults.scss';
 import Translate from 'react-translate-component';
 import counterpart from 'counterpart';
 

@@ -18,50 +18,52 @@ const PlayerStats = (props) => {
   function renderStats(stats) {
     return (
       <table>
-        <tr>
-          <td>First Race</td>
-          <td>
-            <Link to={`/races/result/${stats.firstRace}`}>
-              {convertTimestampToDateString(stats.firstRaceDate)}
-            </Link>
-            </td>
-        </tr>
-        <tr>
-          <td>Total Races</td>
-          <td>{stats.totalRaces}</td>
-        </tr>
-        <tr>
-          <td>Time Played</td>
-          <td>{convertSecondsToTimeString(stats.totalTimePlayed)}</td>
-        </tr>
-        <tr>
-          <td>Total Games</td>
-          <td>{stats.totalGames}</td>
-        </tr>
-        <tr>
-          <td>Rank</td>
-          <td>{(stats.rank > 0) ? addOrdinalIndicator(stats.rank) : ''}</td>
-        </tr>
-        <tr className='first-place'>
-          <td>1sts</td>
-          <td>{stats.totalFirstPlace}</td>
-        </tr>
-        <tr className='second-place'>
-          <td>2nds</td>
-          <td>{stats.totalSecondPlace}</td>
-        </tr>
-        <tr className='third-place'>
-          <td>3rds</td>
-          <td>{stats.totalThirdPlace}</td>
-        </tr>
-        <tr className='red'>
-          <td>Forfeits</td>
-          <td>{stats.totalQuits}</td>
-        </tr>
-        <tr className='red'>
-          <td>DQs</td>
-          <td>{(stats.totalDisqualifications > 0) ? stats.totalDisqualifications : ''}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>First Race</td>
+            <td>
+              <Link to={`/races/result/${stats.firstRace}`}>
+                {convertTimestampToDateString(stats.firstRaceDate)}
+              </Link>
+              </td>
+          </tr>
+          <tr>
+            <td>Total Races</td>
+            <td>{stats.totalRaces}</td>
+          </tr>
+          <tr>
+            <td>Time Played</td>
+            <td>{convertSecondsToTimeString(stats.totalTimePlayed)}</td>
+          </tr>
+          <tr>
+            <td>Total Games</td>
+            <td>{stats.totalGames}</td>
+          </tr>
+          <tr>
+            <td>Rank</td>
+            <td>{(stats.rank > 0) ? addOrdinalIndicator(stats.rank) : ''}</td>
+          </tr>
+          <tr className='first-place'>
+            <td>1sts</td>
+            <td>{stats.totalFirstPlace}</td>
+          </tr>
+          <tr className='second-place'>
+            <td>2nds</td>
+            <td>{stats.totalSecondPlace}</td>
+          </tr>
+          <tr className='third-place'>
+            <td>3rds</td>
+            <td>{stats.totalThirdPlace}</td>
+          </tr>
+          <tr className='red'>
+            <td>Forfeits</td>
+            <td>{stats.totalQuits}</td>
+          </tr>
+          <tr className='red'>
+            <td>DQs</td>
+            <td>{(stats.totalDisqualifications > 0) ? stats.totalDisqualifications : ''}</td>
+          </tr>
+        </tbody>
       </table>
     );
   }
