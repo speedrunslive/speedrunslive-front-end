@@ -9,7 +9,7 @@ const LiveRacesList = (props) => {
   function renderRace(race){
     // Do not render races recorded or complete
     if (race.state <= 3) {
-      return <LiveRace race={race} />
+      return <LiveRace key={race.id} race={race} />
     }
   }
 
