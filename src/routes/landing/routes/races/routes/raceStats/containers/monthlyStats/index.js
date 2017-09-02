@@ -9,12 +9,12 @@ class MonthlyStatsContainer extends Component {
       this.props.fetchMonthlyStats();
     }
   }
-renderMonth(month) {
-  return <MonthlyStats stats={month} />;
+renderMonth(month, i) {
+  return <MonthlyStats key={i} stats={month} />;
 }
 renderYear(year) {
   return (
-    <div>
+    <div key={year.year}>
       <h3>{year.year}</h3>
         <div className='year'>
         {year.stats.map(this.renderMonth)}

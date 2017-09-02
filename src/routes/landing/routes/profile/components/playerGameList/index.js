@@ -12,7 +12,7 @@ const PlayerGameList = (props) => {
     const selectedClass = (props.game === game.gameAbbrev) ? 'selected' : ''; 
     let placeColor = getCssClassForRank(i+1);
     return (
-        <Link className={`${placeColor} ${selectedClass}`} to={`/profile/${player}/game/${game.gameAbbrev}`}>
+        <Link key={game.gameAbbrev} className={`${placeColor} ${selectedClass}`} to={`/profile/${player}/game/${game.gameAbbrev}`}>
           <li>{game.gameName}</li>
         </Link>
     );
