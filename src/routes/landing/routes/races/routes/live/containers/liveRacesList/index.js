@@ -26,7 +26,6 @@ class LiveRacesListContainer extends Component {
 
   render() {
     if (!this.props.liveRaces.races) return null;
-
     return (
       <LiveRacesList races={this.props.liveRaces.races} />
     );

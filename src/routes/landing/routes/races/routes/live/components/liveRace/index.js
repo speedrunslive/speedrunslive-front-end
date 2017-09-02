@@ -7,19 +7,16 @@ import './liveRace.scss';
 import blankImage from '../../../../../../../../css/images/blank-image.png';
 
 const LiveRace = (props) => {
-  const {game,goal,time,statetext,numentrants,state,id} = props.race;
+  const {game,goal,statetext,numentrants,id} = props.race;
 
-  function getTimer() {
-    let raceStart = new Date(time * 1000);
-    return <span className='green'><LiveRaceTimer start={raceStart} /></span>
-
+  function getTimer(time) {
+    return <span className='green'><LiveRaceTimer start={time} /></span>
   }
 
-  function renderRaceStatus() {
-    if (state === 3) {
-      return getTimer();
+  function renderRaceStatus(race) {
+    if (race.state === 3) {
+      return getTimer(race.time);
     }
-
     else {
       return <span>{statetext}</span>
     }
@@ -36,7 +33,7 @@ const LiveRace = (props) => {
           </div>
           <div className="race-status">
             <h2>{numentrants} entrant(s)</h2>
-            {renderRaceStatus()}
+            {renderRaceStatus(props.race)}
           </div>
       </li>
     </Link>
