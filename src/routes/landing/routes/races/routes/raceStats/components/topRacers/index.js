@@ -1,20 +1,21 @@
 import React from 'react';
 import * as sort from '../../containers/topRacers/constants';
+import {Link} from 'react-router';
 import {convertSecondsToTimeString} from '../../../../../../../../utils';
 
 import './topRacers.scss'; 
 
 const TopRacers = (props) => {
 
-  function createRow(racer, i){
+  function createRow(player, i){
     return (
       <tr key={i+1}>
         <td>{i+1}</td>
-        <td>{racer.name}</td>
-        <td>{racer.totalRaces}</td>
-        <td>{racer.totalFirstPlace}</td>
-        <td>{convertSecondsToTimeString(racer.totalTimePlayed)}</td>
-        <td>{racer.totalGames}</td>
+        <td><Link to={`/profile/${player.name}`}>{player.name}</Link></td>
+        <td>{player.totalRaces}</td>
+        <td>{player.totalFirstPlace}</td>
+        <td>{convertSecondsToTimeString(player.totalTimePlayed)}</td>
+        <td>{player.totalGames}</td>
       </tr>
     );
   }
