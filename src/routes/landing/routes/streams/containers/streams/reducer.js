@@ -1,6 +1,6 @@
-import {FETCH_STREAMS, SET_FEATURED_STREAM} from './constants';
+import {FETCH_STREAMS, SET_FEATURED_STREAM, FILTER_STREAMS} from './constants';
 
-const INITIAL_STATE = {all: [], featuredStream:{}};
+const INITIAL_STATE = {all: [], featuredStream:{}, filterText:''};
 
 const streams = (state = INITIAL_STATE, action) => {
   switch(action.type){
@@ -8,21 +8,24 @@ const streams = (state = INITIAL_STATE, action) => {
       var streams = action.payload._source.channels;
       var featuredStream = state.featuredStream;
       if (!featuredStream || Object.keys(featuredStream).length === 0){
-        featuredStream = pickFeaturedStream(streams);
+        featuredStream = pickRandomStream(streams);
         streams =  setFeaturedStream(streams, featuredStream);
       }
-      return {all: streams, featuredStream};
+      return {...state, all: streams, featuredStream};
     }
     case SET_FEATURED_STREAM:{
       const newStreamList = setFeaturedStream(state.all, action.payload);
-      return {all: newStreamList, featuredStream:action.payload};
+      return {...state, all: newStreamList, featuredStream:action.payload};
+    }
+    case FILTER_STREAMS:{
+      return {...state, filterText:action.payload}
     }
     default:
       return state;
   }
 };
 
-const pickFeaturedStream = (streams) =>{
+const pickRandomStream = (streams) =>{
   var randomStreamIdx = Math.floor(Math.random() * streams.length);
   return streams[randomStreamIdx];
 }
