@@ -1,0 +1,23 @@
+@import '~css/mixins';
+@import '~css/variables';
+
+.live-race-entrants {
+  @include srlTable();
+    
+  tbody {
+    td{
+    text-align: left;
+    }
+  }
+
+  .green {
+    font-weight: 600;
+    color:$green-light;
+  }
+  .true-skill {
+    font-size: .9em;
+    font-style: italic;
+    color: $grey-darker;
+    text-shadow: $text-shadow-base;
+  }
+}

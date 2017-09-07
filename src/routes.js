@@ -39,6 +39,7 @@ import StreamsContainer from './routes/landing/routes/streams/containers/streams
 import GameBody from      './routes/landing/routes/game/components/gameBody'; 
 import PlayerProfileBody from './routes/landing/routes/profile/components/playerProfileBody';
 import LiveRacesListContainer from './routes/landing/routes/races/routes/live/containers/liveRacesList';
+import LiveRaceViewerContainer from './routes/landing/routes/races/routes/live/containers/liveRaceViewer';
 
 import IndividualRaceResult from './routes/landing/routes/races/routes/result/components/individualRaceResult';
 
@@ -51,6 +52,9 @@ export default function (props = {}) {
 
   return ( 
     <Router history={history}>
+      {/** Display Live Race Without Header/Footer */}
+      <Route path="races/live/:raceId" component={LiveRaceViewerContainer} />
+      
       <Route path="/" component={Landing}>
         <IndexRoute component={StreamsContainer} />
         <Route path="streams" component={Streams}>

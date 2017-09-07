@@ -16,6 +16,7 @@ import playerData from './routes/landing/routes/profile/containers/playerData/re
 import playerGameList from './routes/landing/routes/profile/containers/playerGameList/reducer'; 
 import playerStats from './routes/landing/routes/profile/containers/playerStats/reducer'; 
 import liveRaces from './routes/landing/routes/races/routes/live/containers/liveRacesList/reducer';
+import liveRaceSelected from './routes/landing/routes/races/routes/live/containers/liveRaceViewer/reducer';
 
 const appReducers = combineReducers({
   alphaList,
@@ -34,6 +35,7 @@ const appReducers = combineReducers({
   playerGameList,
   playerStats,
   liveRaces,
+  liveRaceSelected,
   routing: routerReducer
 });
 

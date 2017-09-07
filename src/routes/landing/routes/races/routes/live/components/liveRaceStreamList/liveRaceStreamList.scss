@@ -1,0 +1,55 @@
+@import '~css/variables';
+
+.live-race-stream-list{
+  .stream {
+    top:0;
+    left:0;
+    padding:0;
+    position:relative;
+    img, stream-header {
+      width:100%;
+    }
+    iframe {
+      border:none;
+      height: 100%;
+      width:100%;
+    }
+    .iframe-wrapper {
+      position: absolute;
+      overflow: hidden;
+      top:0;
+      width:100%;
+      height:100%;
+    }
+
+  // linear-gradient(0deg,rgba(0,0,0,.8) 0,rgba(0,0,0,.35) 60%,transparent);
+
+    &:hover{
+      .stream-header {opacity: 1;}
+    }
+    .stream-header {
+      opacity: 0;
+      transition: opacity .15s ease-out;
+      position: absolute;
+      z-index: 9999;
+      background: linear-gradient(rgba(0,0,0,.95), transparent);
+      width: 100%;
+      color:#fff;
+      font-size: 1.5em;
+      padding:10px 15px 20px;
+      text-shadow: 0 0 6px #222;
+      div {
+        display:inline-block;
+      }
+      .text-btn {
+        user-select: none;
+        float:right;
+        font-size:1.2em;
+        &:hover {
+          color:$srl-blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

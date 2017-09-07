@@ -1,0 +1,69 @@
+@import '~css/mixins';
+@import '~css/variables';
+
+.live-race-viewer-container {
+  $utility-height: 5%;
+  $entrants-list-width: 20%;
+
+  .display {
+    display:block;
+  }
+
+  .hidden {
+    display:none;
+  }
+
+  .sidebar, iframe {
+    height: 100%;
+    width: 100%;
+    border:none;
+  }
+
+  &:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  .streams-wrapper {
+    width:100% - $entrants-list-width;
+    float: left;
+  }
+  .entrants-list {
+    background:$darker-grey-background;
+    width:$entrants-list-width;
+    float: left;
+    height:(100%) - $utility-height;
+    position: fixed;
+    top:$utility-height;
+    right: 0;
+  }
+  .utility {
+    height:$utility-height;
+    top:0;
+    position: fixed;
+    width:100%;
+    background:$darker-grey-background;
+    .btn {
+      width:40px;
+    }
+    select {
+      border-radius: 5px;
+      background: $dark-grey-background;
+      color: darken($white,5%);
+      height: 80%;
+      margin: 6px 15px 0 5px;
+    }
+    img {
+      width: 24px;
+      margin-top: 8px;
+      display: block;
+      float: left;
+    }
+  }
+
+}
+
+// header{display:none;}
+// footer{display:none;}
