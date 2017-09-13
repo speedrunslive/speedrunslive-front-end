@@ -43,6 +43,3 @@ class LiveRaceTimer extends Component {
 }
 
 export default LiveRaceTimer;
-/**
- * 
- */

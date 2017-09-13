@@ -47,15 +47,19 @@
       bottom: 0;
       right: 21px;
       font-size: em(12);
-      float: right;
     }
-    .icon {
-      height: 12px;
-      width: 12px;
-      float: right;
+    .twitch-icon {
+      width: 13px;
       position: absolute;
       bottom: 1px;
-      right: 4px;
+      right: 2px;
+    }
+    .racing-icon {
+      position: absolute;
+      top:0;
+      right:0;
+      opacity: .25;
+      width:21px;
     }
   }
 }
