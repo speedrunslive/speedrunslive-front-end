@@ -14,14 +14,21 @@ const StreamListItem = (props) => {
     <div onClick={()=>{onClick(stream)}} className={`stream-list-item ${featuredStream}`}>
       <img className="stream-icon" src={stream.image.size70}></img>
       <div className="stream-info">
+        {renderRacingIcon(stream.is_racing)}
         <span className="stream-name">{stream.display_name}</span>
         <span className="stream-title">{decodeHtmlEntities(stream.title)}</span>
         <span className="game-name">{stream.meta_game}</span>
-        <img className="icon" src="http://cdn.speedrunslive.com/images/ttv_icon20px.png"></img>
+        <img className="twitch-icon" src="http://cdn.speedrunslive.com/images/ttv_icon20px.png"></img>
         <span className="viewers">{stream.current_viewers}</span>
       </div>
     </div>
   );
+
+  function renderRacingIcon(isRacing) {
+    if (isRacing===1) {
+      return <img className='racing-icon' src="http://cdn.speedrunslive.com/images/liveraces.png" alt="Is Racing" />
+    }
+  }
 }
 export default StreamListItem;
 
