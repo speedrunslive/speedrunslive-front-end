@@ -5,9 +5,9 @@ import './landing.scss';
 
 const Landing = (props) => {
   return (
-    <div id="mainContent">
-      <Header />
+    <div id="main-content">
         <div className="wrap">
+          <Header />
           {props.children}
         </div>
       <Footer />

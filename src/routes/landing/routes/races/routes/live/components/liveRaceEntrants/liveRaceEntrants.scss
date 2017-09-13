@@ -2,12 +2,20 @@
 @import '~css/variables';
 
 .live-race-entrants {
+
+  img {cursor: pointer; width: 18px;}
+  img:hover { transform: scale(1.1);}
+
   @include srlTable();
-    
   tbody {
     td{
-    text-align: left;
+      text-align: left;
     }
+  }
+
+  .player {
+    width:110px;
+    word-wrap: break-word;
   }
 
   .green {

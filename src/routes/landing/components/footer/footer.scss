@@ -6,10 +6,9 @@ footer {
     color: $grey-darker;
     font-size: em(12);
     border-top: 1px $coal-grey dotted;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    clear:both;
+    margin-top: -#{$footer-height};
     height:$footer-height;
 
     div {

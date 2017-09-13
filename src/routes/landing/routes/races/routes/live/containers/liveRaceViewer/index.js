@@ -1,107 +1,115 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchLiveRaceEntrants, addEntrantToStreamList, removeEntrantFromStreamList} from './actions';
+import {Link} from 'react-router';
+import {fetchLiveRaceEntrants, addToSelectedStreamList, removeFromSelectedStreamList, resetSelectedRaceState} from './actions';
 
 import LiveRaceEntrants from '../../components/liveRaceEntrants';
 import LiveRaceStreamList from  '../../components/liveRaceStreamList';
-import {getRaceEntrantsSelector, getStreamingRaceEntrantsSelector} from '../../selectors';
-import './test.scss';
+import LiveRaceSelectBox from '../../components/liveRaceSelectBox';
+import LiveRaceTwitchChats from '../../components/liveRaceTwitchChats';
+import {getRaceEntrantsSelector} from '../../selectors';
+import './liveRaceViewer.scss';
 
+const RACE_DETAILS = 'Race Details';
+
+/**
+ * @class LiveRaceViewerContainer - SRL Live Race viewer page
+ * 
+ * This container is responsible for fetching racers and mediating all interactions between it's child components and the redux store.
+ * It is also responsible for some displaying the sidebar GUI. 
+ * 
+ * Ideally sidebar should be broken out, but until it's required to be re-usable - will keep as is for 
+ * the convenience of passing props to only 1 level of immediate children.
+ * 
+ * Local State
+ * @param {string} selected - current selected value in the dropdown box
+ * @param {boolean} sidebarMinimized - toggle sidebar GUI
+ * 
+ * Redux State
+ * @param {Object} race - Main race object from the API
+ * @param {Object} entrants - Race entrants, with twitch property null if not streaming
+ * @param {Array} selectedStreams - Streams to display on screen
+ * 
+ */
 class LiveRaceViewerContainer extends Component {
   constructor(props) {
     super(props);
-    const cols = [2,3,4,6,12];
-    const colIdx = 4;
-    this.state = {colIdx: 3, columns:cols, selected:'race'};
-    this.getColumnSize = this.getColumns.bind(this);
-    this.handleColChange = this.handleColChange.bind(this);
+    this.state = {selected:RACE_DETAILS, sidebarMinimized:true};
+    this.callApi = this.callApi.bind(this);
   }
+
+  //Life Cycle Methods
   componentDidMount() {
-    this.props.fetchLiveRaceEntrants(this.props.params.raceId);
+    const PAGE_UPDATE_INTERVAL = 60000; //60 seconds
+    this.callApi();
+    this.interval = setInterval(this.callApi, PAGE_UPDATE_INTERVAL);
   }
 
-  getColumns() {
-    return this.state.columns[this.state.colIdx];
-  }
-
-  handleColChange(direction) {
-    if (direction>0){
-      if (this.state.colIdx>=this.state.columns.length-1) return;
-    } else {
-      if (this.state.colIdx==0) return;
-    }
-    
-    this.setState({colIdx: this.state.colIdx + direction});
-  }
-
-  handleCheckboxChange(checked, player) {
-    if (checked) {
-      this.props.addEntrantToStreamList(player);
-    }
-    else {
-      this.props.removeEntrantFromStreamList(player);
-    }
-  }
-
-  handleStreamRemove(player) {
-    this.props.removeEntrantFromStreamList(player);
-  }
-
-  renderStreamerDropdown(entrants) {
-    let streamingEntrants = [];
-    for (var i in entrants) {
-      if (entrants[i].twitch) {
-        const name = entrants[i].twitch.channel.name;
-        streamingEntrants.push(<option value={name}> 💬 {name}</option>)
-      }
-    }
-    return streamingEntrants;
-  }
-
-  renderSideBar(entrants) {
-    // render everything, but only display one thing at a time. 
-    // this takes longer to load up front but then no delay when toggling chats.
-    let sideBarJsx = [];
-
-    let displayClass = (this.state.selected == 'race') ? 'display' : 'hidden';
-    sideBarJsx.push(<div className={displayClass}><LiveRaceEntrants key='race' race={this.props.race} entrants={this.props.entrants} handleCheckboxChange={this.handleCheckboxChange.bind(this)} /></div>);
-
-    for (var i in entrants) {
-        if (entrants[i].twitch) {
-        const name = entrants[i].twitch.channel.name;
-        let displayClass = (this.state.selected == name) ? 'display' : 'hidden';
-        sideBarJsx.push(<iframe key={name} className={displayClass} frameBorder="0" scrolling="no" src={`http://www.twitch.tv/${name}/chat?darkpopout`}></iframe>);
-      }
-    }
-
-    return sideBarJsx;
+  componentWillUnmount() {
+    this.props.resetSelectedRaceState();
+    clearInterval(this.interval);
   }
 
   render() {
-    console.log('this.props.streamingEntrants:', this.props.streamingEntrants);
-
-    if (!this.props.entrants) return null; //Loading
     if (!this.props.race) return null; // Loading
+    if (!this.props.entrants) return null; // Loading
+
+    const sidebarStatus = (this.state.sidebarMinimized) ? '' : 'sidebar-minimized'; 
 
     return (
-      <div className='live-race-viewer-container'>
-        <div className='streams-wrapper'>
-          <LiveRaceStreamList handleStreamRemove={this.handleStreamRemove.bind(this)} entrants={this.props.streamingEntrants} columns={this.getColumns()} />
+      <div className={`live-race-viewer-container ${sidebarStatus}`}>
+        <div className={`streams-wrapper`}>
+          <LiveRaceStreamList removeFromSelectedStreamList={this.props.removeFromSelectedStreamList} selectedStreams={this.props.selectedStreams} />
         </div>
 
-        <div className='entrants-list'>
-          <div className='utility'>
-            <img src='https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png' />
-            <select onChange={(e)=>{this.setState({selected:e.target.value})}}>
-              <option value='race'>Race Details</option>
-              {this.renderStreamerDropdown(this.props.streamingEntrants)}
-            </select>
-            <div onClick={() => this.handleColChange(1)} className='btn blue-hover'>+</div> <div onClick={() => this.handleColChange(-1)} className='btn blue-hover'>-</div>
-          </div>
-          <div className='sidebar'>
-            {this.renderSideBar(this.props.entrants)}
-          </div>
-        </div>
+        {this.renderSidebar()}
+      </div>
+    );
+  }
+
+  //Helper Methods
+  callApi() {
+    this.props.fetchLiveRaceEntrants(this.props.params.raceId);
+  }
+
+  handleStreamListChange(isAdded, player) {
+    if (isAdded) {
+      this.props.addToSelectedStreamList(player);
+    }
+    else {
+      this.props.removeFromSelectedStreamList(player);
+    }
+  }
+
+  renderEntrants() {
+    let displayClass = (this.state.selected === RACE_DETAILS) ? 'display' : 'hidden';
+    return (
+      <div className={`live-race-entrants-wrapper ${displayClass}`}>
+        <LiveRaceEntrants race={this.props.race} entrants={this.props.entrants} handleStreamListChange={this.handleStreamListChange.bind(this)}
+                          selectedStreams={this.props.selectedStreams} />
+      </div>
+    );
+  }
+
+  toggleSideBar() {
+    this.setState({sidebarMinimized: !this.state.sidebarMinimized});
+  }
+
+  handleSelectBoxChange(optionSelected) {
+    this.setState({selected: optionSelected}); 
+  }
+
+  renderSidebar() {
+    return (
+      <div className={`sidebar`}>
+        <span onClick={this.toggleSideBar.bind(this)} className='arrow'>&nbsp;</span>
+        <Link to="/races/live"><span className='srl-logo'>&nbsp;</span></Link>
+        <LiveRaceSelectBox key={this.props.race.id} defaultOption={RACE_DETAILS} options={this.props.selectedStreams} 
+                           handleSelectBoxChange={this.handleSelectBoxChange.bind(this)} />
+
+        {this.renderEntrants()}
+
+        <LiveRaceTwitchChats streams={this.props.selectedStreams} selectedChat={this.state.selected}/>
       </div>
     );
   }
@@ -109,9 +117,10 @@ class LiveRaceViewerContainer extends Component {
 function mapStateToProps (state) { 
  return {
    entrants: getRaceEntrantsSelector(state),
-   streamingEntrants: getStreamingRaceEntrantsSelector(state),
-   race: state.liveRaceSelected || {}
+   race: state.liveRaceSelected.race || {},
+   selectedStreams: state.liveRaceSelected.selectedStreams
  }
 }
 
-export default connect(mapStateToProps, {fetchLiveRaceEntrants, addEntrantToStreamList, removeEntrantFromStreamList})(LiveRaceViewerContainer);
+export default connect(mapStateToProps, {fetchLiveRaceEntrants, addToSelectedStreamList, 
+                                        removeFromSelectedStreamList, resetSelectedRaceState})(LiveRaceViewerContainer);

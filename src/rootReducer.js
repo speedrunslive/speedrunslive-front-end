@@ -15,7 +15,7 @@ import gameLeaderboard from './routes/landing/routes/game/containers/gameLeaderb
 import playerData from './routes/landing/routes/profile/containers/playerData/reducer';
 import playerGameList from './routes/landing/routes/profile/containers/playerGameList/reducer'; 
 import playerStats from './routes/landing/routes/profile/containers/playerStats/reducer'; 
-import liveRaces from './routes/landing/routes/races/routes/live/containers/liveRacesList/reducer';
+import liveRaces from './routes/landing/routes/races/routes/live/containers/liveRacePanelList/reducer';
 import liveRaceSelected from './routes/landing/routes/races/routes/live/containers/liveRaceViewer/reducer';
 
 const appReducers = combineReducers({

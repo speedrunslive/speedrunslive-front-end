@@ -170,7 +170,7 @@ const CommandList = () => {
         <p>Grounds for disqualification:</p>
         <ul>
           <li>an entrant who breaks the rules of the goal</li>
-          <li>an entrant who cheats outpull-right</li>
+          <li>an entrant who cheats</li>
           <li>an entrant who disappears for too long without quitting</li>
         </ul>
 
