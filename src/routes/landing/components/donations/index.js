@@ -5,7 +5,7 @@ import './donations.scss';
 const Donations = ({donations}) => {
   const SERVER_COST = 65;
   const date = new Date();
-  const month = numberToMonth(date.getMonth());
+  const month = numberToMonth(date.getMonth()+1);
   const year = date.getFullYear();
 
   if (!donations.amount){return null}
