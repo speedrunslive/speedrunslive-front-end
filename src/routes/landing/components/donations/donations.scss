@@ -5,12 +5,9 @@
   text-align: center;
   width:250px;
   margin-top:3px;
-  a{
-    text-decoration:none;
-  }
+  a {text-decoration:none;}
 
   .donations-bar{
-    display: table;
     margin: 2px auto;
     width:250px;
     height:8px;
@@ -21,24 +18,23 @@
     border-color: $coal-grey $black $black $coal-grey;
 
     .donations-total{
+      opacity:.8;
       width:50%;
       height:6px;
       border-radius:inherit;
       background: $srl-yellow-dark;
       border: 1px solid;
-      border-color: $srl-yellow $srl-yellow-dark $srl-yellow-dark $srl-yellow
+      border-color: $srl-yellow $srl-yellow-dark $srl-yellow-dark $srl-yellow;
+    }
+
+    .donation-met {
+      background: $green-light;
+      border:$fern-green;
     }
   }
 }
 
 .donations:hover{
-  strong{
-    color:$srl-yellow;
-  }
-    .donations-bar{
-      background:lighten($dark-grey,8%);
-      .donations-total{
-        background:lighten($srl-yellow-dark,8%);
-      }
-    }
+  strong{color:lighten($srl-yellow, 10%); }
+  .donations-total{opacity:1;}
 }
