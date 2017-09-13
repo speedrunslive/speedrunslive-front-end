@@ -2,11 +2,14 @@ import React from 'react';
 import LiveRaceTimer from '../../containers/liveRaceTimer';
 import {Link} from 'react-router';
 
-import './liveRace.scss';
+import './liveRacePanel.scss';
 
-import blankImage from '../../../../../../../../css/images/blank-image.png';
-
-const LiveRace = (props) => {
+/**
+ * LiveRacePanel - Display race details in a typical SRL Panel
+ * 
+ * @param {any} race - race to be displayed
+ */
+const LiveRacePanel = (props) => {
   const {game,goal,statetext,numentrants,id} = props.race;
 
   function getTimer(time) {
@@ -24,8 +27,8 @@ const LiveRace = (props) => {
 
   return (
     <Link to={`/races/live/${id}`}>
-      <li className='live-race'>
-          <img onError={(ev)=> ev.target.src=blankImage} 
+      <li className='live-race-panel'>
+          <img onError={(ev)=> ev.target.src=require('../../../../../../../../css/images/blank-image.png')} 
                 src={`http://cdn.speedrunslive.com/images/games/${game.abbrev}.jpg`} alt='Game Image'/>
           <div className='race-details'>
             <h2>{game.name}</h2>
@@ -40,4 +43,4 @@ const LiveRace = (props) => {
   );
 }
 
-export default LiveRace;
+export default LiveRacePanel;

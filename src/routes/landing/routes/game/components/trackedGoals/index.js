@@ -1,47 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {convertSecondsToRaceTime, addOrdinalIndicator, getCssClassForRank} from '../../../../../../utils';
+import * as raceHelper from '../../../../../../utils/raceHelper';
 
 import './trackedGoals.scss';
 
+/**
+ * TrackedGoals - Render table of top 5 racers for each given category 
+ * 
+ * @param {Array} trackedGoals - list of goal objects to parse
+ */
 const TrackedGoals = (props) => {
-
   const {trackedGoals} = props;
 
-    function renderPlace(place) {
-      let placeColor = getCssClassForRank(place);
-      return (
-        <td className={`left ${placeColor}`}>{addOrdinalIndicator(place)}</td>
-        );
-    }
-
-    function renderPlayer(player) {
-      return (
-        <td className='left'>
-          <Link to={`/profile/${player}`}>{player}</Link>
-        </td>
-      );
-    }
-
-    function renderRaceTime(seconds, race) {
-      return (
-      <td className={`left`}>
-        <Link to={`/races/result/${race}`}>{convertSecondsToRaceTime(seconds)}</Link>
-      </td>
-      );
-    }
-
-    function renderRow(result, i) {
-      let place = i+1;
-      if (place > 5) return null;
-    return (
-      <tr key={place}>
-        {renderPlace(place)}
-        {renderPlayer(result.player)}
-        {renderRaceTime(result.time, result.race)}
-      </tr>
-    );
-  }
+  return (
+    <div className='tracked-goals'>
+      <h1>Best Race Times</h1>
+      {trackedGoals.map(renderGoal)}
+    </div>
+  );
 
   function renderGoal(goal,i) {
     return (
@@ -62,15 +38,18 @@ const TrackedGoals = (props) => {
     );
   }
 
-  return (
-    <div className='tracked-goals'>
-      <h1>Best Race Times</h1>
-      {trackedGoals.map(renderGoal)}
-    </div>
-  );
-
+    function renderRow(result, i) {
+      let place = i+1;
+      if (place > 5) return null;
+      return (
+        <tr key={place}>
+          {raceHelper.renderPlace(place)}
+          {raceHelper.renderPlayer(result.player)}
+          <Link to={`/races/result/${result.race}`}>{raceHelper.renderRaceTime(result.time, place)}</Link>
+        </tr>
+      );
+  }
 }
-
 export default TrackedGoals;
 
 

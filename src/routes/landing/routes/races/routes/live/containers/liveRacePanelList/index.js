@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchLiveRaces} from './actions';
 
-import LiveRacesList from '../../components/liveRacesList';
+import LiveRacePanelList from '../../components/liveRacePanelList';
 
-class LiveRacesListContainer extends Component {
+class LiveRacePanelListContainer extends Component {
   constructor(props) {
     super(props);
     this.callApi = this.callApi.bind(this);
   }
   componentDidMount() {
-    const PAGE_UPDATE_INTERVAL = 30000; //30 seconds
+    const PAGE_UPDATE_INTERVAL = 60000; //60 seconds
 
     this.callApi();
     this.interval = setInterval(this.callApi, PAGE_UPDATE_INTERVAL);
@@ -27,7 +27,7 @@ class LiveRacesListContainer extends Component {
   render() {
     if (!this.props.liveRaces.races) return null;
     return (
-      <LiveRacesList races={this.props.liveRaces.races} />
+      <LiveRacePanelList races={this.props.liveRaces.races} />
     );
   }
 
@@ -38,4 +38,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchLiveRaces})(LiveRacesListContainer);
+export default connect(mapStateToProps, {fetchLiveRaces})(LiveRacePanelListContainer);

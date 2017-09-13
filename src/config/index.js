@@ -9,7 +9,11 @@ export const externalApi = {
     clientId: '77j5cesl781f4gpduf1278i38j8icr1',
     getChannelUrl: function(user) {
       return `${this.url}/channels/${user}?client_id=${this.clientId}`;
-    }   
+    },
+    getStreamsUrl: function(users) {
+      const channels = '?channel=' + users.join(',');
+      return `${this.url}/streams${channels}&client_id=${this.clientId}`;
+    }
   },
   hitbox: {
     url:'https://api.hitbox.tv',

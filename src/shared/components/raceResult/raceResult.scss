@@ -22,9 +22,6 @@
   .left {
     text-align: left;
   }
-  div {
-    display: none;
-  }
   .comment {
     font-size: .88em;
     cursor: default;
@@ -32,6 +29,9 @@
       background-color: lighten($coal-grey, 4%);
       border-radius: 5px;
       padding: 1px 6px;
+    }
+    div {
+      display: none;
     }
     &:hover {
       span {

@@ -1,16 +1,22 @@
 @import '~css/global';
 html {
   position: relative;
-  min-height: 100%;
-  overflow-y: scroll;
+  height:100%;
+  overflow-y: auto;
+
 }
 
 body {
-  margin: 0 0 $footer-height 0;
+  height: 100%;
+  margin: 0;
   background-color: $main-background;
   font-family: $font-family-base;
   font-size: #{$font-size-base}px;
   color: $grey;
+
+  #root, #main-content {height:100%;}
+  .wrap {min-height: 100%; padding-bottom:70px;}
+
   a {
     color: inherit;
     &:hover {

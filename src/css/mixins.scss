@@ -49,6 +49,7 @@ $browser-context: $font-size-base; // Default font size
       .goal{
         text-align: left;
         color: lighten($grey,6%);
+        word-break: break-word;
       }
       .date{
         text-align: right;

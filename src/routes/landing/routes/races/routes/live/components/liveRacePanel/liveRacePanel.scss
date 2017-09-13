@@ -4,7 +4,7 @@
 $panel-height: 60px;
 $panel-pad: 5px;
 
-.live-race {
+.live-race-panel {
   @include srlPanel(100%,null);
   min-height:$panel-height;
   margin-bottom: 10px;

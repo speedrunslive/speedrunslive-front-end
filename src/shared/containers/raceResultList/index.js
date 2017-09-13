@@ -19,7 +19,6 @@ class RaceResultListContainer extends Component {
     if (raceId !== newProps.raceId || page !== newProps.page || pageSize !== newProps.pageSize || player !== newProps.player || game !== newProps.game) {
       this.props.fetchRaceResults(newProps.raceId, newProps.page, newProps.pageSize, newProps.player, newProps.game);
     }
-
   }
 
   componentDidMount() {

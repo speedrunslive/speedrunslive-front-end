@@ -1,0 +1,65 @@
+@import '~css/mixins';
+@import '~css/variables';
+
+.live-race-viewer-container {
+  $sidebar-width: 20%;
+  $sidebar-width-minimized: 40px;
+  
+  height:100%;
+  overflow:hidden;
+
+  .streams-wrapper {
+    width:100% - $sidebar-width;
+    height:100%;
+    float: left;
+  }
+  &.sidebar-minimized .streams-wrapper {width:97% ;width:calc(100% - #{$sidebar-width-minimized});}
+  
+
+  /********** SIDE BAR **********/
+  .sidebar {
+    background:$darker-grey-background;
+    width:$sidebar-width;
+    float: left;
+    height:100%;
+
+    .srl-logo {
+      background: url('../../../../../../../../css/images/srl_305.png') left no-repeat; 
+      background-size: contain;
+      width: 125px;
+      height:38px; 
+      display: inline-block;
+      margin-left: 24px;
+    }
+    .srl-logo:hover {background-position-x:right;}
+  
+    .arrow { 
+      background: url('../../../../../../../../css/images/toggle-arrow.png') left no-repeat; 
+      background-size: 49px 24px; 
+      width:26px; 
+      height:41px; 
+      display:inline-block;
+      cursor: pointer;
+    }
+    .arrow:hover {background-position-x: right; }
+
+    .live-race-entrants-wrapper {overflow: auto;height:96%;clear: both;}
+
+    .display {display:block;}
+    .hidden {display:none;}
+  }
+
+  &.sidebar-minimized .sidebar{
+      width: $sidebar-width-minimized;
+      * {visibility: hidden;}
+      .arrow {
+        visibility: visible;
+        transform: rotate(180deg);
+      }
+      .srl-logo {
+        visibility: visible;
+        transform: rotate(90deg);
+        margin: 56px 0 0px -44px;
+      }
+  }
+}
