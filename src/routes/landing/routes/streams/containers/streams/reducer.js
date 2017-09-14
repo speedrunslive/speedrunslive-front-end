@@ -5,13 +5,15 @@ const INITIAL_STATE = {all: [], featuredStream:{}, filterText:''};
 const streams = (state = INITIAL_STATE, action) => {
   switch(action.type){
     case FETCH_STREAMS:{
-      var streams = action.payload._source.channels;
+      var sortedStream = action.payload._source.channels.sort((streamA, streamB)=>{
+        return (streamA.current_viewers < streamB.current_viewers) ? 1 : -1
+      });
       var featuredStream = state.featuredStream;
       if (!featuredStream || Object.keys(featuredStream).length === 0){
-        featuredStream = pickRandomStream(streams);
-        streams =  setFeaturedStream(streams, featuredStream);
+        featuredStream = pickRandomStream(sortedStream);
+        sortedStream =  setFeaturedStream(sortedStream, featuredStream);
       }
-      return {...state, all: streams, featuredStream};
+      return {...state, all: sortedStream, featuredStream};
     }
     case SET_FEATURED_STREAM:{
       const newStreamList = setFeaturedStream(state.all, action.payload);
