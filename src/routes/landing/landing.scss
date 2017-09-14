@@ -2,8 +2,7 @@
 html {
   position: relative;
   height:100%;
-  overflow-y: auto;
-
+  overflow-y: hidden;
 }
 
 body {
@@ -15,6 +14,7 @@ body {
   color: $grey;
 
   #root, #main-content {height:100%;}
+  #main-content{overflow-y: scroll;}
   .wrap {min-height: 100%; padding-bottom:70px;}
 
   a {

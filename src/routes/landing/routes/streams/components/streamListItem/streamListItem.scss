@@ -62,26 +62,25 @@
       width:21px;
     }
   }
-}
-
-.stream-list-item:hover {
-  background: $dark-blue;
-  background: linear-gradient($dark-blue, darken($dark-blue,5%));
-  border-color: $srl-blue $black $black $srl-blue;
-  cursor: pointer;
-  .stream-info {
-    .stream-title {
-      color: lighten($royal-blue,15%);
-      text-shadow: $text-shadow-base;
-    }
-    .stream-name {
-      color: lighten($srl-yellow, 10%);
+  &:hover {
+    background: $dark-blue;
+    background: linear-gradient($dark-blue, darken($dark-blue,5%));
+    border-color: $srl-blue $black $black $srl-blue;
+    cursor: pointer;
+    .stream-info {
+      .stream-title {
+        color: lighten($royal-blue,15%);
+        text-shadow: $text-shadow-base;
+      }
+      .stream-name {
+        color: lighten($srl-yellow, 10%);
+      }
     }
   }
-}
-
-.stream-list-item-selected{
-  @extend .stream-list-item:hover;
-  background: darken($dark-blue,10%);
-  background-image: linear-gradient(darken($dark-blue,5%), darken($dark-blue,15%));
+  
+  &.stream-list-item-selected{
+    @extend .stream-list-item:hover;
+    background: darken($dark-blue,10%);
+    background-image: linear-gradient(darken($dark-blue,5%), darken($dark-blue,15%));
+  }
 }
