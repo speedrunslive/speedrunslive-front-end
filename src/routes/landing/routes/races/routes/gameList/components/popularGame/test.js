@@ -9,9 +9,8 @@ describe('PopularGame', () => {
     const wrapper = shallow(
       <PopularGame name={props.name} rank={props.rank} short={props.short} />
     );
-
-    expect(wrapper.children().prop('to')).to.eq('/races/game/test/1');
-    expect(wrapper.find('.gameName').text()).to.eq('Test');
-    expect(wrapper.find('.gameRank').text()).to.eq('1');
+    expect(wrapper.children().prop('to')).to.eq('/races/game/test');
+    expect(wrapper.find('.game-name').text()).to.eq('Test');
+    expect(wrapper.find('.first-place').length).to.eq(1);
   });
 });

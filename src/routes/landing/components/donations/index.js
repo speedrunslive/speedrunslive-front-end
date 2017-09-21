@@ -2,8 +2,10 @@ import React, { PropTypes } from 'react';
 import {numberToMonth} from '../../../../utils';
 import './donations.scss';
 
+export const SERVER_COST = 65;
+
 const Donations = ({donations}) => {
-  const SERVER_COST = 65;
+
   const date = new Date();
   const month = numberToMonth(date.getMonth()+1);
   const year = date.getFullYear();
@@ -30,7 +32,7 @@ const Donations = ({donations}) => {
 
   function renderDonationTotal(currentDonations) {
     let donationPercentage = (currentDonations / SERVER_COST)*100;
-    if (donationPercentage >= SERVER_COST) {
+    if (donationPercentage >= 100) {
       return <div className="donations-total donation-met" style={{ width: '100%' }} />
     } 
     else {
