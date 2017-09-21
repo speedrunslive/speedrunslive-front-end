@@ -39,6 +39,18 @@ services:
   #     cd /usr/src/app &&
   #     /usr/local/bin/node index.js'
 
+  mocha-watch:
+    image: node:6.9.4-alpine
+    container_name: mocha-watch
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=test
+    command:
+      sh -c '
+      cd /usr/src/app &&
+      /usr/src/app/node_modules/mocha/bin/mocha --watch'
+
   mocha:
     image: node:6.9.4-alpine
     container_name: mocha

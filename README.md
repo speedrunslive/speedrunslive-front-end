@@ -75,4 +75,6 @@ src
 
 `docker-compose run --rm mocha`
 
+or for intereactive testing: `docker-compose run --rm mocha-watch`
+
 Please unit test any components or functions that you can.

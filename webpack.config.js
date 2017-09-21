@@ -29,7 +29,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
-      loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],
+      loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015,presets[]=babel-polyfill'],
     }, {
       test: /\.html$/,
       loader: 'file?name=[name].[ext]',
@@ -56,6 +56,13 @@ module.exports = {
           ]
   },
   devtool: 'cheap-module-source-map',
+  useBuiltIns: 'usage',
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+    'react-addons-test-utils': 'react-dom',
+  },
   plugins: [ 
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
