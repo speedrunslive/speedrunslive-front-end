@@ -3,10 +3,10 @@ import {Link} from 'react-router';
 import {getCssClassForRank, addOrdinalIndicator, convertSecondsToRaceTime} from '../utils';
 
 //constants used by SRL API in entrant[i].place prop
-const READY = 9994;
-const ENTERED = 9995;
-const FORFEIT = 9998;
-const DISQUALIFIED = 9999;
+export const READY = 9994;
+export const ENTERED = 9995;
+export const FORFEIT = 9998;
+export const DISQUALIFIED = 9999;
 
 export function renderRaceTime(seconds, place) {
   let timeString, quitterColor = '';
