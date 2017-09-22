@@ -42,7 +42,7 @@ describe('RaceResult', () => {
   });
 
   it('comments render properly',() => {
-    expect(componentForfeit.text()).to.contain('no scarecrow song, got saw w/o sot');
+    expect(componentForfeit.text()).to.contain(genericComment);
   });
 
   it('player renders properly', () => {
@@ -50,6 +50,7 @@ describe('RaceResult', () => {
   });
 });
 
+const genericComment = 'This is a generic comment!!!';
 const mockRaceResultForPlace= (place) => {
   return {
     "id": "1234",
@@ -70,7 +71,7 @@ const mockRaceResultForPlace= (place) => {
         "place": place,
         "player": "Elminster",
         "time": 0,
-        "message": "no scarecrow song, got saw w/o sot",
+        "message": genericComment,
         "oldtrueskill": 859,
         "newtrueskill": 845,
         "trueskillchange": -14,

@@ -2,6 +2,15 @@ import React from 'react';
 
 import './pagenator.scss';
 
+/**
+ * Pagenator - generic pagenator which navigates to a relative url page
+ * 
+ * ex. mysite.com/1
+ *     mysite.com/2
+ * 
+ * @param {any} page - Current page we are on
+ * @param {any} lastPage - Last available page we can navigate to
+ */
 const Pagenator = (props) => {
     // temp paging. Should be done with react router and buttons in future.
     let nextPage = parseInt(props.page) + 1;
