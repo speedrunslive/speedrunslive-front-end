@@ -4,8 +4,14 @@ import {decodeHtmlEntities} from '../../../../../../utils';
 import './streamListItem.scss';
 
 
+/**
+ * StreamListItem - panel to represent a streamer on SRL front page
+ * 
+ * @param {Object} stream - Object containing stream information
+ * @param {function} onClick - callback function, to allow a parent to handle when this component is clicked
+ */
 const StreamListItem = (props) => {
-
+  
   const stream = props.stream;
   const onClick = props.onClick;
   const featuredStream = (stream.featured) ? 'stream-list-item-selected' : '';
