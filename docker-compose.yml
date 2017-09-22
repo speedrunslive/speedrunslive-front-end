@@ -49,7 +49,7 @@ services:
     command:
       sh -c '
       cd /usr/src/app &&
-      /usr/src/app/node_modules/mocha/bin/mocha --watch'
+      /usr/src/app/node_modules/mocha/bin/mocha --watch --recursive'
 
   mocha:
     image: node:6.9.4-alpine
