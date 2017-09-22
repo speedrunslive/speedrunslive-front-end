@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import './channel.scss';
+import './channelBody.scss';
 
 const ChannelBody = ()=>{
   return(
-    <div className="container channelPage">
+    <div className="channel-body">
       <div className="col-md-3 pull-right">
         <h1>About #speedrunslive</h1>
 
