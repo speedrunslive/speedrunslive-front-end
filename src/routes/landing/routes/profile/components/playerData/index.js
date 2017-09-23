@@ -3,6 +3,13 @@ import {Link} from 'react-router';
 
 import './playerData.scss';
 
+
+/**
+ * PlayerData - display player image and social media buttons
+ * 
+ * @param {any} playerData.srl - data from SRL api to display
+ * @param {any} playerData.external - data from Twitch api to display
+ */
 const PlayerData = (props) => {
   const {name,channel,api,twitter,youtube,country} = props.playerData.srl;
   const {logo} = props.playerData.external;
