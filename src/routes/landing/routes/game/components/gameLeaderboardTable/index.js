@@ -3,6 +3,12 @@ import {Link} from 'react-router';
 
 import './gameLeaderboardTable.scss';
 
+/**
+ * GameLeaderboardTable - display a player/trueskill leaderboard. 
+ * 
+ * @param {Array} leaders - list of players to display in table
+ * @param {string} percentile - used as css class. Example .percentile-1, .percentile-2, .percentile-unranked, etc.
+ */
 const GameLeaderboardTable = (props) => {
   const {leaders, percentile} = props;
 
@@ -20,9 +26,7 @@ const GameLeaderboardTable = (props) => {
     <div className='game-leaderboard-table'>
     <table className={`percentile-${percentile}`}>
       <tbody>
-        {
-          leaders.map(renderTableRow)
-        }
+        {leaders.map(renderTableRow)}
       </tbody>
     </table>
     </div>
