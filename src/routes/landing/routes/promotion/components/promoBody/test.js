@@ -6,6 +6,6 @@ import PromoBody from '../promoBody';
 describe('PromoBody', () =>{
   it('renders', () => {
     const component = shallow(<PromoBody />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

@@ -6,7 +6,7 @@ import PlayerGameList from './';
 describe('PlayerGameList', () =>{
   it('renders', () => {
     const component = shallow(<PlayerGameList game={mockGame} playerGameList={mockGameList} player={mockPlayer} />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('will have .selected class for game if exists in gameList', () => {

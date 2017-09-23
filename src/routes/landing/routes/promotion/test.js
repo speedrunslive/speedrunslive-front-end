@@ -6,7 +6,7 @@ import Promotion from '../promotion';
 describe('Promotion Route Handler', () =>{
   it('renders', () => {
     const component = shallow(<Promotion />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children when passed', () => {

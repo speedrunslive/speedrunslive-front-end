@@ -6,7 +6,7 @@ import GameStats from './';
 describe('GameStats', () =>{
   it('renders', () => {
     const component = shallow(<GameStats />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('will display correct stats', () => {

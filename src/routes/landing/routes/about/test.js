@@ -6,7 +6,7 @@ import About from './';
 describe('About', () =>{
   it('renders', () => {
     const component = shallow(<About />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children', () => {

@@ -6,6 +6,6 @@ import Rules from './';
 describe('Rules', () =>{
   it('renders', () => {
     const component = shallow(<Rules />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

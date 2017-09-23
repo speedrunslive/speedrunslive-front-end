@@ -6,6 +6,6 @@ import Registration from './';
 describe('Registration', () =>{
   it('renders', () => {
     const component = shallow(<Registration />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

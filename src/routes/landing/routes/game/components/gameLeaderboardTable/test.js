@@ -6,7 +6,7 @@ import GameLeaderboardTable from './';
 describe('GameLeaderboardTable', () =>{
   it('renders', () => {
     const component = shallow(<GameLeaderboardTable leaders={mockPlayerList(10)} percentile={1} />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders correct amount of rows', () => {

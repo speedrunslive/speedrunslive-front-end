@@ -6,6 +6,6 @@ import GameBody from './';
 describe('GameBody', () =>{
   it('renders', () => {
     const component = shallow(<GameBody params={{}}/>);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

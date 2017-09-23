@@ -6,7 +6,7 @@ import PlayerProfileBody from './';
 describe('PlayerProfileBody', () =>{
   it('renders', () => {
     const component = shallow(<PlayerProfileBody params={mockParams}/>);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });
 

@@ -10,7 +10,7 @@ describe('TrackedGoals', () =>{
     component = shallow(<TrackedGoals trackedGoals={goal} />);
   })
   it('renders', () => {
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders only 5 topresults even if there are more', () => {

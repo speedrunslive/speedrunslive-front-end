@@ -6,6 +6,6 @@ import ToolsBody from '../toolsBody';
 describe('ToolsBody', () =>{
   it('renders', () => {
     const component = shallow(<ToolsBody />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

@@ -6,6 +6,6 @@ import Glossary from './';
 describe('Glossary', () =>{
   it('renders', () => {
     const component = shallow(<Glossary />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

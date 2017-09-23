@@ -6,6 +6,6 @@ import AboutBody from './';
 describe('AboutBody', () =>{
   it('renders', () => {
     const component = shallow(<AboutBody />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

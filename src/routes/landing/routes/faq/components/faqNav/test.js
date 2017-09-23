@@ -6,7 +6,7 @@ import FAQNav from './';
 describe('FAQNav', () =>{
   it('renders', () => {
     const component = shallow(<FAQNav />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children', () => {

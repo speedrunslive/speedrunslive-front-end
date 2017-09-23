@@ -6,7 +6,7 @@ import Tools from '../tools';
 describe('Tools Route Handler', () =>{
   it('renders', () => {
     const component = shallow(<Tools />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children', () => {

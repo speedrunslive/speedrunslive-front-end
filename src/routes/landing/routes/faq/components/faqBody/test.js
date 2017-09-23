@@ -6,7 +6,7 @@ import FAQBody from './';
 describe('FAQBody', () =>{
   it('renders', () => {
     const component = shallow(<FAQBody />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
 });

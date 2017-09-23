@@ -6,6 +6,6 @@ import ToggleUnrankedLeaderboard from './';
 describe('ToggleUnrankedLeaderboard', () =>{
   it('renders', () => {
     const component = shallow(<ToggleUnrankedLeaderboard />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

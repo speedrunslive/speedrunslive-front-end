@@ -6,7 +6,7 @@ import Game from './';
 describe('Game', () =>{
   it('renders', () => {
     const component = shallow(<Game />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children', () => {

@@ -7,7 +7,7 @@ describe('StreamListItem', () => {
   
   it('renders properly', () => {
     const component = shallow(<StreamListItem stream={mockStream(false,false)}/>);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('will toggle img.racing-icon depending if user is in race', () => {

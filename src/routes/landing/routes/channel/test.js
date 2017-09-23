@@ -6,7 +6,7 @@ import Channel from './';
 describe('Channel', () =>{
   it('renders', () => {
     const component = shallow(<Channel />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('renders children', () => {

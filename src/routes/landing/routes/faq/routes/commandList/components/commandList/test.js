@@ -6,6 +6,6 @@ import CommandList from './';
 describe('CommandList', () =>{
   it('renders', () => {
     const component = shallow(<CommandList />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

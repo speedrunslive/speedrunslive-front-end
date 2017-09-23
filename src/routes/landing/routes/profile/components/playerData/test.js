@@ -8,6 +8,6 @@ describe('PlayerData', () =>{
 
   it('renders', () => {
     const component = shallow(<PlayerData playerData={emptyPlayerDataProps} />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

@@ -6,7 +6,7 @@ import ToTopButton from './';
 describe('ToTopButton', () =>{
   it('renders', () => {
     const component = shallow(<ToTopButton />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 
   it('click attempts to manipulate window object', () => {

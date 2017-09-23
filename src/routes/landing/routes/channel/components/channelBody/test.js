@@ -6,6 +6,6 @@ import ChannelBody from './';
 describe('ChannelBody', () =>{
   it('renders', () => {
     const component = shallow(<ChannelBody />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

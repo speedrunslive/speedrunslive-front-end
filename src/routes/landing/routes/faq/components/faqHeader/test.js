@@ -6,6 +6,6 @@ import FAQHeader from './';
 describe('FAQHeader', () =>{
   it('renders', () => {
     const component = shallow(<FAQHeader />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });

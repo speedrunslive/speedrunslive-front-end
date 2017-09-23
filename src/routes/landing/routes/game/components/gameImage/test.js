@@ -6,6 +6,6 @@ import GameImage from './';
 describe('GameImage', () =>{
   it('renders', () => {
     const component = shallow(<GameImage />);
-    expect(component).to.exist;
+    expect(component.exists()).to.eq(true);
   });
 });
