@@ -6,6 +6,7 @@ import './liveRacePanel.scss';
 
 /**
  * LiveRacePanel - Display race details in a typical SRL Panel
+ *                 Does not display if race.state === 4
  * 
  * @param {any} race - race to be displayed
  */
@@ -25,6 +26,7 @@ const LiveRacePanel = (props) => {
     }
   }
 
+  if (props.race.state === 4) return null;
   return (
     <Link to={`/races/live/${id}`}>
       <li className='live-race-panel'>

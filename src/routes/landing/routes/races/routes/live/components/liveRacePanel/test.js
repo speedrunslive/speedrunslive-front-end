@@ -10,23 +10,26 @@ describe('LiveRacePanel', () =>{
   beforeEach(() => {
     race = new MockRace(3,'THIS IS RACE STATE');
     component = shallow(<LiveRacePanel race={race} />);
-  })
-
+  });
 
   it('renders', () => {
-    let race = new MockRace(1,'THIS IS RACE STATE');
-    let component = shallow(<LiveRacePanel race={race} />);
     expect(component.exists()).to.eq(true);
   });
 
-  it('race state !=0= 3 then display race.statetext, no timer', () => {
+  it('race state !== 3 then display race.statetext, no timer', () => {
     for(var state = 0; state < 10;state++) {
-      if (state === 3) continue;
+      if (state === 3 || state === 4) continue;
       race = new MockRace(state,'THIS IS RACE STATE');
       component = shallow(<LiveRacePanel race={race} />);
       expect(component.html()).to.contain('THIS IS RACE STATE');
       expect(component.find(LiveRaceTimer).length).to.eq(0);
     }
+  });
+
+  it('does not render if state === 4', () => {
+    race = new MockRace(4,'THIS IS RACE STATE');
+    component = shallow(<LiveRacePanel race={race} />);
+    expect(component.html()).to.eq(null);
   })
 
   it('race state === 3 then display <LiveRaceTimer />', () => {
@@ -42,6 +45,7 @@ describe('LiveRacePanel', () =>{
     expect(component.find('.race-details > div').text()).to.eq('A Race Goal');
   })
 });
+
 function MockRace (state, statetext) {
   this.id = 1234;
   this.statetext = statetext;
