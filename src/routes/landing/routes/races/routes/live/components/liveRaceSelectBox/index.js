@@ -10,7 +10,7 @@ import './liveRaceSelectBox.scss';
  */
 const LiveRaceSelectBox = (props) => {
     function renderDropdownOption(optionText) {
-    return <option key={optionText} value={optionText}> {optionText}</option>;
+    return <option key={optionText} value={optionText}>{optionText}</option>;
   }
   return (
     <select className="live-race-select-box" onChange={(e)=>{props.handleSelectBoxChange(e.target.value)}}>
