@@ -12,7 +12,6 @@ describe('LiveRaceEntrants', () =>{
     expect(component.exists()).to.eq(true);
   });
 
-  //icon not displayed if no twitch data
   it('only displays a twitch icon if twitch data is passed in', () => {
     let race = new MockRace(2,'In Progress','The Goal');
     let entrants = createMockEntrants(5, false); //5 entrants, 0 are streaming
@@ -58,7 +57,6 @@ describe('LiveRaceEntrants', () =>{
     expect(component.find(LiveRaceTimer).length).to.eq(1);
   });
 });
-
 
 function MockRace (state, statetext, goal) {
   this.id = 1234;
