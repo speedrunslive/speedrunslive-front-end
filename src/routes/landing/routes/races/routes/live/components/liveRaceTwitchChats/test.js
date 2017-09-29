@@ -12,7 +12,6 @@ describe('LiveRaceTwitchChats', () =>{
   it('selectedChat iframe will have .display class', () => {
     const component = shallow(<LiveRaceTwitchChats streams={mockStreams} selectedChat={mockSelectedStream} />);
     const selectedPlayer = component.find('iframe').findWhere(node => playerInSrcAttribute(node, 'chattester'));
-    console.log(selectedPlayer.html());
     expect(selectedPlayer.length).to.eq(1);
     expect(selectedPlayer.find('.display').length).to.eq(1);
   });
