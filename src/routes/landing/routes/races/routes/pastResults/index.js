@@ -8,6 +8,11 @@ import RaceResultListContainer from '../../../../../../shared/containers/raceRes
 
 counterpart.registerTranslations('en', require('./translations/en'));
 
+/**
+ * PastResults - Display past race results
+ * 
+ * @param {number} params.page - current page number, grabbed off url 
+ */
 const PastResults = (props) => {
   return (
     <div className="pastResults">
