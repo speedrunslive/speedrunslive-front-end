@@ -5,6 +5,11 @@ import * as raceHelper from '../../../utils/raceHelper';
 
 import './raceResult.scss';
 
+/**
+ * RaceResult - display a single SRL race result as an html table
+ * 
+ * @param {Object} raceResult - Object with result details.
+ */
 const RaceResult = (props) => {
 
   const raceResult = props.raceResult;
