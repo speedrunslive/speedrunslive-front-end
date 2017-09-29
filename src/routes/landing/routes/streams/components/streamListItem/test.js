@@ -24,6 +24,11 @@ describe('StreamListItem', () => {
     expect(componentNotFeatured.find('.stream-list-item-selected').length).to.eq(0);
   });
 
+  it('will display game prop passed', () =>{
+    const componentNotFeatured = shallow(<StreamListItem stream={mockStream(false,false)}/>);
+    expect(componentNotFeatured.text()).to.contain(mockStream().meta_game);
+  })
+
 });
 
 
