@@ -6,7 +6,7 @@ Node + React + Sass.
 
 Clone the repository and navigate to the project then run the following commands:
 
-Note for Windows users: The project must be in your /users/ folder for volume mounting.
+Note for Windows users: The project must be in your %HOMEPATH% (e.g. `C:\Users\username`) for volume mounting.
 
 ```Shell
 # For development
@@ -75,6 +75,10 @@ src
 
 `docker-compose run --rm mocha`
 
-or for intereactive testing: `docker-compose run --rm mocha-watch`
+or
+
+`docker-compose run --rm mocha-watch`
+
+mocha --watch needs to be restarted when new files are added. 
 
 Please unit test any components or functions that you can.
