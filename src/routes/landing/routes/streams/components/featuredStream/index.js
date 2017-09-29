@@ -1,6 +1,11 @@
 import React from 'react';
 import './featuredStream.scss';
 
+/**
+ * FeaturedStream - display a twitch stream iframe and corresponding chat iframe
+ * 
+ * @param {Object} featuredStream - contains stream name and meta data
+ */
 const FeaturedStream = ({featuredStream}) => {
 
     if (!featuredStream){return <div>SELECT A STREAM</div>}

@@ -13,10 +13,7 @@ const LiveRacePanelList = (props) => {
   const races = props.races;
 
   function renderRace(race){
-    // Do not render 'Complete' races
-    if (race.state !== 4) {
       return <LiveRacePanel key={race.id} race={race} />
-    }
   }
 
   return (

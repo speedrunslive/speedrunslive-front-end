@@ -4,8 +4,12 @@ import { shallow } from 'enzyme';
 import FAQ from './';
 
 describe('FAQ', () => {
+  it('renders', () => {
+    const component = shallow(<FAQ />);
+    expect(component.exists()).to.eq(true);
+  });
 
-  it('renders children correctly', () => {
+  it('renders children', () => {
     const wrapper = shallow(
         <FAQ>
           <div className="child" />

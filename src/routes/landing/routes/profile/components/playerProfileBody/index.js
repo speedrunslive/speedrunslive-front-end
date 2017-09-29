@@ -5,6 +5,18 @@ import PlayerDataContainer from '../../containers/playerData';
 import PlayerGameListContainer from '../../containers/playerGameList';
 import PlayerStatsContainer from '../../containers/playerStats';
 
+/**
+ * PlayerProfileBody - SRL player profile page
+ * Reads in params passed through url (react-router) and disseminates to children
+ * 
+ * ex. speedrunslive.com/profile/{player}/{page}
+ *                     or
+ * ex. speedrunslive.com/profile/{player}/game/{game}/{page}
+ * 
+ * @param {any} params.page - current page
+ * @param {any} params.game - current game data to display
+ * @param {any} params.player - current player
+ */
 const PlayerProfileBody = (props) => {
   const {page, game, player} = props.params;
 

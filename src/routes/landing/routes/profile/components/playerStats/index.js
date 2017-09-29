@@ -4,14 +4,20 @@ import {Link} from 'react-router';
 
 import './playerStats.scss';
 
+
+/**
+ * PlayerStats - Display race stats for racer
+ * 
+ * @param {string} playerStats.game - current game to display in header
+ * @param {any} playerStats.stats - stats to display
+ * @param {Object} playerStats.player - unused, but currently attached to state object.  
+ */
 const PlayerStats = (props) => {
-  const {game, player, stats} = props.playerStats;
+  const {game, stats} = props.playerStats;
 
   function renderHeader(game) {
     return (
-    <h1>
-      Stats <span className='dull'> » </span> {game.name}
-    </h1>
+    <h1>Stats <span className='dull'> » </span> {game.name}</h1>
     );
   }
 
@@ -68,7 +74,7 @@ const PlayerStats = (props) => {
     );
   }
 
-  if (!game || !player) return null;
+  if (!game) return null;
   return (
     <div className='player-stats'>
       {renderHeader(game)}

@@ -1,9 +1,8 @@
 @import '~css/variables.scss';
 
-.aboutSRL{
-  p{
-    margin: 3px;
-  }
+.about-body{
+  margin-top: 20px;
+  p{margin: 3px;}
   a{
     float: left;
     width: 200px;
@@ -13,9 +12,9 @@
   }
   span{
     margin:0 0 0 7px;
-  }
-  .vertical-space{
-    margin:20px 0 0;
+    font-size: 96%;
+    color: $grey-darker;
+    text-shadow: $text-shadow-base;
   }
 
 }

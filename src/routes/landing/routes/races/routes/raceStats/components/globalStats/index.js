@@ -3,6 +3,11 @@ import {convertSecondsToTimeString} from '../../../../../../../../utils';
 
 import './globalStats.scss';
 
+/**
+ * GlobalStats
+ * 
+ * @param {Object} globalStats - Global stats to display
+ */
 const GlobalStats = (props) => {
   return (
     <div className='global-stats'>

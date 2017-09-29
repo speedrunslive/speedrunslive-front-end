@@ -5,14 +5,23 @@ import GameImage from '../gameImage';
 import GameRulesContainer from '../../containers/gameRules';
 import GameStatsContainer from '../../containers/gameStats';
 import TrackedGoalsContainer from '../../containers/trackedGoals';
-import GameLeaderboard from '../../containers/gameLeaderboard';
+import GameLeaderboardContainer from '../../containers/gameLeaderboard';
 
+/**
+ * GameBody - SRL game page
+ * Reads in params passed through url (react-router) and disseminates to children
+ * 
+ * ex. speedrunslive.com/game/{game}/{page}
+ * 
+ * @param {any} params.game - game abbreviation
+ * @param {any} params.page - current page 
+ */
 const GameBody = (props) => {
   return (
     <div className="gameBody">
       <div className="row">
         <div className="col-md-3">
-          <GameLeaderboard game={props.params.game}/>
+          <GameLeaderboardContainer game={props.params.game}/>
         </div>
 
         <div className="col-md-6">

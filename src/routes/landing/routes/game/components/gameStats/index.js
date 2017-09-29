@@ -4,6 +4,14 @@ import {Link} from 'react-router';
 
 import './gameStats.scss';
 
+
+/**
+ * GameStats - display list of stats
+ * 
+ * @param {Object} game - current game
+ * @param {Object} stats - game statistics to display
+ * @returns 
+ */
 const GameStats = (props) => {
   const {game, stats} = props;
   

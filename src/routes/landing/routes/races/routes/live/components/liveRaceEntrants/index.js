@@ -6,10 +6,10 @@ import './liveRaceEntrants.scss';
 
 /**
  * LiveRaceEntrants - Display a table of race entrants
- *                    Can toggle streams if they are streaming
+ *                    Toggleable stream 'checkbox' to select a stream
  * 
  * @param {Object} race - Race details to be displayed in table header
- * @param {Object} entrants - Race entrants 
+ * @param {Object} entrants - Race entrants to be display in table body
  * @param {Array} selectedStreams - current streams selected. Display with purple icon (else grey)
  * @param {any} handleStreamListChange - callback function to allow parent to handle when twitch icon selected
  */
@@ -67,7 +67,7 @@ const LiveRaceEntrants = (props) => {
 
     let addStream;
     let twitchIcon;
-    if (selectedStreams.includes(twitch)) {
+    if (selectedStreams && selectedStreams.includes(twitch)) {
       return (
         <td>
           <img className="icon" onClick={() => handleStreamListChange(false, twitch)} src={twitchIconSelected} />

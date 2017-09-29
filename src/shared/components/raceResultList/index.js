@@ -4,6 +4,20 @@ import RaceResult from '../raceResult';
 
 import Pagenator from '../pagenator';
 
+/**
+ * RaceResultList - Displays list of races. 
+ * 
+ * View 1:
+ *   If props.isIndividualRace then only display single race with appropriate header
+ * 
+ * View 2: 
+ *   Else display list of <RaceResult/> with pagenator
+ * 
+ * 
+ * @param {Array} raceResultList - list of races
+ * @param {number} page - current page, to be passed to Pagenator
+ * @param {number} lastPage - last possible page, to be passed to Pagenator
+ */
 const RaceResultList = (props) => {
 
   var raceResultList = props.raceResultList;

@@ -7,7 +7,7 @@ import './liveRaceTwitchChats.scss';
  *                       All are 'display:none' except for props.selectedChat
  * 
  * @param {Object} props.streams - Twitch stream names. 
- * @param {string} props.selectedChat - callback, to allow parent to handle when a streams 'X' button is clicked.
+ * @param {string} props.selectedChat - current chat to display.
  */
 const LiveRaceTwitchChats = (props) => {
   return (
