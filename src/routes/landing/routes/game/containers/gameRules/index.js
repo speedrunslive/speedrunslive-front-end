@@ -6,6 +6,12 @@ class GameRulesContainer extends Component {
   componentDidMount() {
     this.props.fetchGameRules(this.props.game);
   } 
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.game !== this.props.game) {
+      this.props.fetchGameRules(newProps.game);
+    }
+  }
   
   render() {
     if (!this.props.gameRules) return null;

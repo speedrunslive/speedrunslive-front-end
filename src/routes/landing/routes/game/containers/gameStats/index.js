@@ -8,6 +8,11 @@ class GameStatsContainer extends Component {
   componentDidMount() {
     this.props.fetchGameStats(this.props.game);
   }
+  componentWillReceiveProps(newProps) {
+    if (newProps.game !== this.props.game) {
+      this.props.fetchGameStats(newProps.game);
+    }
+  }
   render() {
     return <GameStats game={this.props.gameStats.game} stats={this.props.gameStats.stats} />;
   }
