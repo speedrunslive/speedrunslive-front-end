@@ -1,14 +1,9 @@
-@import '~css/variables';
-
+@import '~css/mixins';
 .stream-search-box {
   clear:both;
   input {
+    @include searchBox();
     margin: 25px 10px 7px 14px;
     width:300px;
-    border-radius: 1px;
-    background-color:$darker-grey-background;
-    color:darken($white, 10%);
-    padding:2px 5px;
-    border-color:$coal-grey;
   }
 }

@@ -1,0 +1,26 @@
+@import '~css/variables';
+.search-results {
+   position: absolute;
+   z-index:99;
+   padding:0;
+   list-style: none;
+   background: $white;
+   color:$coal-grey;
+   width: 300px;
+   margin-top:-6px;
+   .result-item:hover {
+    background: linear-gradient(to bottom, $royal-blue,$dark-blue);
+    color:$white
+   }
+   .result-category {
+     font-size: .8em;
+     font-weight: $bold;
+     color:$dark-grey;
+     padding:10px 0 0 5px;
+     &:nth-child(n+2) {border-top:1px dashed $grey;}
+   }
+   .result-item {
+     cursor: pointer;
+     padding:10px;
+   }
+ }
