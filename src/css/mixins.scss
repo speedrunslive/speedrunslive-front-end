@@ -25,6 +25,19 @@ $browser-context: $font-size-base; // Default font size
   width: $width;
 }
 
+@mixin searchBox() {
+  border-radius: 5px;
+  background-color:$darker-grey-background;
+  color:darken($white, 10%);
+  padding:2px 5px;
+  border-color:$coal-grey;
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 1px 1px $dark-blue;
+}
+
+}
+
 @mixin srlTable() {
   table {
     margin-bottom: 16px;

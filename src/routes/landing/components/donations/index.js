@@ -13,7 +13,7 @@ const Donations = ({donations}) => {
   if (!donations.amount){return null}
 
   return (
-    <div className="donations col-md-7">
+    <div className="donations">
       <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=SQ2NXSJRUVWLW"
         target="_blank"
         title="All donations cover monthly server and bandwidth costs. Thanks to all donators!">
@@ -36,7 +36,7 @@ const Donations = ({donations}) => {
       return <div className="donations-total donation-met" style={{ width: '100%' }} />
     } 
     else {
-      return <div className="donations-total" style={{ width: `'${donationPercentage}%'` }} />
+      return <div className="donations-total" style={{ width: `${donationPercentage}%` }} />
     }
   }
 }

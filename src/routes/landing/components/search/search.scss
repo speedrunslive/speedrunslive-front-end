@@ -1,0 +1,6 @@
+@import '~css/mixins';
+.search {
+  @include searchBox();
+  width:300px;
+  margin: 13px 0;
+}
