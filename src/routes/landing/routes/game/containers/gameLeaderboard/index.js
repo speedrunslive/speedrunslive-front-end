@@ -15,6 +15,12 @@ class GameLeaderboardContainer extends Component {
     this.props.fetchGameLeaderboard(this.props.game);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.game !== this.props.game) {
+      this.props.fetchGameLeaderboard(newProps.game);
+    }
+  }
+
   renderLeaderboard(leaderboard) {
     return <GameLeaderboardTable leaders={leaderboard.leaders} percentile={leaderboard.percentile} />
   }

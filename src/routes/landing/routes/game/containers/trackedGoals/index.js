@@ -9,6 +9,12 @@ class TrackedGoalsContainer extends Component {
     let season = 0;
     this.props.fetchTrackedGoals(this.props.game, season);
   }
+  componentWillReceiveProps(newProps) {
+    if (newProps.game !== this.props.game) {
+      let season = 0;
+      this.props.fetchTrackedGoals(newProps.game, season);
+    }
+  }
   render() {
     return <TrackedGoals trackedGoals={this.props.trackedGoals} />
   }
