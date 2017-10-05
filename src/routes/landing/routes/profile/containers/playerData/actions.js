@@ -18,6 +18,17 @@ export function fetchPlayerData(player) {
 
 export function fetchStreamServiceData(player, srlData) {
 
+  // If no Twitch Data then only 
+  if(!externalApi[srlData.api]) {
+    return function(dispatch) {
+      dispatch({
+        type:FETCH_PLAYER_DATA,
+        srlData:srlData,
+        externalData:{}
+      });
+    }
+  } 
+
   const url = externalApi[srlData.api].getChannelUrl(player);
 
   return function (dispatch) {
