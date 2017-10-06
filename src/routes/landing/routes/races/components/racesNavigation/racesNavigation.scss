@@ -8,5 +8,11 @@
         &:not(:first-of-type) {
             border-radius: initial;
         }
+        img {
+          float: right;
+          position: relative;
+          right: 13px;
+          opacity: 0.18;
+        }
     }
 }
